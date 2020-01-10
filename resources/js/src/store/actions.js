@@ -49,6 +49,32 @@ const actions = {
     updateUserInfo({ commit }, payload) {
       commit('UPDATE_USER_INFO', payload)
     },
-}
+
+
+    viewWaitMessage({ commit }, payload)
+    {
+        payload.notify({
+            title: 'Please, Wait..',
+            text: 'Your request in in progress.',
+            color: 'warning',
+            iconPack: 'feather',
+            icon: 'icon-clock'
+        });
+    },
+
+    handleError({ commit }, payload)
+    {
+        switch (payload.error.response.status) {
+            case 401:
+                router.push('/dashboard/error-403');
+                break;
+            case 403:
+                router.push('/dashboard/error-403');
+                break;
+            default:
+                payload.reject(payload.error);
+        }
+    }
+};
 
 export default actions

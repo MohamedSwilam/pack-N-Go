@@ -11,4 +11,8 @@
 |
 */
 
-Route::get('/{any}', 'ApplicationController')->where('any', '.*');
+//Route::get('/{any}', 'ApplicationController')->where('any', '.*');
+
+Route::view('/', 'pages.home')->name('home');
+Route::get('/dashboard', 'ApplicationController')->where('any', '.*');
+Route::get('/dashboard/{any}', 'ApplicationController')->where('any', '.*');

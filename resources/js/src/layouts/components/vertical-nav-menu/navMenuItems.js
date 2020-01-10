@@ -1,12 +1,3 @@
-/*=========================================================================================
-  File Name: sidebarItems.js
-  Description: Sidebar Items list. Add / Remove menu items from here.
-  ----------------------------------------------------------------------------------------
-  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-  Author: Pixinvent
-  Author URL: http://www.themeforest.net/user/pixinvent
-==========================================================================================*/
-
 
 export default [
   {
@@ -15,10 +6,34 @@ export default [
     slug: "home",
     icon: "HomeIcon",
   },
-  {
-    url: "/page2",
-    name: "Page 2",
-    slug: "page2",
-    icon: "FileIcon",
-  },
+    {
+        url: "/dashboard/employee",
+        name: "Employee",
+        slug: "employee",
+        icon: "UserIcon",
+        i18n: "Employee",
+        permission: 'browse-employee'
+    },
+    {
+        url: "/dashboard/client",
+        name: "Clients",
+        slug: "client",
+        icon: "UsersIcon",
+        i18n: "Employee",
+        permission: 'browse-client'
+    },
+    {
+        name: "Settings",
+        icon: "SettingsIcon",
+        i18n: "Settings",
+        submenu: [
+            {
+                url: '/dashboard/settings/role',
+                name: "Roles & Permissions",
+                slug: "role",
+                i18n: "Roles",
+                permission: "browse-role"
+            }
+        ]
+    },
 ]
