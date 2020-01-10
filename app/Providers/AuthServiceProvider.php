@@ -2,8 +2,17 @@
 
 namespace App\Providers;
 
+use App\Client;
+use App\Policies\ClientPolicy;
+use App\Policies\EmployeePolicy;
+use App\Policies\PermissionPolicy;
+use App\Policies\RolePolicy;
+use App\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Passport\Passport;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -14,6 +23,10 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Model' => 'App\Policies\ModelPolicy',
+        User::class => EmployeePolicy::class,
+        Role::class => RolePolicy::class,
+        Permission::class => PermissionPolicy::class,
+        Client::class => ClientPolicy::class
     ];
 
     /**
@@ -25,6 +38,6 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Passport::routes();
     }
 }
