@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Client;
+use App\Package;
 use App\Policies\ClientPolicy;
 use App\Policies\EmployeePolicy;
+use App\Policies\PackagePolicy;
 use App\Policies\PermissionPolicy;
 use App\Policies\RolePolicy;
 use App\User;
@@ -26,7 +28,8 @@ class AuthServiceProvider extends ServiceProvider
         User::class => EmployeePolicy::class,
         Role::class => RolePolicy::class,
         Permission::class => PermissionPolicy::class,
-        Client::class => ClientPolicy::class
+        Client::class => ClientPolicy::class,
+        Package::class => PackagePolicy::class,
     ];
 
     /**

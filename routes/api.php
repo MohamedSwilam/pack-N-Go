@@ -43,3 +43,11 @@ Route::group(['prefix' => 'client', 'middleware' => 'auth:api'], function () {
     Route::delete('{id}', 'ClientController@destroy');
     Route::resource('', 'ClientController');
 });
+
+
+Route::group(['prefix' => 'package', 'middleware' => 'auth:api'], function () {
+    Route::post('{id}', 'PackageController@update');
+    Route::get('{id}', 'PackageController@show');
+    Route::delete('{id}', 'PackageController@destroy');
+    Route::resource('', 'PackageController');
+});
