@@ -124,4 +124,43 @@ return [
             'display_name' => 'Delete Package',
         ],
     ],
+
+    'Lusion' => [
+        [
+            'name' => 'create-lusion',
+            'guard_name' => 'api',
+            'display_name' => 'Create Lusion',
+        ],
+        [
+            'name' => 'delete-lusion',
+            'guard_name' => 'api',
+            'display_name' => 'Delete Lusion',
+        ],
+    ],
+
+    'Schedule' => [
+        [
+            'name' => 'create-schedule',
+            'guard_name' => 'api',
+            'display_name' => 'Create Schedule',
+        ],
+        [
+            'name' => 'delete-schedule',
+            'guard_name' => 'api',
+            'display_name' => 'Delete Schedule',
+        ],
+    ],
+
+    'Accommodation' => [
+        [
+            'name' => 'create-accommodation',
+            'guard_name' => 'api',
+            'display_name' => 'Create Accommodation',
+        ],
+        [
+            'name' => 'delete-accommodation',
+            'guard_name' => 'api',
+            'display_name' => 'Delete Accommodation',
+        ],
+    ],
 ];

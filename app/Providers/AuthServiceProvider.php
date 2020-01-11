@@ -2,13 +2,19 @@
 
 namespace App\Providers;
 
+use App\Accommodation;
 use App\Client;
+use App\Lusion;
 use App\Package;
+use App\Policies\AccommodationPolicy;
 use App\Policies\ClientPolicy;
 use App\Policies\EmployeePolicy;
+use App\Policies\LusionPolicy;
 use App\Policies\PackagePolicy;
 use App\Policies\PermissionPolicy;
 use App\Policies\RolePolicy;
+use App\Policies\SchedulePolicy;
+use App\Schedule;
 use App\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
@@ -30,6 +36,9 @@ class AuthServiceProvider extends ServiceProvider
         Permission::class => PermissionPolicy::class,
         Client::class => ClientPolicy::class,
         Package::class => PackagePolicy::class,
+        Lusion::class => LusionPolicy::class,
+        Schedule::class => SchedulePolicy::class,
+        Accommodation::class => AccommodationPolicy::class,
     ];
 
     /**

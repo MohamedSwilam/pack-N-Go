@@ -2,10 +2,10 @@
 
 namespace App\Transformers;
 
-use App\Lusion;
+use App\Accommodation;
 use League\Fractal\TransformerAbstract;
 
-class LusionTransformer extends TransformerAbstract
+class AccommodationTransformer extends TransformerAbstract
 {
     /**
      * List of resources to automatically include
@@ -28,11 +28,11 @@ class LusionTransformer extends TransformerAbstract
     /**
      * A Fractal transformer.
      *
-     * @param Lusion $lusion
+     * @param Accommodation $accommodation
      * @return array
      */
-    public function transform(Lusion $lusion)
+    public function transform(Accommodation $accommodation)
     {
-        return $lusion->toArray();
+        return $accommodation->toArray();
     }
 }
