@@ -95,5 +95,33 @@ return [
             'guard_name' => 'api',
             'display_name' => 'View Permission',
         ]
-    ]
+    ],
+
+    'Package' => [
+        [
+            'name' => 'create-package',
+            'guard_name' => 'api',
+            'display_name' => 'Create Package',
+        ],
+        [
+            'name' => 'browse-package',
+            'guard_name' => 'api',
+            'display_name' => 'Browse Package',
+        ],
+        [
+            'name' => 'view-package',
+            'guard_name' => 'api',
+            'display_name' => 'View Package',
+        ],
+        [
+            'name' => 'edit-package',
+            'guard_name' => 'api',
+            'display_name' => 'Edit Package',
+        ],
+        [
+            'name' => 'delete-package',
+            'guard_name' => 'api',
+            'display_name' => 'Delete Package',
+        ],
+    ],
 ];
