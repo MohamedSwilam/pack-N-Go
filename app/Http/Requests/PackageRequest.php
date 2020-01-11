@@ -35,6 +35,9 @@ class PackageRequest extends FormRequest
                 'rate' => 'required|integer',
                 'date' => 'required|date',
                 'season' => 'required',
+                'home_page' => 'required|boolean',
+                'inclusions.*.name' => 'required',
+                'exclusions.*.name' => 'required',
             ];
         }
         else if (sizeof($segments) == 3){
@@ -48,6 +51,7 @@ class PackageRequest extends FormRequest
                 'rate' => 'integer',
                 'date' => 'date',
                 'season' => '',
+                'home_page' => 'boolean',
             ];
         }
     }

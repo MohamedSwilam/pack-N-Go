@@ -24,6 +24,7 @@ class CreatePackagesTable extends Migration
             $table->integer('nights')->nullable();
             $table->integer('rate')->nullable();
             $table->date('date')->nullable();
+            $table->boolean('home_page')->nullable();
             $table->timestamps();
         });
     }
