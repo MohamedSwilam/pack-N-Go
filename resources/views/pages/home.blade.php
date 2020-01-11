@@ -18,414 +18,439 @@
     <!-- search popup End -->
 
     <!-- banner area start -->
-    <div class="banner-area">
-        <div class="banner-slider">
-            <div class="banner-slider-item banner-bg-1">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8 col-lg-9 offset-xl-2 offset-lg-1">
-                            <div class="row">
-                                <div class="col-lg-9 col-sm-8">
-                                    <div class="banner-inner">
-                                        <p class="banner-cat s-animate-1">Hot Places</p>
-                                        <h2 class="banner-title s-animate-2">Navagio <br> Beach</h2>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-4">
-                                    <div class="video-popup-btn s-animate-video">
-                                        <a href="https://www.youtube.com/watch?v=c7XEhXZ_rsk" class="video-play-btn mfp-iframe"><i class="fa fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 banner-tour-package">
-                                    <div class="row">
-                                        <div class="col-sm-4 s-animate-3">
-                                            <div class="tp-price-meta">
-                                                <p>Price</p>
-                                                <h2>620 <small>$</small></h2>
-                                                <p class="tp-price-meta-details">7 Days Tour <span>on 2 person</span></p>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4 s-animate-4">
-                                            <div class="tp-price-meta">
-                                                <p>5 Star</p>
-                                                <h2>Hotel</h2>
-                                                <p class="tp-price-meta-details">Hotels <span>to choice</span></p>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4 s-animate-5">
-                                            <div class="tp-price-meta">
-                                                <p>Flight date</p>
-                                                <h2>17</h2>
-                                                <p class="tp-price-meta-details">September <span>or later</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="main-banner-area jarallax" style="background-image: url(/images/website/banner/4.png);">
+        <div class="content">
+            <div class="container">
+                <h2>Explore, Discover, Travel</h2>
+                <h1>ADVENTURE</h1>
+                <h1 class="shadow">ADVENTURE</h1>
+                <div class="scroll-down">
+                    <a href="#intro" class="text-center">
+                        <span></span>
+                        <i class="la la-long-arrow-down"></i>
+                    </a>
                 </div>
-            </div>
-            <div class="banner-slider-item banner-bg-2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8 col-lg-9 offset-xl-2 offset-lg-1">
-                            <div class="row">
-                                <div class="col-lg-9 col-sm-8">
-                                    <div class="banner-inner">
-                                        <p class="banner-cat s-animate-1">Hot Places</p>
-                                        <h2 class="banner-title s-animate-2">Mykonos <br> island</h2>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-4">
-                                    <div class="video-popup-btn s-animate-video">
-                                        <a href="https://www.youtube.com/watch?v=c7XEhXZ_rsk" class="video-play-btn mfp-iframe"><i class="fa fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 banner-tour-package">
-                                    <div class="row">
-                                        <div class="col-sm-4 s-animate-3">
-                                            <div class="tp-price-meta">
-                                                <p>Price</p>
-                                                <h2>720 <span>$</span></h2>
-                                                <p class="tp-price-meta-details">7 Days Tour <span>on 2 person</span></p>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4 s-animate-4">
-                                            <div class="tp-price-meta">
-                                                <p>5 Star</p>
-                                                <h2>Hotel</h2>
-                                                <p class="tp-price-meta-details">Hotels <span>to choice</span></p>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4 s-animate-5">
-                                            <div class="tp-price-meta">
-                                                <p>Flight date</p>
-                                                <h2>17</h2>
-                                                <p class="tp-price-meta-details">September <span>or later</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="banner-slider-item banner-bg-3">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8 col-lg-9 offset-xl-2 offset-lg-1">
-                            <div class="row">
-                                <div class="col-lg-9 col-sm-8">
-                                    <div class="banner-inner">
-                                        <p class="banner-cat s-animate-1">Hot Places</p>
-                                        <h2 class="banner-title s-animate-2">Navagio <br> Beach</h2>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-4">
-                                    <div class="video-popup-btn s-animate-video">
-                                        <a href="https://www.youtube.com/watch?v=c7XEhXZ_rsk" class="video-play-btn mfp-iframe"><i class="fa fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 banner-tour-package">
-                                    <div class="row">
-                                        <div class="col-sm-4 s-animate-3">
-                                            <div class="tp-price-meta">
-                                                <p>Price</p>
-                                                <h2>620 <small>$</small></h2>
-                                                <p class="tp-price-meta-details">7 Days Tour <span>on 2 person</span></p>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4 s-animate-4">
-                                            <div class="tp-price-meta">
-                                                <p>5 Star</p>
-                                                <h2>Hotel</h2>
-                                                <p class="tp-price-meta-details">Hotels <span>to choice</span></p>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4 s-animate-5">
-                                            <div class="tp-price-meta">
-                                                <p>Flight date</p>
-                                                <h2>17</h2>
-                                                <p class="tp-price-meta-details">September <span>or later</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="banner-social-meta">
-            <div class="banner-slider-dots"></div>
-            <ul class="social-icon">
-                <li>
-                    <a class="facebook" href="https://www.facebook.com/codingeek.net/" target="_blank"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li>
-                    <a class="twitter" href="https://twitter.com/codingeeknet" target="_blank"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li>
-                    <a class="pinterest" href="https://www.instagram.com/codingeeknet/" target="_blank"><i class="fa fa-instagram"></i></a>
-                </li>
-            </ul>
-        </div>
-        <div class="container">
-            <div class="banner-slider-controls">
-                <div class="slider-nav tp-control-nav"></div>
-                <!--slider-nav-->
-                <div class="tp-slider-extra slider-extra">
-                    <div class="text">
-                        <span class="first">01</span>
-                        <span class="devider">/</span>
-                        <span class="last"></span>
-                    </div>
-                </div>
-                <!--slider-extra-->
             </div>
         </div>
     </div>
     <!-- banner area end -->
 
-    <!-- search area start -->
-    <div class="search-area tp-main-search-area">
-        <div class="container">
-            <div class="tp-main-search">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4">
-                        <div class="tp-search-single-wrap">
-                            <input class="w-100" type="text" placeholder="Bangladesh,Dhaka">
-                            <i class="ti-location-pin"></i>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <div class="tp-search-single-wrap">
-                            <input class="w-100" type="text" placeholder="Where From?">
-                            <i class="fa fa-dot-circle-o"></i>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4 order-lg-9">
-                        <div class="tp-search-single-wrap float-left w-100">
-                            <select class="select w-100">
-                                <option value="1">Travel Type</option>
-                                <option value="2">Event Travel</option>
-                                <option value="3">Weekend Break</option>
-                                <option value="4">Package Holiday</option>
-                                <option value="5">Business Travel</option>
-                            </select>
-                            <i class="fa fa-plus-circle"></i>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-8 order-lg-6">
-                        <div class="tp-search-single-wrap float-left">
-                            <div class="tp-search-date tp-departing-date-wrap w-50 float-left">
-                                <input type="text" class="departing-date" placeholder="Departing">
-                                <i class="fa fa-calendar-minus-o"></i>
-                            </div>
-                            <div class="tp-search-date tp-returning-date-wrap w-50 float-left">
-                                <input type="text" class="returning-date" placeholder="Returning">
-                                <img src="/images/website/icons/2.png" alt="icons">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4 order-12">
-                        <a class="btn btn-yellow" href="#"><i class="ti-search"></i> Search</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- search area end -->
-
     <!-- intro area start -->
-    <div class="intro-area pd-top-112">
+    <div id="intro" class="intro-area pd-top-50">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="single-intro wow animated fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.1s">
-                        <h4 class="intro-title">
-                            <span class="intro-count">01</span>
-                            <a class="intro-cat" href="#">Travel</a>
-                        </h4>
-                        <p>Sponsorships are like unicorns or leprechauns, talked about often but they don’t actually exist. There is only dollars and cents, the ...</p>
+                <div class="col-lg-3 col-sm-6 single-intro-two bl-0">
+                    <div class="single-intro style-two">
+                        <div class="thumb">
+                            <img src="/images/website/icons/9.png" alt="img">
+                        </div>
+                        <h4 class="intro-title">Private Transport</h4>
+                        <p>Sponsorships are like unicorns or leprechauns, talked about often but they don’t exist. There is only dollars</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="single-intro wow animated fadeInUp" data-wow-duration="1.0s" data-wow-delay="0.2s">
-                        <h4 class="intro-title">
-                            <span class="intro-count">02</span>
-                            <a class="intro-cat" href="#">Experience</a>
-                        </h4>
-                        <p>My response is usually harsh. Offended at the suggestion that a career that’s taken more than a decade to create could be...</p>
+                <div class="col-lg-3 col-sm-6 single-intro-two">
+                    <div class="single-intro style-two">
+                        <div class="thumb">
+                            <img src="/images/website/icons/10.png" alt="img">
+                        </div>
+                        <h4 class="intro-title">Diverse Destinations</h4>
+                        <p>My response usually harsh. Offended at the that a career that’s taken more than a decade to create could be</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="single-intro wow animated fadeInUp" data-wow-duration="1.6s" data-wow-delay="0.3s">
-                        <h4 class="intro-title">
-                            <span class="intro-count">03</span>
-                            <a class="intro-cat" href="#">Relax</a>
-                        </h4>
-                        <p>I have always made a living to make movies, never the other way around. When I first started I washed in a seafood restaurant....</p>
+                <div class="col-lg-3 col-sm-6 single-intro-two">
+                    <div class="single-intro style-two">
+                        <div class="thumb">
+                            <img src="/images/website/icons/11.png" alt="img">
+                        </div>
+                        <h4 class="intro-title">Great Hotels</h4>
+                        <p>I have always made a living to make movies, never the other way around.I first I washed dishes in a seafood</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 single-intro-two">
+                    <div class="single-intro style-two">
+                        <div class="thumb">
+                            <img src="/images/website/icons/12.png" alt="img">
+                        </div>
+                        <h4 class="intro-title">Fast Booking</h4>
+                        <p>Aenean sed nibh a magna posuere tempor. Nunc faucibus nunc aliquet. Donec congue, nunc vel tempor</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- intro area end -->
+    <!-- intro area End -->
 
-    <!-- offer area start -->
-    <div class="offer-area pd-top-70">
+    <!-- travelus area start -->
+    <div class="travelus-area pd-top-120 pd-bottom-92 jarallax" style="background-image: url(/images/website/bg/9.png);">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row">
                 <div class="col-xl-6 col-lg-8">
-                    <div class="section-title text-center">
-                        <h2 class="title">Special offers & Discounts</h2>
-                        <p>Lorem Ipsum is simply dummy text the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                    <div class="section-title section-title-left-border style-two">
+                        <h2 class="title">Lets Go Travel with Us</h2>
+                        <p>Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac. Ut sit amet erat nec nibh rhoncus varius in non lorem. Donec interdum, lectus in convallis pulvinar, enim elit porta sapien, vel finibus erat felis sed neque. Etiam aliquet neque sagittis erat tincidunt aliquam.</p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="destinations-list-slider-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-9 col-lg-10 offset-xl-1 order-lg-12">
-                        <div class="destinations-list-slider">
-                            <div class="d-list-slider-item">
-                                <div class="single-destinations-list text-center">
-                                    <div class="thumb">
-                                        <span class="d-list-tag">Special Offer</span>
-                                        <img src="/images/website/destination-list/1.png" alt="list">
-                                        <div class="d-list-btn-wrap">
-                                            <div class="d-list-btn">
-                                                <a class="btn btn-yellow" href="#">Book Now <i class="fa fa-paper-plane"></i></a>
-                                            </div>
-                                        </div>
+            <ul class="row single-travelus-wrap-area">
+                <li class="col-lg-2 col-sm-4 single-travelus-wrap">
+                    <div class="single-travelus text-center">
+                        <div class="icons">
+                            <img src="/images/website/icons/27.png" alt="img">
+                        </div>
+                        <h4>Search</h4>
+                    </div>
+                </li>
+                <li class="col-lg-2 col-sm-4 single-travelus-wrap">
+                    <div class="single-travelus text-center">
+                        <div class="icons">
+                            <img src="/images/website/icons/28.png" alt="img">
+                        </div>
+                        <h4>Book</h4>
+                    </div>
+                </li>
+                <li class="col-lg-2 col-sm-4 single-travelus-wrap">
+                    <div class="single-travelus text-center">
+                        <div class="icons">
+                            <img src="/images/website/icons/27.png" alt="img">
+                        </div>
+                        <h4>Travel</h4>
+                    </div>
+                </li>
+                <li class="col-lg-5 offset-xl-1 single-travelus-wrap">
+                    <img src="/images/website/others/15.png" alt="img">
+                </li>
+            </ul>
+            <!-- package area end -->
+            <div class="package-area pd-top-105">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-8">
+                            <div class="section-title section-title-left-border style-two">
+                                <h2 class="title">Best Packages For You</h2>
+                                <p>Vivamus eget aliquam dui. Integer eu arcu vel arcu suscipit ultrices quis non mauris. Aenean scelerisque, sem eu dictum commodo, velit nisi</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="0.1s" data-wow-delay="0.1s">
+                                <div class="thumb">
+                                    <img src="/images/website/destination-list/8.png" alt="img">
+                                </div>
+                                <div class="details">
+                                    <div class="location">
+                                        <span class="location-name"><img src="/images/website/icons/1.png" alt="img">Africa</span>
+                                        <span class="tp-review-meta float-right">
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <span>4.0</span>
+                                        </span>
                                     </div>
-                                    <div class="details">
-                                        <h4 class="title">Greece</h4>
-                                        <p class="content">Atmosphere of the sunny country</p>
-                                        <ul class="tp-list-meta border-bt-dot">
-                                            <li><i class="fa fa-calendar-o"></i> 8oct</li>
-                                            <li><i class="fa fa-clock-o"></i> 4 days</li>
-                                            <li><i class="fa fa-star"></i> 4.3</li>
-                                        </ul>
-                                        <div class="tp-price-meta tp-price-meta-cl">
+                                    <h3>Machu Picchu</h3>
+                                    <ul class="package-meta">
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-clock-o"></i></p>
+                                            <p>Duration</p>
+                                            <h2>4 Days</h2>
+                                        </li>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-users"></i></p>
+                                            <p>Person</p>
+                                            <h2>2 Adult</h2>
+                                        </li>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-tag"></i></p>
                                             <p>Price</p>
-                                            <h2>620 <small>$</small></h2>
-                                            <del>620<span>$</span></del>
-                                        </div>
-                                    </div>
+                                            <h2>620 <span>$</span></h2>
+                                        </li>
+                                    </ul>
+                                    <a class="btn btn-gray" href="#">Book Now</a>
                                 </div>
                             </div>
-                            <div class="d-list-slider-item">
-                                <div class="single-destinations-list text-center">
-                                    <div class="thumb">
-                                        <img src="/images/website/destination-list/2.png" alt="list">
-                                        <div class="d-list-btn-wrap">
-                                            <div class="d-list-btn">
-                                                <a class="btn btn-yellow" href="#">Book Now <i class="fa fa-paper-plane"></i></a>
-                                            </div>
-                                        </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.2s">
+                                <div class="thumb">
+                                    <img src="/images/website/destination-list/9.png" alt="img">
+                                </div>
+                                <div class="details">
+                                    <div class="location">
+                                        <span class="location-name"><img src="/images/website/icons/1.png" alt="img">Peru</span>
+                                        <span class="tp-review-meta float-right">
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <span>4.0</span>
+                                        </span>
                                     </div>
-                                    <div class="details">
-                                        <h4 class="title">Italy</h4>
-                                        <p class="content">Atmosphere of the sunny country</p>
-                                        <ul class="tp-list-meta border-bt-dot">
-                                            <li><i class="fa fa-calendar-o"></i> 8oct</li>
-                                            <li><i class="fa fa-clock-o"></i> 4 days</li>
-                                            <li><i class="fa fa-star"></i> 4.3</li>
-                                        </ul>
-                                        <div class="tp-price-meta tp-price-meta-cl">
+                                    <h3>British Islands</h3>
+                                    <ul class="package-meta">
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-clock-o"></i></p>
+                                            <p>Duration</p>
+                                            <h2>4 Days</h2>
+                                        </li>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-users"></i></p>
+                                            <p>Person</p>
+                                            <h2>2 Adult</h2>
+                                        </li>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-tag"></i></p>
                                             <p>Price</p>
-                                            <h2>620 <small>$</small></h2>
-                                            <del>620<span>$</span></del>
-                                        </div>
-                                    </div>
+                                            <h2>720 <span>$</span></h2>
+                                        </li>
+                                    </ul>
+                                    <a class="btn btn-gray" href="#">Book Now</a>
                                 </div>
                             </div>
-                            <div class="d-list-slider-item">
-                                <div class="single-destinations-list text-center">
-                                    <div class="thumb">
-                                        <span class="d-list-tag">Special Offer</span>
-                                        <img src="/images/website/destination-list/3.png" alt="list">
-                                        <div class="d-list-btn-wrap">
-                                            <div class="d-list-btn">
-                                                <a class="btn btn-yellow" href="#">Book Now <i class="fa fa-paper-plane"></i></a>
-                                            </div>
-                                        </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.3s">
+                                <div class="thumb">
+                                    <img src="/images/website/destination-list/10.png" alt="img">
+                                </div>
+                                <div class="details">
+                                    <div class="location">
+                                        <span class="location-name"><img src="/images/website/icons/1.png" alt="img">USA</span>
+                                        <span class="tp-review-meta float-right">
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <span>4.0</span>
+                                        </span>
                                     </div>
-                                    <div class="details">
-                                        <h4 class="title">Canada</h4>
-                                        <p class="content">Atmosphere of the sunny country</p>
-                                        <ul class="tp-list-meta border-bt-dot">
-                                            <li><i class="fa fa-calendar-o"></i> 8oct</li>
-                                            <li><i class="fa fa-clock-o"></i> 4 days</li>
-                                            <li><i class="fa fa-star"></i> 4.3</li>
-                                        </ul>
-                                        <div class="tp-price-meta tp-price-meta-cl">
+                                    <h3>Grand Canyon</h3>
+                                    <ul class="package-meta">
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-clock-o"></i></p>
+                                            <p>Duration</p>
+                                            <h2>4 Days</h2>
+                                        </li>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-users"></i></p>
+                                            <p>Person</p>
+                                            <h2>2 Adult</h2>
+                                        </li>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-tag"></i></p>
                                             <p>Price</p>
-                                            <h2>620 <small>$</small></h2>
-                                            <del>620<span>$</span></del>
-                                        </div>
-                                    </div>
+                                            <h2>310 <span>$</span></h2>
+                                        </li>
+                                    </ul>
+                                    <a class="btn btn-gray" href="#">Book Now</a>
                                 </div>
                             </div>
-                            <div class="d-list-slider-item">
-                                <div class="single-destinations-list text-center">
-                                    <div class="thumb">
-                                        <span class="d-list-tag">Special Offer</span>
-                                        <img src="/images/website/destination-list/1.png" alt="list">
-                                        <div class="d-list-btn-wrap">
-                                            <div class="d-list-btn">
-                                                <a class="btn btn-yellow" href="#">Book Now <i class="fa fa-paper-plane"></i></a>
-                                            </div>
-                                        </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="0.9s" data-wow-delay="0.4s">
+                                <div class="thumb">
+                                    <img src="/images/website/destination-list/11.png" alt="img">
+                                </div>
+                                <div class="details">
+                                    <div class="location">
+                                        <span class="location-name"><img src="/images/website/icons/1.png" alt="img">France</span>
+                                        <span class="tp-review-meta float-right">
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <span>4.0</span>
+                                        </span>
                                     </div>
-                                    <div class="details">
-                                        <h4 class="title">Greece</h4>
-                                        <p class="content">Atmosphere of the sunny country</p>
-                                        <ul class="tp-list-meta border-bt-dot">
-                                            <li><i class="fa fa-calendar-o"></i> 8oct</li>
-                                            <li><i class="fa fa-clock-o"></i> 4 days</li>
-                                            <li><i class="fa fa-star"></i> 4.3</li>
-                                        </ul>
-                                        <div class="tp-price-meta tp-price-meta-cl">
+                                    <h3>eiffel tower</h3>
+                                    <ul class="package-meta">
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-clock-o"></i></p>
+                                            <p>Duration</p>
+                                            <h2>4 Days</h2>
+                                        </li>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-users"></i></p>
+                                            <p>Person</p>
+                                            <h2>2 Adult</h2>
+                                        </li>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-tag"></i></p>
                                             <p>Price</p>
-                                            <h2>620 <small>$</small></h2>
-                                            <del>620<span>$</span></del>
-                                        </div>
+                                            <h2>540 <span>$</span></h2>
+                                        </li>
+                                    </ul>
+                                    <a class="btn btn-gray" href="#">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="1.2s" data-wow-delay="0.5s">
+                                <div class="thumb">
+                                    <img src="/images/website/destination-list/12.png" alt="img">
+                                </div>
+                                <div class="details">
+                                    <div class="location">
+                                        <span class="location-name"><img src="/images/website/icons/1.png" alt="img">Italy</span>
+                                        <span class="tp-review-meta float-right">
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <span>4.0</span>
+                                        </span>
                                     </div>
+                                    <h3>Colosseum, Rome</h3>
+                                    <ul class="package-meta">
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-clock-o"></i></p>
+                                            <p>Duration</p>
+                                            <h2>4 Days</h2>
+                                        </li>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-users"></i></p>
+                                            <p>Person</p>
+                                            <h2>2 Adult</h2>
+                                        </li>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-tag"></i></p>
+                                            <p>Price</p>
+                                            <h2>620 <span>$</span></h2>
+                                        </li>
+                                    </ul>
+                                    <a class="btn btn-gray" href="#">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.6s">
+                                <div class="thumb">
+                                    <img src="/images/website/destination-list/13.png" alt="img">
+                                </div>
+                                <div class="details">
+                                    <div class="location">
+                                        <span class="location-name"><img src="/images/website/icons/1.png" alt="img">Peru</span>
+                                        <span class="tp-review-meta float-right">
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <span>4.0</span>
+                                        </span>
+                                    </div>
+                                    <h3>British Islands</h3>
+                                    <ul class="package-meta">
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-clock-o"></i></p>
+                                            <p>Duration</p>
+                                            <h2>4 Days</h2>
+                                        </li>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-users"></i></p>
+                                            <p>Person</p>
+                                            <h2>2 Adult</h2>
+                                        </li>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-tag"></i></p>
+                                            <p>Price</p>
+                                            <h2>720 <span>$</span></h2>
+                                        </li>
+                                    </ul>
+                                    <a class="btn btn-gray" href="#">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="1.8s" data-wow-delay="0.7s">
+                                <div class="thumb">
+                                    <img src="/images/website/destination-list/14.png" alt="img">
+                                </div>
+                                <div class="details">
+                                    <div class="location">
+                                        <span class="location-name"><img src="/images/website/icons/1.png" alt="img">Spain</span>
+                                        <span class="tp-review-meta float-right">
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <span>4.0</span>
+                                        </span>
+                                    </div>
+                                    <h3>Great Reef</h3>
+                                    <ul class="package-meta">
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-clock-o"></i></p>
+                                            <p>Duration</p>
+                                            <h2>4 Days</h2>
+                                        </li>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-users"></i></p>
+                                            <p>Person</p>
+                                            <h2>2 Adult</h2>
+                                        </li>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-tag"></i></p>
+                                            <p>Price</p>
+                                            <h2>310 <span>$</span></h2>
+                                        </li>
+                                    </ul>
+                                    <a class="btn btn-gray" href="#">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="2.1s" data-wow-delay="0.8s">
+                                <div class="thumb">
+                                    <img src="/images/website/destination-list/15.png" alt="img">
+                                </div>
+                                <div class="details">
+                                    <div class="location">
+                                        <span class="location-name"><img src="/images/website/icons/1.png" alt="img">Usa</span>
+                                        <span class="tp-review-meta float-right">
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <i class="ic-yellow fa fa-star"></i>
+                                            <span>4.0</span>
+                                        </span>
+                                    </div>
+                                    <h3>Sea Beach</h3>
+                                    <ul class="package-meta">
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-clock-o"></i></p>
+                                            <p>Duration</p>
+                                            <h2>4 Days</h2>
+                                        </li>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-users"></i></p>
+                                            <p>Person</p>
+                                            <h2>2 Adult</h2>
+                                        </li>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-tag"></i></p>
+                                            <p>Price</p>
+                                            <h2>540 <span>$</span></h2>
+                                        </li>
+                                    </ul>
+                                    <a class="btn btn-gray" href="#">Book Now</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-2 align-self-center order-lg-11">
-                        <div class="container">
-                            <div class="destinations-slider-controls">
-                                <div class="slider-nav tp-control-nav"></div>
-                                <!--slider-nav-->
-                                <div class="tp-slider-extra slider-extra">
-                                    <div class="text">
-                                        <span class="first">01 </span>
-                                        <span class="last"></span>
-                                    </div>
-                                    <!--text-->
-                                    <div class="d-list-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                                        <span class="slider__label sr-only"></span>
-                                    </div>
-                                </div>
-                                <!--slider-extra-->
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
+            <!-- package area end -->
         </div>
     </div>
-    <!-- offer area end -->
+    <!-- travelus area start -->
 
     <!-- video area start -->
     <div class="video-area tp-video-area pd-top-110" style="background-image: url('/images/website/bg/7.png');">
@@ -435,7 +460,7 @@
                     <div class="section-title mb-lg-0 mb-4 text-center text-lg-left">
                         <h2 class="title">What Do You Know <br> About US</h2>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when unknown printer took a galley of type and scrambled it to make a type specimen book. It has not only five centuries</p>
-                        <a class="btn btn-yellow" href="#"><span>Read More<i class="la la-arrow-right"></i></span></a>
+                        <a class="btn btn-yellow" href="{{route('about')}}"><span>Read More<i class="la la-arrow-right"></i></span></a>
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-6 offset-xl-1 wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
@@ -530,181 +555,64 @@
     </div>
     <!-- holiday plan area end -->
 
-    <!-- client review area start -->
-    <div class="client-review-area client-review-area-home pd-top-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 align-self-center">
-                    <div class="thumb wow animated fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
-                        <div class="client-review-thumb">
-                            <img src="/images/website/others/client-review.png" alt="review">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="single-client-review wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
-                        <p class="sub-title">Travel Reviews</p>
-                        <h3 class="location-name">Russia</h3>
-                        <div class="tp-review-meta">
-                            <i class="ic-yellow fa fa-star"></i>
-                            <i class="ic-yellow fa fa-star"></i>
-                            <i class="ic-yellow fa fa-star"></i>
-                            <i class="ic-yellow fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <span>4.0</span>
-                        </div>
-                        <p>The largest country in the world, Russia offers a broad array of travel experiences, from treks up the slopes of glacier-capped mountains to strolls along the shoreline of Earth’s oldest lake. Historical sites and cultural activities in the country’s great cities abound as well. Whether you’re exploring the grounds of Moscow’s Kremlin or wandering through the steppes of Mongolia, a visit to Russia is an adventure not soon forgotten. These top tourists attractions in Russia can inspire a great Russian itinerary for a memorable trip.</p>
-                        <div class="media">
-                            <div class="media-left">
-                                <img src="/images/website/client/1.png" alt="client">
-                            </div>
-                            <div class="media-body">
-                                <h6>Jasmine Woodkin</h6>
-                                <p>Tourist</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- client review area End -->
-
-    <!-- blog area start -->
-    <div class="blog-area pd-top-120">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="single-blog single-blog-wrap style-two">
-                        <div class="thumb single-blog-left-wrap">
-                            <img src="/images/website/blog/10.png" alt="blog">
-                        </div>
-                        <div class="single-blog-details single-blog-right-wrap">
-                            <a class="tag" href="#">Europe</a>
-                            <p class="date">19 September 2019</p>
-                            <h4 class="title">Why You Shouldn’t Ride Elephants In France.</h4>
-                            <p class="content">Kava contains 30 demos as for now, and we’re planning to release more! Except demos, Kava theme has more and more features for.. users, business, companies, developers, bloggers and other categories of users. Even if you are an absolute beginner</p>
-                            <a class="btn btn-yellow" href="#"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="single-blog style-three">
-                                <div class="thumb">
-                                    <img src="/images/website/blog/11.png" alt="blog">
-                                </div>
-                                <div class="single-blog-details-wrap">
-                                    <div class="single-blog-details text-center">
-                                        <a class="tag" href="#">Europe</a>
-                                        <p class="date">19 September 2019</p>
-                                        <h4 class="title">Why You Shouldn’t Ride Elephants In Thailand</h4>
-                                        <a class="btn btn-yellow" href="#"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="single-blog style-three">
-                                <div class="thumb">
-                                    <img src="/images/website/blog/12.png" alt="blog">
-                                </div>
-                                <div class="single-blog-details-wrap">
-                                    <div class="single-blog-details text-center">
-                                        <a class="tag" href="#">Europe</a>
-                                        <p class="date">18 September 2019</p>
-                                        <h4 class="title">10 Best Highways for Romantic Long Drive</h4>
-                                        <a class="btn btn-yellow" href="#"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="single-blog style-three">
-                                <div class="thumb">
-                                    <img src="/images/website/blog/13.png" alt="blog">
-                                </div>
-                                <div class="single-blog-details-wrap">
-                                    <div class="single-blog-details text-center">
-                                        <a class="tag" href="#">Europe</a>
-                                        <p class="date">18 September 2019</p>
-                                        <h4 class="title">Rock Climbing Limestone Cliffs At Railay Beach</h4>
-                                        <a class="btn btn-yellow" href="#"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="single-blog style-three">
-                                <div class="thumb">
-                                    <img src="/images/website/blog/14.png" alt="blog">
-                                </div>
-                                <div class="single-blog-details-wrap">
-                                    <div class="single-blog-details text-center">
-                                        <a class="tag" href="#">Europe</a>
-                                        <p class="date">19 September 2019</p>
-                                        <h4 class="title">Magic In The Sky: Chasing Iceland’s Lights</h4>
-                                        <a class="btn btn-yellow" href="#"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- blog area End -->
-
-    <!-- ads area start -->
-    <div class="ads-area pd-top-90">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-8 col-lg-9">
-                    <a class="ads-thumb" href="#">
-                        <img src="/images/website/others/1.png" alt="ads">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ads area End -->
 
     <!-- newslatter area Start -->
-    <div class="newslatter-area pd-top-120">
+    <div class="newslatter-area pd-top-110">
         <div class="container">
-            <div class="newslatter-area-wrap border-tp-solid">
-                <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-5 offset-xl-2">
-                        <div class="section-title mb-md-0">
-                            <h2 class="title">Newsletter</h2>
-                            <p>Sign up to receive the best offers</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-7 align-self-center offset-xl-1">
-                        <div class="input-group newslatter-wrap">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa fa-envelope"></i></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Email">
-                            <div class="input-group-append">
-                                <button class="btn btn-yellow" type="button">Subscribe</button>
-                            </div>
-                        </div>
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-9">
+                    <div class="section-title text-center">
+                        <h2 class="title wow animated fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.1s">Insurance</h2>
+                        <p class="wow animated fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.2s">No vis fastidii accumsan, ignota postulant ea mea. Vis et prima integre, ei vis ridens moderatius reformidans cu vim doctus accumsan ignota.</p>
                     </div>
                 </div>
+            </div>
+            <div class="row justify-content-center">
+                <form class="tp-form-wrap">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="single-input-wrap style-two">
+                                <span class="single-input-title">Name</span>
+                                <input type="text">
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="single-input-wrap style-two">
+                                <span class="single-input-title">Birth Date</span>
+                                <input type="date">
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="single-input-wrap style-two">
+                                <span class="single-input-title">Passport Number</span>
+                                <input type="text">
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="single-input-wrap style-two">
+                                <span class="single-input-title">Expire Date</span>
+                                <input type="date">
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="single-input-wrap style-two">
+                                <span class="single-input-title">Gender</span>
+                                <input type="text">
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="single-input-wrap style-two">
+                                <span class="single-input-title">Nationality</span>
+                                <input type="text">
+                            </label>
+                        </div>
+                        <div class="col-12 justify-content-center">
+                            <a class="btn btn-yellow mt-3 text-center" href="#">Submit</a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
     <!-- newslatter area End -->
-
-
-
-    <!-- back to top area start -->
-    <div class="back-to-top">
-        <span class="back-top"><i class="fa fa-angle-up"></i></span>
-    </div>
-    <!-- back to top area end -->
-
 @endsection
