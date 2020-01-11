@@ -1,4 +1,10 @@
 
+<!-- back to top area start -->
+<div class="back-to-top">
+    <span class="back-top"><i class="fa fa-angle-up"></i></span>
+</div>
+<!-- back to top area end -->
+
 <!-- footer area start -->
 <footer class="footer-area" style="background-image: url(/images/website/bg/2.png);">
     <div class="container">
