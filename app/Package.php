@@ -8,7 +8,7 @@ class Package extends Model
 {
     protected $fillable = ['title','description','price','currency','season','days','nights','rate','date', 'home_page'];
 
-    protected $with = ['inclusions', 'exclusions'];
+    protected $with = ['inclusions', 'exclusions', 'schedules', 'accommodations'];
 
     public function inclusions()
     {
@@ -18,6 +18,16 @@ class Package extends Model
     public function exclusions()
     {
         return $this->hasMany(Lusion::class)->where('type', 0);
+    }
+
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class);
+    }
+
+    public function accommodations()
+    {
+        return $this->hasMany(Accommodation::class);
     }
 
     public function scopeComing($query)

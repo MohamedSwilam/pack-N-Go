@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LusionRequest extends FormRequest
+class AccommodationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,15 +26,19 @@ class LusionRequest extends FormRequest
         $segments = request()->segments();
         if (sizeof($segments) == 2){
             return [
-                'name' => 'required',
-                'type' => 'required|boolean',
+                'city' => 'required',
+                'nights' => 'required|integer',
+                'hotel' => 'required',
+                'rate' => 'required',
                 'package_id' => 'required|exists:packages,id',
             ];
         }
         else if (sizeof($segments) == 3){
             return [
-                'name' => '',
-                'type' => 'boolean',
+                'city' => '',
+                'nights' => 'integer',
+                'hotel' => '',
+                'rate' => '',
                 'package_id' => 'exists:packages,id',
             ];
         }

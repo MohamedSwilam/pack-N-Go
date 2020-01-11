@@ -2,10 +2,10 @@
 
 namespace App\Transformers;
 
-use App\Lusion;
+use App\Schedule;
 use League\Fractal\TransformerAbstract;
 
-class LusionTransformer extends TransformerAbstract
+class ScheduleTransformer extends TransformerAbstract
 {
     /**
      * List of resources to automatically include
@@ -28,11 +28,11 @@ class LusionTransformer extends TransformerAbstract
     /**
      * A Fractal transformer.
      *
-     * @param Lusion $lusion
+     * @param Schedule $schedule
      * @return array
      */
-    public function transform(Lusion $lusion)
+    public function transform(Schedule $schedule)
     {
-        return $lusion->toArray();
+        return $schedule->toArray();
     }
 }
