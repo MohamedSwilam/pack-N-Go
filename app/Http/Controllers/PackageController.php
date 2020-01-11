@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PackageRequest;
 use App\IndexResponse;
+use App\Lusion;
 use App\Package;
 use App\Transformers\PackageTransformer;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -54,6 +55,18 @@ class PackageController extends Controller
         $this->authorize('store', Package::class);
 
         $package = Package::create($request->validated());
+
+        foreach (request()->inclusions as $inclusion){
+            $inclusion['type'] = 1;
+            $inclusion = Lusion::create($inclusion);
+            $package->inclusions()->save($inclusion);
+        }
+
+        foreach (request()->exclusions as $exclusion){
+            $exclusion['type'] = 0;
+            $exclusion = Lusion::create($exclusion);
+            $package->exclusions()->save($exclusion);
+        }
 
         return $this->respond(
             'Created Successfully',
