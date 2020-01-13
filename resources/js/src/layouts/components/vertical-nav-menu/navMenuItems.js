@@ -19,8 +19,7 @@ export default [
         name: "Package",
         slug: "package",
         icon: "PackageIcon",
-        i18n: "Package",
-        permission: 'browse-employee'
+        i18n: "Package"
     },
     {
         url: "/dashboard/client",
@@ -29,6 +28,13 @@ export default [
         icon: "UsersIcon",
         i18n: "Employee",
         permission: 'browse-client'
+    },
+    {
+        url: "/dashboard/blog",
+        name: "Blog",
+        slug: "blog",
+        icon: "BookIcon",
+        i18n: "Blog"
     },
     {
         name: "Settings",

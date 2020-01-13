@@ -54,27 +54,43 @@ class PackageController extends Controller
     {
         $this->authorize('store', Package::class);
 
-        $package = Package::create($request->validated());
+        $data = $request->validated();
+        $data['home_page'] = $data['home_page']?1:0;
 
-        foreach ($request->validated()['inclusions'] as $inclusion){
-            $inclusion['type'] = 1;
-            $inclusion = Lusion::create($inclusion);
+        $package = Package::create($data);
+
+        foreach (json_decode($request->validated()['inclusions']) as $inclusion){
+            $inclusion = Lusion::create([
+                    'type' => 1,
+                    'name' => $inclusion->name
+                ]);
             $package->inclusions()->save($inclusion);
         }
 
-        foreach ($request->validated()['exclusions'] as $exclusion){
-            $exclusion['type'] = 0;
-            $exclusion = Lusion::create($exclusion);
+        foreach (json_decode($request->validated()['exclusions']) as $exclusion){
+
+            $exclusion = Lusion::create([
+                'type' => 0,
+                'name' => $exclusion->name
+            ]);
             $package->exclusions()->save($exclusion);
         }
 
-        foreach ($request->validated()['schedules'] as $schedule){
-            $schedule = Schedule::create($schedule);
+        foreach (json_decode($request->validated()['schedule']) as $schedule){
+            $schedule = Schedule::create([
+                'day' => $schedule->day_number,
+                'description' => $schedule->description
+            ]);
             $package->schedules()->save($schedule);
         }
 
-        foreach ($request->validated()['accommodations'] as $accommodation){
-            $accommodation = Accommodation::create($accommodation);
+        foreach (json_decode($request->validated()['accommodations']) as $accommodation){
+            $accommodation = Accommodation::create([
+                'city' => $accommodation->city,
+                'nights' => $accommodation->nights,
+                'hotel' => $accommodation->hotel,
+                'rate' => $accommodation->rate,
+            ]);
             $package->accommodations()->save($accommodation);
         }
 

@@ -14,6 +14,7 @@ import moduleAuth from './auth/moduleAuth';
 import moduleEmployee from './employee/moduleEmployee';
 import modulePackage from './package/modulePackage';
 import moduleClient from './client/moduleClient';
+import moduleBlog from './blog/moduleBlog';
 import moduleRolesAndPermissions from './roles-and-permissions/moduleRolesAndPermissions';
 
 
@@ -31,6 +32,7 @@ export default new Vuex.Store({
         employee: moduleEmployee,
         package: modulePackage,
         client: moduleClient,
+        blog: moduleBlog,
         rolesAndPermissions: moduleRolesAndPermissions,
     },
     plugins: [vuexLocal.plugin],
