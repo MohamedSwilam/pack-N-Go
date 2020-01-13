@@ -5,7 +5,7 @@ namespace App\Policies;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ClientPolicy
+class BookingPolicy
 {
     use HandlesAuthorization;
 
@@ -21,26 +21,26 @@ class ClientPolicy
 
     public function index()
     {
-        return request()->user()->hasPermissionTo('browse-client');
+        return request()->user()->hasPermissionTo('browse-booking');
     }
 
     public function store()
     {
-        return request()->user()->hasPermissionTo('create-client');
+        return request()->user()->hasPermissionTo('create-booking');
     }
 
     public function show()
     {
-        return request()->user()->hasPermissionTo('view-client');
+        return request()->user()->hasPermissionTo('view-booking');
     }
 
     public function update()
     {
-        return request()->user()->hasPermissionTo('edit-client');
+        return request()->user()->hasPermissionTo('edit-booking');
     }
 
     public function destroy()
     {
-        return request()->user()->hasPermissionTo('delete-client');
+        return request()->user()->hasPermissionTo('delete-booking');
     }
 }

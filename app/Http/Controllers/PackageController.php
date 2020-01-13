@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Accommodation;
 use App\Http\Requests\PackageRequest;
 use App\IndexResponse;
 use App\Lusion;
+use App\Media;
 use App\Package;
+use App\Schedule;
 use App\Transformers\PackageTransformer;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
@@ -18,12 +21,9 @@ class PackageController extends Controller
      * Display a listing of the resource.
      *
      * @return JsonResponse
-     * @throws AuthorizationException
      */
     public function index()
     {
-        $this->authorize('index', Package::class);
-
         return $this->respond(
             'Data Loaded Successfully',
             fractal(
@@ -56,16 +56,35 @@ class PackageController extends Controller
 
         $package = Package::create($request->validated());
 
-        foreach (request()->inclusions as $inclusion){
+        foreach ($request->validated()['inclusions'] as $inclusion){
             $inclusion['type'] = 1;
             $inclusion = Lusion::create($inclusion);
             $package->inclusions()->save($inclusion);
         }
 
-        foreach (request()->exclusions as $exclusion){
+        foreach ($request->validated()['exclusions'] as $exclusion){
             $exclusion['type'] = 0;
             $exclusion = Lusion::create($exclusion);
             $package->exclusions()->save($exclusion);
+        }
+
+        foreach ($request->validated()['schedules'] as $schedule){
+            $schedule = Schedule::create($schedule);
+            $package->schedules()->save($schedule);
+        }
+
+        foreach ($request->validated()['accommodations'] as $accommodation){
+            $accommodation = Accommodation::create($accommodation);
+            $package->accommodations()->save($accommodation);
+        }
+
+        foreach ($request->validated()['images'] as $image){
+            $data = [
+                'old_name' => $image->getClientOriginalName(),
+            ];
+            $data['url'] = download_file($image, config('paths.package-image.create'));
+            $image = Media::create($data);
+            $package->medias()->save($image);
         }
 
         return $this->respond(
