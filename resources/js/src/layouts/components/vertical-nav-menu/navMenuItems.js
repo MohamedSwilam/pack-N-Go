@@ -37,6 +37,14 @@ export default [
         i18n: "Blog"
     },
     {
+        url: "/dashboard/insurance",
+        name: "Insurance",
+        slug: "insurance",
+        icon: "ClipboardIcon",
+        i18n: "insurance",
+        permission: 'browse-insurance'
+    },
+    {
         name: "Settings",
         icon: "SettingsIcon",
         i18n: "Settings",
