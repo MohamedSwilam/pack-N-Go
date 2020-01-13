@@ -50,3 +50,13 @@ Route::group(['prefix' => 'booking', 'middleware' => 'auth:api'], function () {
     Route::delete('{id}', 'BookingController@destroy');
     Route::resource('', 'BookingController');
 });
+
+Route::group(['prefix' => 'post'], function () {
+    Route::get('', 'PostController@index');
+    Route::get('{id}', 'PostController@show');
+    Route::group(['middleware' => 'auth:api'], function () {
+        Route::post('', 'PostController@store');
+        Route::post('{id}', 'PostController@update');
+        Route::delete('{id}', 'PostController@destroy');
+    });
+});

@@ -82,7 +82,7 @@ class PackageController extends Controller
             $data = [
                 'old_name' => $image->getClientOriginalName(),
             ];
-            $data['url'] = download_file($image, config('paths.package-image.create'));
+            $data['url'] = download_file($image, config('paths.create'));
             $image = Media::create($data);
             $package->medias()->save($image);
         }

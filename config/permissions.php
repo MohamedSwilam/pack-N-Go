@@ -163,4 +163,32 @@ return [
             'display_name' => 'Delete Booking',
         ],
     ],
+
+    'Post' => [
+        [
+            'name' => 'create-post',
+            'guard_name' => 'api',
+            'display_name' => 'Create Post',
+        ],
+        [
+            'name' => 'browse-post',
+            'guard_name' => 'api',
+            'display_name' => 'Browse Post',
+        ],
+        [
+            'name' => 'view-post',
+            'guard_name' => 'api',
+            'display_name' => 'View Post',
+        ],
+        [
+            'name' => 'edit-post',
+            'guard_name' => 'api',
+            'display_name' => 'Edit Post',
+        ],
+        [
+            'name' => 'delete-post',
+            'guard_name' => 'api',
+            'display_name' => 'Delete Post',
+        ],
+    ],
 ];

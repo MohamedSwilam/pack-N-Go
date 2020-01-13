@@ -15,6 +15,6 @@ class Media extends Model
 
     public function getUrlAttribute($value)
     {
-        return config('paths.package-image.get').$value;
+        return config('paths.image.get').$value;
     }
 }

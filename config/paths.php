@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'package-image' => [
-        'create' => 'storage/package',
-        'get' => '/storage/package/',
-        'delete' => '/package/',
+    'image' => [
+        'create' => 'storage',
+        'get' => '/storage/',
+        'delete' => '/',
     ],
 ];

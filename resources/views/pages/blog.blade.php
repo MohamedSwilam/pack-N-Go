@@ -27,142 +27,27 @@
     <div class="blog-list-area pd-top-120">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="/images/website/blog/1.png" alt="blog">
-                            <a class="tag" href="#">Europe</a>
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">19 September 2019</p>
-                            <h4 class="title"><a href="#">Why You Shouldn’t Ride France.</a></h4>
-                            <p class="content">Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada</p>
-                            <a class="btn-read-more" href="blog-details.html"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="/images/website/blog/2.png" alt="blog">
-                            <a class="tag" href="#">Africa</a>
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">19 September 2019</p>
-                            <h4 class="title"><a href="#">Aliquam faucibus, nec commodo</a></h4>
-                            <p class="content">Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada</p>
-                            <a class="btn-read-more" href="blog-details.html"><span>Read More<i class="la la-arrow-right"></i></span></a>
+                @foreach($posts as $post)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-blog">
+                            <div class="thumb">
+                                @if($post->image)
+                                    <img src="{{$post->image->url}}" alt="blog">
+                                @else
+                                    <img src="/images/website/blog/1.png" alt="blog">
+                                @endif
+                            </div>
+                            <div class="single-blog-details">
+                                <p class="date">{{date('F j, Y, g:i a', strtotime($post->created_at))}}</p>
+                                <h4 class="title">{{$post->title}}</h4>
+                                <p class="content">{{$post->description}}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="/images/website/blog/3.png" alt="blog">
-                            <a class="tag" href="#">Europe</a>
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">19 September 2019</p>
-                            <h4 class="title"><a href="#">Why You Shouldn’t Ride France.</a></h4>
-                            <p class="content">Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada</p>
-                            <a class="btn-read-more" href="blog-details.html"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="/images/website/blog/4.png" alt="blog">
-                            <a class="tag" href="#">Iseland</a>
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">19 September 2019</p>
-                            <h4 class="title"><a href="#">Duis pretium gravida enim, vel maximus</a></h4>
-                            <p class="content">Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada</p>
-                            <a class="btn-read-more" href="blog-details.html"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="/images/website/blog/5.png" alt="blog">
-                            <a class="tag" href="#">Europe</a>
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">19 September 2019</p>
-                            <h4 class="title"><a href="#">Duis pretium gravida enim</a></h4>
-                            <p class="content">Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada</p>
-                            <a class="btn-read-more" href="blog-details.html"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="/images/website/blog/6.png" alt="blog">
-                            <a class="tag" href="#">Europe</a>
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">19 September 2019</p>
-                            <h4 class="title"><a href="#">Why You Shouldn’t Ride France.</a></h4>
-                            <p class="content">Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada</p>
-                            <a class="btn-read-more" href="blog-details.html"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="/images/website/blog/7.png" alt="blog">
-                            <a class="tag" href="#">Europe</a>
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">19 September 2019</p>
-                            <h4 class="title"><a href="#">Etiam convallis elementum sapien</a></h4>
-                            <p class="content">Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada</p>
-                            <a class="btn-read-more" href="blog-details.html"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="/images/website/blog/8.png" alt="blog">
-                            <a class="tag" href="#">Asia</a>
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">19 September 2019</p>
-                            <h4 class="title"><a href="#">Duis porta, ligula rhoncus euismod</a></h4>
-                            <p class="content">Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada</p>
-                            <a class="btn-read-more" href="blog-details.html"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img src="/images/website/blog/9.png" alt="blog">
-                            <a class="tag" href="#">Europe</a>
-                        </div>
-                        <div class="single-blog-details">
-                            <p class="date">19 September 2019</p>
-                            <h4 class="title"><a href="#">Aliquam faucibus, nec commodo</a></h4>
-                            <p class="content">Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada</p>
-                            <a class="btn-read-more" href="blog-details.html"><span>Read More<i class="la la-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
                 <div class="col-lg-12  text-md-center text-left">
                     <div class="tp-pagination text-md-center text-left d-inline-block mt-4">
-                        <ul>
-                            <li><a class="prev page-numbers" href="#"><i class="la la-long-arrow-left"></i></a></li>
-                            <li><span class="page-numbers">1</span></li>
-                            <li><span class="page-numbers current">2</span></li>
-                            <li><a class="page-numbers" href="#">3</a></li>
-                            <li><a class="page-numbers" href="#">4</a></li>
-                            <li><a class="next page-numbers" href="#"><i class="la la-long-arrow-right"></i></a></li>
-                        </ul>
+                        {{ $posts->links() }}
                     </div>
                 </div>
             </div>
