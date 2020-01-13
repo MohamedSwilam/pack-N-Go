@@ -39,13 +39,14 @@ class PackageRequest extends FormRequest
                 'inclusions.*.name' => 'required',
                 'exclusions.*.name' => 'required',
                 'schedules.*.day' => 'required|integer',
-                'schedules.*.time' => 'required|date_format:H:i',
-                'schedules.*.title' => 'required',
+                'schedules.*.time' => 'date_format:H:i',
+                'schedules.*.title' => '',
                 'schedules.*.description' => 'required',
                 'accommodations.*.city' => 'required',
                 'accommodations.*.nights' => 'required|integer',
                 'accommodations.*.hotel' => 'required',
                 'accommodations.*.rate' => 'required',
+                'images' => '',
             ];
         }
         else if (sizeof($segments) == 3){
