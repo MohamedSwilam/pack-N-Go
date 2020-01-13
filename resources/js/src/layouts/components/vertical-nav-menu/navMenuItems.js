@@ -15,6 +15,14 @@ export default [
         permission: 'browse-employee'
     },
     {
+        url: "/dashboard/package",
+        name: "Package",
+        slug: "package",
+        icon: "PackageIcon",
+        i18n: "Package",
+        permission: 'browse-employee'
+    },
+    {
         url: "/dashboard/client",
         name: "Clients",
         slug: "client",

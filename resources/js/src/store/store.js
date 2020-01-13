@@ -12,6 +12,7 @@ Vue.use(Vuex);
 
 import moduleAuth from './auth/moduleAuth';
 import moduleEmployee from './employee/moduleEmployee';
+import modulePackage from './package/modulePackage';
 import moduleClient from './client/moduleClient';
 import moduleRolesAndPermissions from './roles-and-permissions/moduleRolesAndPermissions';
 
@@ -28,6 +29,7 @@ export default new Vuex.Store({
     modules: {
         auth: moduleAuth,
         employee: moduleEmployee,
+        package: modulePackage,
         client: moduleClient,
         rolesAndPermissions: moduleRolesAndPermissions,
     },
