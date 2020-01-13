@@ -191,4 +191,32 @@ return [
             'display_name' => 'Delete Post',
         ],
     ],
+
+    'Insurance' => [
+        [
+            'name' => 'create-insurance',
+            'guard_name' => 'api',
+            'display_name' => 'Create Insurance',
+        ],
+        [
+            'name' => 'browse-insurance',
+            'guard_name' => 'api',
+            'display_name' => 'Browse Insurance',
+        ],
+        [
+            'name' => 'view-insurance',
+            'guard_name' => 'api',
+            'display_name' => 'View Insurance',
+        ],
+        [
+            'name' => 'edit-insurance',
+            'guard_name' => 'api',
+            'display_name' => 'Edit Insurance',
+        ],
+        [
+            'name' => 'delete-insurance',
+            'guard_name' => 'api',
+            'display_name' => 'Delete Insurance',
+        ],
+    ],
 ];

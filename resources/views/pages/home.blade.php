@@ -132,318 +132,44 @@
                         </div>
                     </div>
                     <div class="row justify-content-center">
+                        @foreach($packages as $package)
                         <div class="col-xl-3 col-lg-4 col-sm-6">
                             <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="0.1s" data-wow-delay="0.1s">
                                 <div class="thumb">
-                                    <img src="/images/website/destination-list/8.png" alt="img">
+                                    @if(count($package->medias))
+                                        <img src="{{$package->medias[0]->url}}" alt="img">
+                                    @else
+                                        <img src="/images/website/destination-list/8.png" alt="img">
+                                    @endif
                                 </div>
                                 <div class="details">
                                     <div class="location">
                                         <span class="location-name"><img src="/images/website/icons/1.png" alt="img">Africa</span>
                                         <span class="tp-review-meta float-right">
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <span>4.0</span>
+                                            @for($i=0;$i<$package->rate;$i++)
+                                                <i class="ic-yellow fa fa-star"></i>
+                                            @endfor
+                                            <span>{{$package->rate}}</span>
                                         </span>
                                     </div>
-                                    <h3>Machu Picchu</h3>
+                                    <h3>{{$package->title}}</h3>
                                     <ul class="package-meta">
                                         <li class="tp-price-meta">
                                             <p><i class="fa fa-clock-o"></i></p>
                                             <p>Duration</p>
-                                            <h2>4 Days</h2>
-                                        </li>
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-users"></i></p>
-                                            <p>Person</p>
-                                            <h2>2 Adult</h2>
+                                            <h2>{{$package->days}} Days / {{$package->nights}} Nights</h2>
                                         </li>
                                         <li class="tp-price-meta">
                                             <p><i class="fa fa-tag"></i></p>
                                             <p>Price</p>
-                                            <h2>620 <span>$</span></h2>
+                                            <h2>{{$package->price}} <span>{{$package->currency}} </span></h2>
                                         </li>
                                     </ul>
-                                    <a class="btn btn-gray" href="#">Book Now</a>
+                                    <a class="btn btn-gray" href="{{route('package_details', $package->id)}}">Book Now</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
-                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.2s">
-                                <div class="thumb">
-                                    <img src="/images/website/destination-list/9.png" alt="img">
-                                </div>
-                                <div class="details">
-                                    <div class="location">
-                                        <span class="location-name"><img src="/images/website/icons/1.png" alt="img">Peru</span>
-                                        <span class="tp-review-meta float-right">
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <span>4.0</span>
-                                        </span>
-                                    </div>
-                                    <h3>British Islands</h3>
-                                    <ul class="package-meta">
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-clock-o"></i></p>
-                                            <p>Duration</p>
-                                            <h2>4 Days</h2>
-                                        </li>
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-users"></i></p>
-                                            <p>Person</p>
-                                            <h2>2 Adult</h2>
-                                        </li>
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-tag"></i></p>
-                                            <p>Price</p>
-                                            <h2>720 <span>$</span></h2>
-                                        </li>
-                                    </ul>
-                                    <a class="btn btn-gray" href="#">Book Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
-                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.3s">
-                                <div class="thumb">
-                                    <img src="/images/website/destination-list/10.png" alt="img">
-                                </div>
-                                <div class="details">
-                                    <div class="location">
-                                        <span class="location-name"><img src="/images/website/icons/1.png" alt="img">USA</span>
-                                        <span class="tp-review-meta float-right">
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <span>4.0</span>
-                                        </span>
-                                    </div>
-                                    <h3>Grand Canyon</h3>
-                                    <ul class="package-meta">
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-clock-o"></i></p>
-                                            <p>Duration</p>
-                                            <h2>4 Days</h2>
-                                        </li>
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-users"></i></p>
-                                            <p>Person</p>
-                                            <h2>2 Adult</h2>
-                                        </li>
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-tag"></i></p>
-                                            <p>Price</p>
-                                            <h2>310 <span>$</span></h2>
-                                        </li>
-                                    </ul>
-                                    <a class="btn btn-gray" href="#">Book Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
-                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="0.9s" data-wow-delay="0.4s">
-                                <div class="thumb">
-                                    <img src="/images/website/destination-list/11.png" alt="img">
-                                </div>
-                                <div class="details">
-                                    <div class="location">
-                                        <span class="location-name"><img src="/images/website/icons/1.png" alt="img">France</span>
-                                        <span class="tp-review-meta float-right">
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <span>4.0</span>
-                                        </span>
-                                    </div>
-                                    <h3>eiffel tower</h3>
-                                    <ul class="package-meta">
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-clock-o"></i></p>
-                                            <p>Duration</p>
-                                            <h2>4 Days</h2>
-                                        </li>
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-users"></i></p>
-                                            <p>Person</p>
-                                            <h2>2 Adult</h2>
-                                        </li>
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-tag"></i></p>
-                                            <p>Price</p>
-                                            <h2>540 <span>$</span></h2>
-                                        </li>
-                                    </ul>
-                                    <a class="btn btn-gray" href="#">Book Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
-                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="1.2s" data-wow-delay="0.5s">
-                                <div class="thumb">
-                                    <img src="/images/website/destination-list/12.png" alt="img">
-                                </div>
-                                <div class="details">
-                                    <div class="location">
-                                        <span class="location-name"><img src="/images/website/icons/1.png" alt="img">Italy</span>
-                                        <span class="tp-review-meta float-right">
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <span>4.0</span>
-                                        </span>
-                                    </div>
-                                    <h3>Colosseum, Rome</h3>
-                                    <ul class="package-meta">
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-clock-o"></i></p>
-                                            <p>Duration</p>
-                                            <h2>4 Days</h2>
-                                        </li>
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-users"></i></p>
-                                            <p>Person</p>
-                                            <h2>2 Adult</h2>
-                                        </li>
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-tag"></i></p>
-                                            <p>Price</p>
-                                            <h2>620 <span>$</span></h2>
-                                        </li>
-                                    </ul>
-                                    <a class="btn btn-gray" href="#">Book Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
-                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.6s">
-                                <div class="thumb">
-                                    <img src="/images/website/destination-list/13.png" alt="img">
-                                </div>
-                                <div class="details">
-                                    <div class="location">
-                                        <span class="location-name"><img src="/images/website/icons/1.png" alt="img">Peru</span>
-                                        <span class="tp-review-meta float-right">
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <span>4.0</span>
-                                        </span>
-                                    </div>
-                                    <h3>British Islands</h3>
-                                    <ul class="package-meta">
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-clock-o"></i></p>
-                                            <p>Duration</p>
-                                            <h2>4 Days</h2>
-                                        </li>
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-users"></i></p>
-                                            <p>Person</p>
-                                            <h2>2 Adult</h2>
-                                        </li>
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-tag"></i></p>
-                                            <p>Price</p>
-                                            <h2>720 <span>$</span></h2>
-                                        </li>
-                                    </ul>
-                                    <a class="btn btn-gray" href="#">Book Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
-                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="1.8s" data-wow-delay="0.7s">
-                                <div class="thumb">
-                                    <img src="/images/website/destination-list/14.png" alt="img">
-                                </div>
-                                <div class="details">
-                                    <div class="location">
-                                        <span class="location-name"><img src="/images/website/icons/1.png" alt="img">Spain</span>
-                                        <span class="tp-review-meta float-right">
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <span>4.0</span>
-                                        </span>
-                                    </div>
-                                    <h3>Great Reef</h3>
-                                    <ul class="package-meta">
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-clock-o"></i></p>
-                                            <p>Duration</p>
-                                            <h2>4 Days</h2>
-                                        </li>
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-users"></i></p>
-                                            <p>Person</p>
-                                            <h2>2 Adult</h2>
-                                        </li>
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-tag"></i></p>
-                                            <p>Price</p>
-                                            <h2>310 <span>$</span></h2>
-                                        </li>
-                                    </ul>
-                                    <a class="btn btn-gray" href="#">Book Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
-                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="2.1s" data-wow-delay="0.8s">
-                                <div class="thumb">
-                                    <img src="/images/website/destination-list/15.png" alt="img">
-                                </div>
-                                <div class="details">
-                                    <div class="location">
-                                        <span class="location-name"><img src="/images/website/icons/1.png" alt="img">Usa</span>
-                                        <span class="tp-review-meta float-right">
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <i class="ic-yellow fa fa-star"></i>
-                                            <span>4.0</span>
-                                        </span>
-                                    </div>
-                                    <h3>Sea Beach</h3>
-                                    <ul class="package-meta">
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-clock-o"></i></p>
-                                            <p>Duration</p>
-                                            <h2>4 Days</h2>
-                                        </li>
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-users"></i></p>
-                                            <p>Person</p>
-                                            <h2>2 Adult</h2>
-                                        </li>
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-tag"></i></p>
-                                            <p>Price</p>
-                                            <h2>540 <span>$</span></h2>
-                                        </li>
-                                    </ul>
-                                    <a class="btn btn-gray" href="#">Book Now</a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -563,52 +289,95 @@
                 <div class="col-xl-6 col-lg-9">
                     <div class="section-title text-center">
                         <h2 class="title wow animated fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.1s">Insurance</h2>
-                        <p class="wow animated fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.2s">No vis fastidii accumsan, ignota postulant ea mea. Vis et prima integre, ei vis ridens moderatius reformidans cu vim doctus accumsan ignota.</p>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <form class="tp-form-wrap">
+                <form class="tp-form-wrap" method="post" action="/insurance" enctype="multipart/form-data">
+                    {{csrf_field()}}
                     <div class="row">
+                        <h3 class="col-md-12">Personal Information</h3>
                         <div class="col-md-6">
                             <label class="single-input-wrap style-two">
                                 <span class="single-input-title">Name</span>
-                                <input type="text">
+                                <input type="text" name="name">
                             </label>
                         </div>
                         <div class="col-md-6">
                             <label class="single-input-wrap style-two">
-                                <span class="single-input-title">Birth Date</span>
-                                <input type="date">
+                                <span class="single-input-title">Address</span>
+                                <input type="text" name="address">
                             </label>
                         </div>
                         <div class="col-md-6">
                             <label class="single-input-wrap style-two">
-                                <span class="single-input-title">Passport Number</span>
-                                <input type="text">
+                                <span class="single-input-title">Phone</span>
+                                <input type="text" name="phone">
                             </label>
                         </div>
-                        <div class="col-md-6">
-                            <label class="single-input-wrap style-two">
-                                <span class="single-input-title">Expire Date</span>
-                                <input type="date">
-                            </label>
+                    </div>
+                    <div class="row">
+                        <h3 class="col-md-12">Passport Information</h3>
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="single-input-wrap style-two">
+                                        <span class="single-input-title">Name</span>
+                                        <input type="text" name="passport_name">
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="single-input-wrap style-two">
+                                        <span class="single-input-title">Birth Date</span>
+                                        <input type="date" name="birth_date">
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="single-input-wrap style-two">
+                                        <span class="single-input-title">Passport Number</span>
+                                        <input type="text" name="passport_number">
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="single-input-wrap style-two">
+                                        <span class="single-input-title">Expire Date</span>
+                                        <input type="date" name="expire_date">
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="single-input-wrap style-two">
+                                        <span class="single-input-title">Gender</span>
+                                        <input type="text" name="gender">
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="single-input-wrap style-two">
+                                        <span class="single-input-title">Nationality</span>
+                                        <input type="text" name="nationality">
+                                    </label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <label class="single-input-wrap style-two">
-                                <span class="single-input-title">Gender</span>
-                                <input type="text">
-                            </label>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="single-input-wrap style-two">
-                                <span class="single-input-title">Nationality</span>
-                                <input type="text">
-                            </label>
+                        <div class="col-md-5">
+
+                            <div class="col-md-6">
+                                <label class="single-input-wrap style-two">
+                                    <span class="single-input-title">Or Upload Your Passport</span>
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="single-input-wrap style-two">
+                                    <span class="single-input-title">Image</span>
+                                    <input type="file" name="image">
+                                </label>
+                            </div>
                         </div>
                         <div class="col-12 justify-content-center">
-                            <a class="btn btn-yellow mt-3 text-center" href="#">Submit</a>
+                            <input class="btn btn-yellow mt-3 text-center" type="submit" value="Submit">
                         </div>
+                        @foreach($errors->all() as $error)
+                            {{$error}}
+                        @endforeach
                     </div>
                 </form>
             </div>
