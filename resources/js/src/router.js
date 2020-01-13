@@ -83,6 +83,20 @@ const router = new Router({
                     }
                 },
                 {
+                    path: '/dashboard/insurance',
+                    name: 'insurance',
+                    component: () => import('./views/insurance/browse.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard', i18n: 'Home' },
+                            { title: 'Insurance', active: true, i18n: 'Blog' },
+                        ],
+                        pageTitle: 'Insurance',
+                        pageTitle_i18n: 'Insurance'
+                    }
+                },
+                {
                     path: '/dashboard/blog/create',
                     name: 'add-blog',
                     component: () => import('./views/blog/create.vue'),

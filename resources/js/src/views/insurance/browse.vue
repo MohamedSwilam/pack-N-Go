@@ -17,7 +17,7 @@
                             {{ index+1 }}
                         </vs-td>
 
-                        <vs-td :data="insurance.image.url">
+                        <vs-td :data="insurance.image">
                             <img v-if="insurance.image" :src="`${insurance.image.url}`" width="50px" height="50px">
                             <b v-else>No Image</b>
                         </vs-td>
@@ -58,7 +58,7 @@
     export default {
         name: "browse",
         mounted() {
-            this.getInsurance();
+            this.getInsurances();
         },
         data: function (){
             return {
@@ -67,7 +67,7 @@
             }
         },
         methods: {
-            getInsurance(){
+            getInsurances(){
                 this.$store.dispatch('insurance/getData', '')
                     .then(response => {
                         this.insurances = response.data.data.data;
