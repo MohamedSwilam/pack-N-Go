@@ -1,40 +1,48 @@
 <template>
     <div class="vx-col w-full mb-base">
-        <vx-card ref="browse" title="Blog List" collapse-action refreshContentAction @refresh="getBlogs">
-            <vs-table search :data="blogs">
-                <template slot="header">
-                    <vs-button v-if="can('create-post')" to="/dashboard/blog/create" size="small" icon-pack="feather" icon="icon-plus">Create Blog</vs-button>
-                </template>
+        <vx-card ref="browse" title="Insurance List" collapse-action refreshContentAction @refresh="getInsurances">
+            <vs-table search :data="insurances">
                 <template slot="thead">
                     <vs-th>#</vs-th>
                     <vs-th>Image</vs-th>
-                    <vs-th>Title</vs-th>
+                    <vs-th>Name</vs-th>
+                    <vs-th>Telephone</vs-th>
+                    <vs-th>Passport #</vs-th>
                     <vs-th>Created At</vs-th>
                     <vs-th>Action</vs-th>
                 </template>
                 <template slot-scope="{data}">
-                    <vs-tr :key="index" v-for="(blog, index) in blogs">
-                        <vs-td :data="blog.id">
+                    <vs-tr :key="index" v-for="(insurance, index) in insurances">
+                        <vs-td :data="insurance.id">
                             {{ index+1 }}
                         </vs-td>
 
-                        <vs-td :data="blog.image.url">
-                            <img :src="`${blog.image.url}`" width="50px" height="50px">
+                        <vs-td :data="insurance.image.url">
+                            <img v-if="insurance.image" :src="`${insurance.image.url}`" width="50px" height="50px">
+                            <b v-else>No Image</b>
                         </vs-td>
 
-                        <vs-td :data="blog.title">
-                            {{ blog.title}}
+                        <vs-td :data="insurance.name">
+                            {{ insurance.name}}
                         </vs-td>
 
-                        <vs-td :data="blog.created_at">
-                            {{ blog.created_at}}
+                        <vs-td :data="insurance.phone">
+                            {{ insurance.phone}}
+                        </vs-td>
+
+                        <vs-td :data="insurance.passport_number">
+                            {{ insurance.passport_number}}
+                        </vs-td>
+
+                        <vs-td :data="insurance.created_at">
+                            {{ insurance.created_at}}
                         </vs-td>
 
                         <vs-td>
                             <vs-row>
                                 <div class="flex mb-4">
-                                    <div class="w-1/3 ml-5" v-if="can('delete-post')">
-                                        <vs-button :id="`btn-delete-${blog.id}`" class="vs-con-loading__container" radius color="danger" type="border" icon-pack="feather" icon="icon-trash" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):confirmDeleteBlog(blog)"></vs-button>
+                                    <div class="w-1/3 ml-5" v-if="can('delete-insurance')">
+                                        <vs-button :id="`btn-delete-${insurance.id}`" class="vs-con-loading__container" radius color="danger" type="border" icon-pack="feather" icon="icon-trash" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):confirmDeleteInsurance(insurance)"></vs-button>
                                     </div>
                                 </div>
                             </vs-row>
@@ -50,19 +58,19 @@
     export default {
         name: "browse",
         mounted() {
-            this.getBlogs();
+            this.getInsurance();
         },
         data: function (){
             return {
-                blogs: [],
+                insurances: [],
                 is_requesting: false
             }
         },
         methods: {
-            getBlogs(){
-                this.$store.dispatch('blog/getData', '')
+            getInsurance(){
+                this.$store.dispatch('insurance/getData', '')
                     .then(response => {
-                        this.blogs = response.data.data.data;
+                        this.insurances = response.data.data.data;
                     })
                     .catch(error => {
                         console.log(error);
@@ -76,27 +84,27 @@
                     });
             },
 
-            confirmDeleteBlog(blog)
+            confirmDeleteInsurance(insurance)
             {
                 this.$vs.dialog({
                     type: 'confirm',
                     color: 'danger',
                     title: `Are you sure!`,
                     text: 'This data can not be retrieved again.',
-                    accept: this.deleteBlog,
-                    parameters: [blog]
+                    accept: this.deleteInsurance,
+                    parameters: [insurance]
                 });
             },
 
-            deleteBlog(params)
+            deleteInsurance(params)
             {
                 this.is_requesting=true;
                 this.$vs.loading({container: `#btn-delete-${params[0].id}`, color: 'danger', scale: 0.45});
-                this.$store.dispatch('blog/delete', params[0].id)
+                this.$store.dispatch('insurance/delete', params[0].id)
                     .then(response => {
                         this.is_requesting = false;
                         this.$vs.loading.close(`#btn-delete-${params[0].id} > .con-vs-loading`);
-                        this.blogs = this.blogs.filter(blog => {return blog.id !== params[0].id});
+                        this.insurances = this.insurances.filter(insurance => {return insurance.id !== params[0].id});
                         this.$vs.notify({
                             title: 'Success',
                             text: response.data.message,
