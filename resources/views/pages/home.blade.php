@@ -162,7 +162,7 @@
                                         <li class="tp-price-meta">
                                             <p><i class="fa fa-tag"></i></p>
                                             <p>Price</p>
-                                            <h2>{{$package->price}} <span>{{$package->currency}} </span></h2>
+                                            <h2>{{$package->price}} {{$package->currency}} </h2>
                                         </li>
                                     </ul>
                                     <a class="btn btn-gray" href="{{route('package_details', $package->id)}}">Book Now</a>
@@ -210,72 +210,31 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-9">
                     <div class="section-title text-center">
-                        <h2 class="title wow animated fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.1s">Perfect Holiday Plan</h2>
-                        <p class="wow animated fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.2s">No vis fastidii accumsan, ignota postulant ea mea. Vis et prima integre, ei vis ridens moderatius reformidans cu vim doctus accumsan ignota.</p>
-                    </div>
+                        <h2 class="title wow animated fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.1s">Latest Packages</h2>
+                        </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-destinations-list style-two wow animated fadeInUp" data-wow-duration="0.4s" data-wow-delay="0.1s">
-                        <div class="thumb">
-                            <img src="/images/website/destination-list/4.png" alt="list">
-                        </div>
-                        <div class="details">
-                            <p class="location"><img src="/images/website/icons/1.png" alt="map">Maldives</p>
-                            <h4 class="title">Hurawalhi Island</h4>
-                            <p class="content">7 Days Tour on 2 person</p>
-                            <div class="tp-price-meta">
-                                <h2>620 <small>$</small></h2>
+                @foreach($latest_packages as $package)
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-destinations-list style-two wow animated fadeInUp" data-wow-duration="0.4s" data-wow-delay="0.1s">
+                            <div class="thumb">
+                                @if(count($package->medias))
+                                    <img src="{{$package->medias[0]->url}}" alt="img">
+                                @else
+                                    <img src="/images/website/destination-list/8.png" alt="img">
+                                @endif
+                            </div>
+                            <div class="details">
+                                <h4 class="title">{{$package->title}}</h4>
+                                <p class="content">{{$package->description}}</p>
+                                <div class="tp-price-meta">
+                                    <h2>{{$package->price}} {{$package->currency}}</h2>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-destinations-list style-two wow animated fadeInUp" data-wow-duration="0.7s" data-wow-delay="0.2s">
-                        <div class="thumb">
-                            <img src="/images/website/destination-list/5.png" alt="list">
-                        </div>
-                        <div class="details">
-                            <p class="location"><img src="/images/website/icons/1.png" alt="map">Indonesia</p>
-                            <h4 class="title">Bali Province</h4>
-                            <p class="content">4 days 2 person</p>
-                            <div class="tp-price-meta">
-                                <h2>780 <small>$</small></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-destinations-list style-two wow animated fadeInUp" data-wow-duration="0.9s" data-wow-delay="0.3s">
-                        <div class="thumb">
-                            <img src="/images/website/destination-list/6.png" alt="list">
-                        </div>
-                        <div class="details">
-                            <p class="location"><img src="/images/website/icons/1.png" alt="map">Bangladesh</p>
-                            <h4 class="title">Cox's bazar Sea Beach</h4>
-                            <p class="content">4 days 4 person</p>
-                            <div class="tp-price-meta">
-                                <h2>850 <small>$</small></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-destinations-list style-two wow animated fadeInUp" data-wow-duration="1.1s" data-wow-delay="0.4s">
-                        <div class="thumb">
-                            <img src="/images/website/destination-list/7.png" alt="list">
-                        </div>
-                        <div class="details">
-                            <p class="location"><img src="/images/website/icons/1.png" alt="map">Spain</p>
-                            <h4 class="title">Barcelona city beach</h4>
-                            <p class="content">3 days 2 person</p>
-                            <div class="tp-price-meta">
-                                <h2>620 <small>$</small></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -376,7 +335,9 @@
                             <input class="btn btn-yellow mt-3 text-center" type="submit" value="Submit">
                         </div>
                         @foreach($errors->all() as $error)
-                            {{$error}}
+                            <div style="color: red">
+                                *{{$error}}<br>
+                            </div>
                         @endforeach
                     </div>
                 </form>
