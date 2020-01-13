@@ -51,6 +51,13 @@ Route::group(['prefix' => 'booking', 'middleware' => 'auth:api'], function () {
     Route::resource('', 'BookingController');
 });
 
+Route::group(['prefix' => 'insurance', 'middleware' => 'auth:api'], function () {
+    Route::post('{id}', 'InsuranceController@update');
+    Route::get('{id}', 'InsuranceController@show');
+    Route::delete('{id}', 'InsuranceController@destroy');
+    Route::resource('', 'InsuranceController');
+});
+
 Route::group(['prefix' => 'post'], function () {
     Route::get('', 'PostController@index');
     Route::get('{id}', 'PostController@show');
