@@ -12,8 +12,10 @@ use App\Policies\EmployeePolicy;
 use App\Policies\LusionPolicy;
 use App\Policies\PackagePolicy;
 use App\Policies\PermissionPolicy;
+use App\Policies\PostPolicy;
 use App\Policies\RolePolicy;
 use App\Policies\SchedulePolicy;
+use App\Post;
 use App\Schedule;
 use App\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -39,6 +41,7 @@ class AuthServiceProvider extends ServiceProvider
         Schedule::class => SchedulePolicy::class,
         Accommodation::class => AccommodationPolicy::class,
         Booking::class => BookingPolicy::class,
+        Post::class => PostPolicy::class,
     ];
 
     /**
