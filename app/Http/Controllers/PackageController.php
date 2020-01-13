@@ -6,6 +6,7 @@ use App\Accommodation;
 use App\Http\Requests\PackageRequest;
 use App\IndexResponse;
 use App\Lusion;
+use App\Media;
 use App\Package;
 use App\Schedule;
 use App\Transformers\PackageTransformer;
@@ -75,6 +76,15 @@ class PackageController extends Controller
         foreach ($request->validated()['accommodations'] as $accommodation){
             $accommodation = Accommodation::create($accommodation);
             $package->accommodations()->save($accommodation);
+        }
+
+        foreach ($request->validated()['images'] as $image){
+            $data = [
+                'old_name' => $image->getClientOriginalName(),
+            ];
+            $data['url'] = download_file($image, config('paths.package-image.create'));
+            $image = Media::create($data);
+            $package->medias()->save($image);
         }
 
         return $this->respond(

@@ -8,7 +8,7 @@ class Package extends Model
 {
     protected $fillable = ['title','description','price','currency','season','days','nights','rate','date', 'home_page'];
 
-    protected $with = ['inclusions', 'exclusions', 'schedules', 'accommodations'];
+    protected $with = ['inclusions', 'exclusions', 'schedules', 'accommodations', 'medias'];
 
     public function inclusions()
     {
@@ -28,6 +28,11 @@ class Package extends Model
     public function accommodations()
     {
         return $this->hasMany(Accommodation::class);
+    }
+
+    public function medias()
+    {
+        return $this->morphMany(Media::class, 'mediable');
     }
 
     public function scopeComing($query)
