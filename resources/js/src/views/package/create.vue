@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                             <div class="vx-col md:w-1/2 w-full mt-5">
-                                <input type="file" multiple>
+                                <input type="file" class="form-control" @change="uploadImages" multiple>
                             </div>
                             <div class="vx-col md:w-1/2 w-full mt-5">
                                 <ul class="switch-container">
@@ -140,16 +140,6 @@
                     </tab-content>
                 </form-wizard>
 
-
-
-
-
-
-
-
-
-
-
             </vx-card>
         </div>
     </div>
@@ -169,38 +159,38 @@
                 roles: [],
                 form: {
                     home_page: false,
-                    title: '',
-                    date: '',
-                    price: 0,
-                    currency: '',
-                    days: 0,
-                    nights: 0,
-                    season: '',
-                    rate: 1,
-                    description: '',
-                    images: null,
+                    title: 'ddod',
+                    date: '2018-05-02',
+                    price: 10000,
+                    currency: 'EGP',
+                    days: 9,
+                    nights: 10,
+                    season: 'Summer',
+                    rate: 12,
+                    description: 'Desc',
+                    images: [],
                     schedule: [
                         {
                             day_number: 1,
-                            description: ''
+                            description: 'Desc1'
                         }
                     ],
                     inclusions: [
                         {
-                            name: ''
+                            name: 'Inc1'
                         }
                     ],
                     exclusions: [
                         {
-                            name: ''
+                            name: 'Exc1'
                         }
                     ],
                     accommodations: [
                         {
-                            city: '',
-                            hotel: '',
-                            rate: 1,
-                            nights: 1
+                            city: 'Ci',
+                            hotel: 'ho',
+                            rate: 10,
+                            nights: 11
                         }
                     ]
                 },
@@ -274,17 +264,29 @@
                 }
             },
 
+            uploadImages(e)
+            {
+                let selectedImages = e.target.files;
+                if (!selectedImages.length) {
+                    return false;
+                }
+                this.form.images = [];
+                for (let i = 0; i < selectedImages.length; i++) {
+                    this.form.images.push(selectedImages[i]);
+                }
+            },
+
             create() {
                 this.is_requesting=true;
                 let form_data = new FormData();
 
                 for (let key in this.form ) {
-                    if ((key === 'image') && this.form.hasOwnProperty(key)){
-                        if (this.form[key]) {
-                            for (let i=0; i<this.form[key].length; i++){
-                                form_data.append(key, this.form[key][i]);
-                            }
+                    if ((key === 'images') && this.form.hasOwnProperty(key)){
+                        for (let i=0; i<this.form[key].length; i++){
+                            form_data.append(key+'[]', this.form[key][i]);
                         }
+                    } else if(key === 'schedule' || key === 'inclusions' || key === 'exclusions' || key === 'accommodations'){
+                        form_data.append(key, JSON.stringify(this.form[key]));
                     }
                     else {
                         form_data.append(key, this.form[key]);
@@ -292,7 +294,7 @@
                 }
                 this.$store.dispatch('package/create', form_data)
                     .then(response => {
-                        this.$router.push(`/dashboard/package/${response.data.data.data.id}`);
+                        this.$router.push(`/dashboard/package`);
                         this.$vs.notify({
                             title: 'Success',
                             text: response.data.message,

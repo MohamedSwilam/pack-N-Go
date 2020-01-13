@@ -69,6 +69,36 @@ const router = new Router({
                     }
                 },
                 {
+                    path: '/dashboard/blog',
+                    name: 'blog',
+                    component: () => import('./views/blog/browse.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard', i18n: 'Home' },
+                            { title: 'Blog', active: true, i18n: 'Blog' },
+                        ],
+                        pageTitle: 'Blog',
+                        pageTitle_i18n: 'Blog'
+                    }
+                },
+                {
+                    path: '/dashboard/blog/create',
+                    name: 'add-blog',
+                    component: () => import('./views/blog/create.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard', i18n: 'Home' },
+                            { title: 'Blog', url: '/dashboard/blog', i18n: 'Blog' },
+                            { title: 'Create', active: true, i18n: 'Blog' },
+                        ],
+                        pageTitle: 'Add Blog',
+                        pageTitle_i18n: 'AddBlog',
+                        permission: 'create-post'
+                    }
+                },
+                {
                     path: '/dashboard/employee',
                     name: 'employee',
                     component: () => import('./views/employee/browse.vue'),
