@@ -38,6 +38,37 @@ const router = new Router({
                   }
                 },
                 {
+                    path: '/dashboard/package',
+                    name: 'package',
+                    component: () => import('./views/package/browse.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard', i18n: 'Home' },
+                            { title: 'Package', active: true, i18n: 'Package' },
+                        ],
+                        pageTitle: 'Package',
+                        pageTitle_i18n: 'Package',
+                        permission: 'browse-employee'
+                    }
+                },
+                {
+                    path: '/dashboard/package/create',
+                    name: 'create-package',
+                    component: () => import('./views/package/create.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard', i18n: 'Home' },
+                            { title: 'Package', i18n: 'Package' },
+                            { title: 'Create', active: true },
+                        ],
+                        pageTitle: 'Create Package',
+                        pageTitle_i18n: 'Package',
+                        permission: 'create-employee'
+                    }
+                },
+                {
                     path: '/dashboard/employee',
                     name: 'employee',
                     component: () => import('./views/employee/browse.vue'),
