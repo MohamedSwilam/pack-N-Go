@@ -2,10 +2,10 @@
 
 namespace App\Transformers;
 
-use App\Client;
+use App\Booking;
 use League\Fractal\TransformerAbstract;
 
-class ClientTransformer extends TransformerAbstract
+class BookingTransformer extends TransformerAbstract
 {
     /**
      * List of resources to automatically include
@@ -28,10 +28,11 @@ class ClientTransformer extends TransformerAbstract
     /**
      * A Fractal transformer.
      *
+     * @param Booking $booking
      * @return array
      */
-    public function transform(Client $client)
+    public function transform(Booking $booking)
     {
-        return $client->toArray();
+        return $booking->toArray();
     }
 }

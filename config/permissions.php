@@ -28,34 +28,6 @@ return [
         ],
     ],
 
-    'Client' => [
-        [
-            'name' => 'create-client',
-            'guard_name' => 'api',
-            'display_name' => 'Create Client',
-        ],
-        [
-            'name' => 'browse-client',
-            'guard_name' => 'api',
-            'display_name' => 'Browse Client',
-        ],
-        [
-            'name' => 'view-client',
-            'guard_name' => 'api',
-            'display_name' => 'View Client',
-        ],
-        [
-            'name' => 'edit-client',
-            'guard_name' => 'api',
-            'display_name' => 'Edit Client',
-        ],
-        [
-            'name' => 'delete-client',
-            'guard_name' => 'api',
-            'display_name' => 'Delete Client',
-        ],
-    ],
-
     'Role' => [
         [
             'name' => 'create-role',
@@ -161,6 +133,34 @@ return [
             'name' => 'delete-accommodation',
             'guard_name' => 'api',
             'display_name' => 'Delete Accommodation',
+        ],
+    ],
+
+    'Booking' => [
+        [
+            'name' => 'create-booking',
+            'guard_name' => 'api',
+            'display_name' => 'Create Booking',
+        ],
+        [
+            'name' => 'browse-booking',
+            'guard_name' => 'api',
+            'display_name' => 'Browse Booking',
+        ],
+        [
+            'name' => 'view-booking',
+            'guard_name' => 'api',
+            'display_name' => 'View Booking',
+        ],
+        [
+            'name' => 'edit-booking',
+            'guard_name' => 'api',
+            'display_name' => 'Edit Booking',
+        ],
+        [
+            'name' => 'delete-booking',
+            'guard_name' => 'api',
+            'display_name' => 'Delete Booking',
         ],
     ],
 ];

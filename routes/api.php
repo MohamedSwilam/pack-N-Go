@@ -37,17 +37,16 @@ Route::group(['prefix' => 'role', 'middleware' => 'auth:api'], function () {
 
 Route::middleware('auth:api')->get('permission', 'PermissionController@index');
 
-Route::group(['prefix' => 'client', 'middleware' => 'auth:api'], function () {
-    Route::post('{id}', 'ClientController@update');
-    Route::get('{id}', 'ClientController@show');
-    Route::delete('{id}', 'ClientController@destroy');
-    Route::resource('', 'ClientController');
-});
-
-
 Route::group(['prefix' => 'package', 'middleware' => 'auth:api'], function () {
     Route::post('{id}', 'PackageController@update');
     Route::get('{id}', 'PackageController@show');
     Route::delete('{id}', 'PackageController@destroy');
     Route::resource('', 'PackageController');
+});
+
+Route::group(['prefix' => 'booking', 'middleware' => 'auth:api'], function () {
+    Route::post('{id}', 'BookingController@update');
+    Route::get('{id}', 'BookingController@show');
+    Route::delete('{id}', 'BookingController@destroy');
+    Route::resource('', 'BookingController');
 });

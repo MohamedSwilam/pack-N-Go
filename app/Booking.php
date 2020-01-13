@@ -2,18 +2,14 @@
 
 namespace App;
 
+use App\Traits\PackageItem;
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class Booking extends Model
 {
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'telephone', 'adults', 'children'
-    ];
+    use PackageItem;
+
+    protected $fillable = ['name', 'email', 'phone', 'adults', 'children', 'infants', 'package_id'];
 
     public function scopeName($query, $name)
     {

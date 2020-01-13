@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ClientRequest extends FormRequest
+class BookingRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,19 +28,23 @@ class ClientRequest extends FormRequest
             return [
                 'email' => 'required|email|unique:clients,email',
                 'name' => 'required',
-                'telephone' => 'required',
+                'phone' => 'required',
                 'adults' => 'required',
                 'children' => 'required',
+                'infants' => 'required',
+                'package_id' => 'exists:packages,id',
             ];
         }
         else if (sizeof($segments) == 3){
             return [
-                'email' => 'email|unique:clients,email,'.$segments[2],
+                'email' => 'email|unique:clients,email',
                 'name' => '',
-                'telephone' => '',
+                'phone' => '',
                 'adults' => '',
                 'children' => '',
+                'infants' => '',
+                'package_id' => 'exists:packages,id',
             ];
-        }
+        };
     }
 }
