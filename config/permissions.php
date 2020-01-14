@@ -219,4 +219,60 @@ return [
             'display_name' => 'Delete Insurance',
         ],
     ],
+
+    'Contact Us' => [
+        [
+            'name' => 'create-contact-us',
+            'guard_name' => 'api',
+            'display_name' => 'Create Contact Us',
+        ],
+        [
+            'name' => 'browse-contact-us',
+            'guard_name' => 'api',
+            'display_name' => 'Browse Contact Us',
+        ],
+        [
+            'name' => 'view-contact-us',
+            'guard_name' => 'api',
+            'display_name' => 'View Contact Us',
+        ],
+        [
+            'name' => 'edit-contact-us',
+            'guard_name' => 'api',
+            'display_name' => 'Edit Contact Us',
+        ],
+        [
+            'name' => 'delete-contact-us',
+            'guard_name' => 'api',
+            'display_name' => 'Delete Contact Us',
+        ],
+    ],
+
+    'Custom Package' => [
+        [
+            'name' => 'create-custom-package',
+            'guard_name' => 'api',
+            'display_name' => 'Create Custom Package',
+        ],
+        [
+            'name' => 'browse-custom-package',
+            'guard_name' => 'api',
+            'display_name' => 'Browse Custom Package',
+        ],
+        [
+            'name' => 'view-custom-package',
+            'guard_name' => 'api',
+            'display_name' => 'View Custom Package',
+        ],
+        [
+            'name' => 'edit-custom-package',
+            'guard_name' => 'api',
+            'display_name' => 'Edit Custom Package',
+        ],
+        [
+            'name' => 'delete-custom-package',
+            'guard_name' => 'api',
+            'display_name' => 'Delete Custom Package',
+        ],
+    ],
 ];

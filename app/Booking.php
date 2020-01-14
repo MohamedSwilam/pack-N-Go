@@ -9,7 +9,12 @@ class Booking extends Model
 {
     use PackageItem;
 
-    protected $fillable = ['name', 'email', 'phone', 'adults', 'children', 'infants', 'package_id'];
+    protected $fillable = ['name', 'email', 'phone', 'adults', 'children', 'infants'];
+
+    public function customPackage()
+    {
+        return $this->hasOne(CustomPackage::class);
+    }
 
     public function scopeName($query, $name)
     {
