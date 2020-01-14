@@ -74,3 +74,11 @@ Route::group(['prefix' => 'contact-us', 'middleware' => 'auth:api'], function ()
     Route::delete('{id}', 'ContactUsController@destroy');
     Route::resource('', 'ContactUsController');
 });
+
+
+Route::group(['prefix' => 'custom-package', 'middleware' => 'auth:api'], function () {
+    Route::post('{id}', 'CustomPackageController@update');
+    Route::get('{id}', 'CustomPackageController@show');
+    Route::delete('{id}', 'CustomPackageController@destroy');
+    Route::resource('', 'CustomPackageController');
+});

@@ -5,12 +5,14 @@ namespace App\Providers;
 use App\Accommodation;
 use App\Booking;
 use App\ContactUs;
+use App\CustomPackage;
 use App\Insurance;
 use App\Lusion;
 use App\Package;
 use App\Policies\AccommodationPolicy;
 use App\Policies\BookingPolicy;
 use App\Policies\ContactUsPolicy;
+use App\Policies\CustomPackagePolicy;
 use App\Policies\EmployeePolicy;
 use App\Policies\InsurancePolicy;
 use App\Policies\LusionPolicy;
@@ -48,6 +50,7 @@ class AuthServiceProvider extends ServiceProvider
         Post::class => PostPolicy::class,
         Insurance::class => InsurancePolicy::class,
         ContactUs::class => ContactUsPolicy::class,
+        CustomPackage::class => CustomPackagePolicy::class,
     ];
 
     /**
