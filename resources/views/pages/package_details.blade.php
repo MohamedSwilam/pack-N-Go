@@ -29,81 +29,40 @@
                     <div class="gallery-filter-area row">
                         <div class="gallery-sizer col-1"></div>
                         <!-- gallery-item -->
-                        <div class="tp-gallery-item col-md-3 col-sm-6">
-                            <div class="tp-gallery-item-img">
-                                <a href="#" data-effect="mfp-zoom-in">
-                                    <img src="/images/website/tour-details/2.png" alt="image">
-                                </a>
+                        @if(sizeof($package->medias))
+                            <div class="tp-gallery-item col-md-3 col-sm-6">
+                                <div class="tp-gallery-item-img">
+                                    <a href="#" data-effect="mfp-zoom-in">
+                                        <img src="{{$package->medias[0]->url}}" alt="image">
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <!-- gallery-item -->
-                        <div class="tp-gallery-item col-lg-2 col-md-4 col-sm-6">
-                            <div class="tp-gallery-item-img">
-                                <a href="#" data-effect="mfp-zoom-in">
-                                    <img src="/images/website/tour-details/3.png" alt="image">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- gallery-item -->
-                        <div class="tp-gallery-item col-lg-2 col-md-4 col-sm-6">
-                            <div class="tp-gallery-item-img">
-                                <a href="#" data-effect="mfp-zoom-in">
-                                    <img src="/images/website/tour-details/3.png" alt="image">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- gallery-item -->
-                        <div class="tp-gallery-item col-lg-2 col-md-4 col-sm-6">
-                            <div class="tp-gallery-item-img">
-                                <a href="#" data-effect="mfp-zoom-in">
-                                    <img src="/images/website/tour-details/3.png" alt="image">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- gallery-item -->
-                        <div class="tp-gallery-item col-lg-2 col-md-4 col-sm-6">
-                            <div class="tp-gallery-item-img">
-                                <a href="#" data-effect="mfp-zoom-in">
-                                    <img src="/images/website/tour-details/4.png" alt="image">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- gallery-item -->
-                        <div class="tp-gallery-item col-lg-2 col-md-4 col-sm-6">
-                            <div class="tp-gallery-item-img">
-                                <a href="#" data-effect="mfp-zoom-in">
-                                    <img src="/images/website/tour-details/5.png" alt="image">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- gallery-item -->
-                        <div class="tp-gallery-item col-lg-2 col-md-4 col-sm-6">
-                            <div class="tp-gallery-item-img">
-                                <a href="#" data-effect="mfp-zoom-in">
-                                    <img src="/images/website/tour-details/6.png" alt="image">
-                                </a>
-                            </div>
-                        </div>
+                        @endif
+                        @foreach($package->medias as $index => $media)
+                            @if($index != 0)
+                                <div class="tp-gallery-item col-lg-2 col-md-4 col-sm-6">
+                                    <div class="tp-gallery-item-img">
+                                        <a href="#" data-effect="mfp-zoom-in">
+                                            <img src="{{$media->url}}" alt="image">
+                                        </a>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
                     </div>
                     <div class="row">
                         <div class="col-xl-3 col-lg-4">
                             <div class="details">
-                                <p class="location mb-0"><i class="fa fa-map-marker"></i>Canada</p>
-                                <h4 class="title">Bali Province</h4>
-                                <p class="content">3 days 2 person</p>
+                                <h4 class="title">{{$package->title}}</h4>
+                                <p class="content">{{$package->days}} Days / {{$package->nights}} Nights</p>
                                 <div class="tp-review-meta">
-                                    <i class="ic-yellow fa fa-star"></i>
-                                    <i class="ic-yellow fa fa-star"></i>
-                                    <i class="ic-yellow fa fa-star"></i>
-                                    <i class="ic-yellow fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <span>4.0</span>
-                                </div>
-                                <div class="all-tags">
-                                    <a href="#">Adventures</a>
-                                    <a href="#">Local special ties</a>
-                                    <a href="#">Natural</a>
-                                    <a href="#">Travel</a>
+                                    @for($i = 0; $i<$package->rate; $i++)
+                                        <i class="ic-yellow fa fa-star"></i>
+                                    @endfor
+                                    @for($i = 0; $i<5-$package->rate; $i++)
+                                        <i class="fa fa-star"></i>
+                                    @endfor
+                                    <span>{{$package->rate}}</span>
                                 </div>
                             </div>
                         </div>
@@ -112,15 +71,14 @@
                                 <p class="book-list-content">Just booked! Get your spot before it's too late.</p>
                                 <div class="tp-price-meta">
                                     <p>Price</p>
-                                    <h2>775 <small>$</small></h2>
+                                    <h2>{{$package->price}} {{$package->currency}}</h2>
                                 </div>
                             </div>
                             <ul class="tp-list-meta border-tp-solid">
-                                <li class="ml-0"><i class="fa fa-calendar-o"></i> 8 Oct</li>
-                                <li><i class="fa fa-clock-o"></i> 4 Days</li>
-                                <li><i class="fa fa-users"></i>2 Person</li>
-                                <li><i class="fa fa-snowflake-o"></i> Relaxing</li>
-                                <li><i class="fa fa-star"></i> 4.3</li>
+                                <li class="ml-0"><i class="fa fa-calendar-o"></i>{{date('t F Y', strtotime($package->date))}}</li>
+                                <li><i class="fa fa-clock-o"></i> {{$package->days}} Days / {{$package->nights}} Nights</li>
+                                <li><i class="fa fa-snowflake-o"></i> {{$package->season}}</li>
+                                <li><i class="fa fa-star"></i>{{number_format($package->rate, 1)}}</li>
                             </ul>
                         </div>
                     </div>
@@ -132,44 +90,37 @@
                 <h4 class="single-page-small-title">Accommodation</h4>
                 <table>
                     <thead style="background-color: #0c112e;color: white;padding: 5px;">
-                        <tr style="text-align: center;line-height: 17px;padding: 5px;">
-                            <th style="width: 10%;padding: 15px;">City</th>
-                            <th style="width: 5%;padding: 15px;">Nights</th>
-                            <th style="width: 10%;padding: 15px;">Hotels / Standard</th>
-                            <th style="width: 15%;padding: 15px;">Per Person in Double inside Cabin</th>
-                            <th style="width: 15%;padding: 15px;">Per Person in Single inside Cabin</th>
-                            <th style="width: 15%;padding: 15px;">Per Person in Double balcony Cabin</th>
-                            <th style="width: 15%;padding: 15px;">Per Person in Single balcony Cabin</th>
-                        </tr>
+                    <tr style="text-align: center;line-height: 17px;padding: 5px;">
+                        <th style="width: 10%;padding: 15px;">City</th>
+                        <th style="width: 5%;padding: 15px;">Nights</th>
+                        <th style="width: 10%;padding: 15px;">Hotels / Standard</th>
+                        <th style="width: 10%;padding: 15px;">Rate</th>
+                        <th style="width: 15%;padding: 15px;">Per Person in Double inside Cabin</th>
+                        <th style="width: 15%;padding: 15px;">Per Person in Single inside Cabin</th>
+                        <th style="width: 15%;padding: 15px;">Per Person in Double balcony Cabin</th>
+                        <th style="width: 15%;padding: 15px;">Per Person in Single balcony Cabin</th>
+                    </tr>
                     </thead>
                     <tbody>
+                    @foreach($package->accommodations as $accommodation)
                         <tr style="text-align: center;border-bottom: 1px solid #0c112e;">
-                            <td style="padding: 15px;">Cairo</td>
-                            <td style="padding: 15px;">3</td>
-                            <td style="padding: 15px;">Sonesta</td>
-                            <td style="padding: 15px;">35,900 EGP</td>
-                            <td style="padding: 15px;">51,900 EGP</td>
-                            <td style="padding: 15px;">39,900 EGP</td>
-                            <td style="padding: 15px;">62,900 EGP</td>
+                            <td style="padding: 15px;">{{$accommodation->city}}</td>
+                            <td style="padding: 15px;">{{$accommodation->nights}}</td>
+                            <td style="padding: 15px;">{{$accommodation->hotel}}</td>
+                            <td style="padding: 15px;">
+                                @for($i = 0; $i<$accommodation->rate; $i++)
+                                    <i class="ic-yellow fa fa-star"></i>
+                                @endfor
+                                @for($i = 0; $i<5-$accommodation->rate; $i++)
+                                    <i class="fa fa-star"></i>
+                                @endfor</td>
+                            <td style="padding: 15px;">{{$accommodation->dbl}}</td>
+                            <td style="padding: 15px;">{{$accommodation->sgl}}</td>
+                            <td style="padding: 15px;">{{$accommodation->dbl_balcony}}</td>
+                            <td style="padding: 15px;">{{$accommodation->sgl_balcony}}</td>
+
                         </tr>
-                        <tr style="text-align: center;border-bottom: 1px solid #0c112e;">
-                            <td style="padding: 15px;">Cairo</td>
-                            <td style="padding: 15px;">3</td>
-                            <td style="padding: 15px;">Sonesta</td>
-                            <td style="padding: 15px;">35,900 EGP</td>
-                            <td style="padding: 15px;">51,900 EGP</td>
-                            <td style="padding: 15px;">39,900 EGP</td>
-                            <td style="padding: 15px;">62,900 EGP</td>
-                        </tr>
-                        <tr style="text-align: center;border-bottom: 1px solid #0c112e;">
-                            <td style="padding: 15px;">Cairo</td>
-                            <td style="padding: 15px;">3</td>
-                            <td style="padding: 15px;">Sonesta</td>
-                            <td style="padding: 15px;">35,900 EGP</td>
-                            <td style="padding: 15px;">51,900 EGP</td>
-                            <td style="padding: 15px;">39,900 EGP</td>
-                            <td style="padding: 15px;">62,900 EGP</td>
-                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
@@ -179,70 +130,27 @@
                 <div class="col-lg-8">
                     <div class="tour-details-wrap">
                         <h4 class="single-page-small-title">Description</h4>
-                        <p>From its distinct half-hour time zone to its occasional June snowshower, Newfoundland runs on its own time. By August, the summer crowds have dwindled, berries hang ripe and heavy on their stems, and the landscape is ablaze with wildflowers. Join us at the peak of Newfoundland’s late summer season as we wind our way through the famously Celtic stretch of coastline known as the Irish Loop, exploring its unique history, folklore, cuisine, and breathtaking seaside scenery. We’ll enjoy dinners made from freshly foraged ingredients on a quiet dock, chat with a boat-builder in the midst of making a vessel, and learn how to craft heritage cheese from local experts while surrounded by an adorable, bleating tribe of tiny baby goats. As we make our way along the Loop, we’ll encounter countless characters, places, and stories that give this corner of the island its charm, tenacity, and unique flair.</p>
+                        <p>{{$package->description}}</p>
                         <hr>
                         <div class="row" style="margin-top: 25px;">
                             <div class="col-lg-6 col-md-6">
                                 <h4 class="single-page-small-title">Inclusions</h4>
-                                <p>
-                                    <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
-                                    <span style="display: table-cell;">Manama Tower, Badda Link Road, Badda Dhaka, Bangladesh</span>
-                                </p>
-                                <p>
-                                    <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
-                                    <span style="display: table-cell;">Manama Tower, Badda Link Road, Badda Dhaka, Bangladesh</span>
-                                </p>
-                                <p>
-                                    <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
-                                    <span style="display: table-cell;">Manama Tower, Badda Link Road, Badda Dhaka, Bangladesh</span>
-                                </p>
-                                <p>
-                                    <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
-                                    <span style="display: table-cell;">Manama Tower, Badda Link Road, Badda Dhaka, Bangladesh</span>
-                                </p>
-                                <p>
-                                    <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
-                                    <span style="display: table-cell;">Manama Tower, Badda Link Road, Badda Dhaka, Bangladesh</span>
-                                </p>
-                                <p>
-                                    <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
-                                    <span style="display: table-cell;">Manama Tower, Badda Link Road, Badda Dhaka, Bangladesh</span>
-                                </p>
-                                <p>
-                                    <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
-                                    <span style="display: table-cell;">Manama Tower, Badda Link Road, Badda Dhaka, Bangladesh</span>
-                                </p>
-                                <p>
-                                    <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
-                                    <span style="display: table-cell;">Manama Tower, Badda Link Road, Badda Dhaka, Bangladesh</span>
-                                </p>
-                                <p>
-                                    <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
-                                    <span style="display: table-cell;">Manama Tower, Badda Link Road, Badda Dhaka, Bangladesh</span>
-                                </p>
+                                @foreach($package->inclusions as $inclusion)
+                                    <p>
+                                        <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
+                                        <span style="display: table-cell;">{{$inclusion->name}}</span>
+                                    </p>
+                                @endforeach
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <h4 class="single-page-small-title">Exclusions</h4>
-                                <p>
-                                    <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
-                                    <span style="display: table-cell;">Manama Tower, Badda Link Road, Badda Dhaka, Bangladesh</span>
-                                </p>
-                                <p>
-                                    <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
-                                    <span style="display: table-cell;">Manama Tower, Badda Link Road, Badda Dhaka, Bangladesh</span>
-                                </p>
-                                <p>
-                                    <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
-                                    <span style="display: table-cell;">Manama Tower, Badda Link Road, Badda Dhaka, Bangladesh</span>
-                                </p>
-                                <p>
-                                    <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
-                                    <span style="display: table-cell;">Manama Tower, Badda Link Road, Badda Dhaka, Bangladesh</span>
-                                </p>
-                                <p>
-                                    <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
-                                    <span style="display: table-cell;">Manama Tower, Badda Link Road, Badda Dhaka, Bangladesh</span>
-                                </p>
+
+                                @foreach($package->exclusions as $exclusion)
+                                    <p>
+                                        <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
+                                        <span style="display: table-cell;">{{$exclusion->name}}</span>
+                                    </p>
+                                @endforeach
                             </div>
                         </div>
                         <div class="package-included-location">
@@ -250,36 +158,18 @@
                             <div class="row">
                                 <div class="timeline">
                                     <div class="timeline__group">
+                                        @foreach($package->schedules as $schedule)
                                         <div class="timeline__box">
                                             <div class="timeline__date">
-                                                <span class="timeline__month">Day 1</span>
+                                                <span class="timeline__month">Day {{$schedule->day}}</span>
                                             </div>
                                             <div class="timeline__post">
                                                 <div class="timeline__content">
-                                                    <p>Attends the Philadelphia Museum School of Industrial Art. Studies design with Alexey Brodovitch, art director at Harper's Bazaar, and works as his assistant.</p>
+                                                    <p>{{$schedule->description}}</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="timeline__box">
-                                            <div class="timeline__date">
-                                                <span class="timeline__month">Day 2</span>
-                                            </div>
-                                            <div class="timeline__post">
-                                                <div class="timeline__content">
-                                                    <p>Started from University of Pennsylvania. This is an important stage of my career. Here I worked in the local magazine. The experience greatly affected me</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="timeline__box">
-                                            <div class="timeline__date">
-                                                <span class="timeline__month">Day 3</span>
-                                            </div>
-                                            <div class="timeline__post">
-                                                <div class="timeline__content">
-                                                    <p>Started from University of Pennsylvania. This is an important stage of my career. Here I worked in the local magazine. The experience greatly affected me</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -290,33 +180,44 @@
                     <div class="sidebar-area sidebar-area-4">
                         <div class="widget tour-list-widget">
                             <div class="widget-tour-list-meta">
-                                <div class="single-widget-search-input-title"><i class="fa fa-user"></i> Name</div>
-                                <div class="single-widget-search-input">
-                                    <input type="text" placeholder="Name">
-                                </div>
-                                <div class="single-widget-search-input-title"><i class="fa fa-envelope"></i> Email</div>
-                                <div class="single-widget-search-input">
-                                    <input type="text" placeholder="Email">
-                                </div>
-                                <div class="single-widget-search-input-title"><i class="fa fa-phone"></i> Phone</div>
-                                <div class="single-widget-search-input">
-                                    <input type="text" placeholder="Phone">
-                                </div>
-                                <div class="single-widget-search-input-title"><i class="fa fa-calendar-minus-o"></i> Date</div>
-                                <div class="single-widget-search-input">
-                                    <input type="text" class="departing-date custom-select" placeholder="Departing">
-                                </div>
-                                <div class="single-widget-search-input-title"><i class="fa fa-calendar-minus-o"></i> Date</div>
-                                <div class="single-widget-search-input">
-                                    <input type="text" class="returning-date custom-select" placeholder="Returning">
-                                </div>
-                                <div class="single-widget-search-input-title"><i class="fa fa-keyboard-o"></i> Message</div>
-                                <div class="single-widget-search-input">
-                                    <textarea placeholder="Type"></textarea>
-                                </div>
-                                <div class="text-lg-center text-left">
-                                    <a class="btn btn-yellow" href="#">Book Now <i class="fa fa-paper-plane"></i></a>
-                                </div>
+                                <form action="/booking" method="post">
+                                    {{csrf_field()}}
+                                    <div class="single-widget-search-input-title"><i class="fa fa-user"></i> Name <span style="color: red">*</span></div>
+                                    <div class="single-widget-search-input">
+                                        <input type="text" placeholder="Name" name="name" required>
+                                    </div>
+                                    <div class="single-widget-search-input-title"><i class="fa fa-envelope"></i> Email  <span style="color: red">*</span></div>
+                                    <div class="single-widget-search-input">
+                                        <input type="email" placeholder="Email" name="email" required>
+                                    </div>
+                                    <div class="single-widget-search-input-title"><i class="fa fa-phone"></i> Phone  <span style="color: red">*</span></div>
+                                    <div class="single-widget-search-input">
+                                        <input type="text" placeholder="Phone" name="phone" required>
+                                    </div>
+                                    <div class="single-widget-search-input-title">#Adults <span style="color: red">*</span></div>
+                                    <div class="single-widget-search-input">
+                                        <input type="number" placeholder="Adults" name="adults" required>
+                                    </div>
+                                    <div class="single-widget-search-input-title">#Children  <span style="color: red">*</span></div>
+                                    <div class="single-widget-search-input">
+                                        <input type="number" placeholder="Children" name="children" required>
+                                    </div>
+                                    <div class="single-widget-search-input-title">#Infants  <span style="color: red">*</span></div>
+                                    <div class="single-widget-search-input">
+                                        <input type="number" placeholder="Infants" name="infants" required>
+                                    </div>
+                                    <input type="hidden" name="package_id" value="{{$package->id}}">
+                                    <button class="text-lg-center text-left btn btn-yellow">
+                                       Book Now <i class="fa fa-paper-plane"></i>
+                                    </button>
+                                    <div class="row">
+                                        @foreach($errors->all() as $error)
+                                            <div class="col-md-12" style="color: red;">
+                                                *{{$error}}<br>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

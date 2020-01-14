@@ -60,3 +60,10 @@ Route::group(['prefix' => 'post'], function () {
         Route::delete('{id}', 'PostController@destroy');
     });
 });
+
+Route::group(['prefix' => 'contact-us', 'middleware' => 'auth:api'], function () {
+    Route::post('{id}', 'ContactUsController@update');
+    Route::get('{id}', 'ContactUsController@show');
+    Route::delete('{id}', 'ContactUsController@destroy');
+    Route::resource('', 'ContactUsController');
+});

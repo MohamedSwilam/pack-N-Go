@@ -17,8 +17,8 @@ Route::view('/', 'pages.home', [
     'packages' => \App\Package::where('home_page', 1)->limit(6)->get(),
     'latest_packages' => \App\Package::where('home_page', 0)->orderBy('created_at', 'desc')->limit(4)->get()
 ])->name('home');
-Route::view('/package', 'pages.packages_list')->name('package_list');
-Route::view('/package/{id}', 'pages.package_details')->name('package_details');
+Route::get('/package', 'Web\PackageController@index')->name('package_list');
+Route::get('/package/{id}', 'Web\PackageController@show')->name('package_details');
 
 Route::view('/blog', 'pages.blog', [
     'posts' => \App\Post::paginate(10)
@@ -31,4 +31,6 @@ Route::get('/dashboard', 'ApplicationController')->where('any', '.*');
 Route::get('/dashboard/{any}', 'ApplicationController')->where('any', '.*');
 
 Route::post('insurance', 'Web\InsuranceController@store');
-Route::view('submitted', 'pages.submitted');
+Route::post('booking', 'Web\BookingController@store');
+Route::post('contact-us', 'Web\ContactUsController@store');
+Route::view('submitted', 'pages.submitted')->name('submitted');

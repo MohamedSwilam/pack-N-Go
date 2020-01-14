@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BookingRequest extends FormRequest
+class ContactUsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,10 @@ class BookingRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|email',
             'name' => 'required',
+            'email' => 'required|email',
             'phone' => 'required',
-            'adults' => 'required',
-            'children' => 'required',
-            'infants' => 'required',
-            'package_id' => 'exists:packages,id',
+            'message' => 'required',
         ];
     }
 }

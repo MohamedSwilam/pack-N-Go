@@ -1,6 +1,6 @@
 @extends('layouts.website')
 
-@section('title') Insurance |   @endsection
+@section('title') Submit |   @endsection
 
 @section('content')
     <!-- breadcrumb area start -->
@@ -9,9 +9,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-inner">
-                        <h1 class="page-title">Insurance</h1>
+                        <h1 class="page-title">Submitted Successfully</h1>
                         <h1 class="page-title">
-                            Your request has been submitted!
+                            We will contact you soon, Thanks for Submitting
                         </h1>
                     </div>
                 </div>
