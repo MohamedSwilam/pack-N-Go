@@ -13,16 +13,11 @@
 
 //Route::get('/{any}', 'ApplicationController')->where('any', '.*');
 
-Route::view('/', 'pages.home', [
-    'packages' => \App\Package::where('home_page', 1)->limit(6)->get(),
-    'latest_packages' => \App\Package::where('home_page', 0)->orderBy('created_at', 'desc')->limit(4)->get()
-])->name('home');
+Route::get('/', 'Web\HomeController@index')->name('home');
 Route::get('/package', 'Web\PackageController@index')->name('package_list');
 Route::get('/package/{id}', 'Web\PackageController@show')->name('package_details');
 
-Route::view('/blog', 'pages.blog', [
-    'posts' => \App\Post::paginate(10)
-])->name('blog');
+Route::get('/blog', 'Web\BlogController@index')->name('blog');
 
 Route::view('/about', 'pages.about')->name('about');
 Route::view('/create-package', 'pages.create_package')->name('create_package');
