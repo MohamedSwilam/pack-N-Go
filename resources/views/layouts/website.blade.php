@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="{{ asset(mix('css/website/style.css'))}}">
         <!-- responsive css -->
         <link rel="stylesheet" href="{{ asset(mix('css/website/responsive.css'))}}">
+        <script src="{{ asset(mix('js/website/jquery-2.2.4.min.js')) }}"></script>
     </head>
     <body>
 
@@ -55,7 +56,6 @@
         </div>
 
         <!-- Additional plugin js -->
-        <script src="{{ asset(mix('js/website/jquery-2.2.4.min.js')) }}"></script>
         <script src="{{ asset(mix('js/website/popper.min.js')) }}"></script>
         <script src="{{ asset(mix('js/website/bootstrap.min.js')) }}"></script>
         <script src="{{ asset(mix('js/website/jquery.magnific-popup.js')) }}"></script>

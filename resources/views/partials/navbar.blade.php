@@ -55,7 +55,7 @@
         <div class="nav-right-content">
             <ul>
                 <li>
-                    <a class="btn btn-yellow" href="{{route('create_package')}}">Create Your Package <i class="fa fa-paper-plane"></i></a>
+                    <a class="btn btn-yellow" href="{{route('create_package')}}">Build Your Package <i class="fa fa-paper-plane"></i></a>
                 </li>
             </ul>
         </div>
