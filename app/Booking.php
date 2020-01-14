@@ -9,6 +9,8 @@ class Booking extends Model
 {
     use PackageItem;
 
+    protected $with = ['package'];
+
     protected $fillable = ['name', 'email', 'phone', 'adults', 'children', 'infants'];
 
     public function customPackage()

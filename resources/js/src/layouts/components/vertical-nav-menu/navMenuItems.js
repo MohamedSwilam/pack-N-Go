@@ -1,7 +1,7 @@
 
 export default [
   {
-    url: "/",
+    url: "/dashboard",
     name: "Home",
     slug: "home",
     icon: "HomeIcon",
@@ -43,6 +43,14 @@ export default [
         icon: "ClipboardIcon",
         i18n: "insurance",
         permission: 'browse-insurance'
+    },
+    {
+        url: "/dashboard/contact-us",
+        name: "Contact Us",
+        slug: "contactUs",
+        icon: "ClipboardIcon",
+        i18n: "contactUs",
+        permission: 'browse-contact-us'
     },
     {
         name: "Settings",

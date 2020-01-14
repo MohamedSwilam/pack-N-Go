@@ -1,10 +1,10 @@
 
-import client from "../../http/requests/client/index"
+import contactUs from "../../http/requests/contactUs/index"
 
 export default {
     getData({ commit, dispatch }, payload) {
         return new Promise((resolve, reject) => {
-            client.getAll(payload)
+            contactUs.getAll(payload)
                 .then(response => {
                     resolve(response)
                 })
@@ -16,7 +16,7 @@ export default {
 
     view({ commit, dispatch }, id) {
         return new Promise((resolve, reject) => {
-            client.view(id)
+            contactUs.view(id)
                 .then(response => {
                     resolve(response)
                 })
@@ -28,7 +28,7 @@ export default {
 
     create({ commit, dispatch }, payload) {
         return new Promise((resolve, reject) => {
-            client.create(payload)
+            contactUs.create(payload)
                 .then(response => {
                     resolve(response)
                 })
@@ -40,7 +40,7 @@ export default {
 
     update({ commit, dispatch }, payload) {
         return new Promise((resolve, reject) => {
-            client.update(payload.id, payload.data)
+            contactUs.update(payload.id, payload.data)
                 .then(response => {
                     resolve(response)
                 })
@@ -52,7 +52,7 @@ export default {
 
     delete({ commit, dispatch }, id) {
         return new Promise((resolve, reject) => {
-            client.delete(id)
+            contactUs.delete(id)
                 .then(response => {
                     resolve(response)
                 })

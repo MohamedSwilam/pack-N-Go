@@ -189,6 +189,20 @@ const router = new Router({
                         pageTitle_i18n: 'Client',
                         permission: 'view-client'
                     }
+                },{
+                    path: '/dashboard/contact-us',
+                    name: 'contact-us',
+                    component: () => import('./views/contactUs/browse.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard', i18n: 'Home' },
+                            { title: 'Contact Us', active: true, i18n: 'Contact Us' },
+                        ],
+                        pageTitle: 'Contact Us',
+                        pageTitle_i18n: 'Contact Us',
+                        permission: 'browse-contact-us'
+                    }
                 },
                 {
                     path: '/dashboard/settings/role',
