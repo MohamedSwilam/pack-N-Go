@@ -345,6 +345,7 @@
                 </form>
             </div>
         </div>
+        <br>
     </div>
     <!-- newslatter area End -->
 @endsection

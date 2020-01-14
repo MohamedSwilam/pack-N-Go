@@ -35,108 +35,302 @@
                                 <div class="col-lg-12 col-md-12">
                                     <label class="single-input-wrap">
                                         <span class="single-input-title"><i class="fa fa-user"></i> Name</span>
-                                        <input type="text">
+                                        <input id="name" type="text">
                                     </label>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <label class="single-input-wrap">
                                         <span class="single-input-title"><i class="fa fa-envelope"></i> Email</span>
-                                        <input type="text">
+                                        <input id="email" type="text">
                                     </label>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <label class="single-input-wrap">
                                         <span class="single-input-title"><i class="fa fa-phone"></i> Telephone</span>
-                                        <input type="text">
+                                        <input id="phone" type="text">
                                     </label>
                                 </div>
                             </div>
                             <hr>
                             <br>
-
                             <h3>Preferences</h3>
                             <br>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="single-widget-search-input-title"><i class="fa fa-calendar-minus-o"></i> Travel Date</div>
                                     <div class="single-widget-search-input">
-                                        <input type="text" class="returning-date custom-select" placeholder="Travel Date">
+                                        <input id="travel_date" type="text" class="returning-date custom-select" placeholder="Travel Date">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <label class="single-input-wrap">
                                         <span class="single-input-title"><i class="fa fa-adjust"></i> Flexibility</span>
-                                        <input type="number">
+                                        <input id="flexibility" type="number">
                                     </label>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
                                     <label class="single-input-wrap">
                                         <span class="single-input-title"><i class="fa fa-male"></i> Adults (+12 Years)</span>
-                                        <input type="number">
+                                        <input id="adults" type="number">
                                     </label>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
                                     <label class="single-input-wrap">
                                         <span class="single-input-title"><i class="fa fa-child"></i> Children (2-12 Years)</span>
-                                        <input type="number">
+                                        <input id="children" type="number">
                                     </label>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
                                     <label class="single-input-wrap">
                                         <span class="single-input-title"><i class="fa fa-child"></i> Infants (0-2 Years)</span>
-                                        <input type="number">
+                                        <input id="infants" type="number">
                                     </label>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <label class="single-input-wrap">
                                         <span class="single-input-title"><i class="fa fa-money"></i> Budget</span>
-                                        <input type="text">
+                                        <input id="budget" type="text">
                                     </label>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <label class="single-input-wrap style-two">
                                         <span class="single-input-title"><i class="fa fa-bed"></i> Room Type</span>
-                                        <select class="nice-select custom-select">
-                                            <option>Single</option>
-                                            <option>Double</option>
-                                            <option>Triple</option>
-                                            <option>Quadruple</option>
+                                        <select id="room_type" class="nice-select custom-select">
+                                            <option value="Single">Single</option>
+                                            <option value="Double">Double</option>
+                                            <option value="Triple">Triple</option>
+                                            <option value="Quadruple">Quadruple</option>
                                         </select>
                                     </label>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <label class="single-input-wrap style-two">
                                         <span class="single-input-title"><i class="fa fa-star"></i> Hotel Rating</span>
-                                        <select class="nice-select custom-select">
-                                            <option>Any</option>
-                                            <option>1 Star</option>
-                                            <option>2 Star</option>
-                                            <option>3 Star</option>
-                                            <option>4 Star</option>
-                                            <option>5 Star</option>
+                                        <select id="hotel_rating" class="nice-select custom-select">
+                                            <option value="Any">Any</option>
+                                            <option value="1">1 Star</option>
+                                            <option value="2">2 Star</option>
+                                            <option value="3">3 Star</option>
+                                            <option value="4">4 Star</option>
+                                            <option value="5">5 Star</option>
                                         </select>
                                     </label>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <label class="single-input-wrap style-two">
                                         <span class="single-input-title"><i class="fa fa-map-marker"></i> Hotel Location</span>
-                                        <select class="nice-select custom-select">
-                                            <option>City Center</option>
-                                            <option>Beach</option>
-                                            <option>Airport</option>
+                                        <select id="hotel_location" class="nice-select custom-select">
+                                            <option value="City Center">City Center</option>
+                                            <option value="Beach">Beach</option>
+                                            <option value="Airport">Airport</option>
                                         </select>
                                     </label>
                                 </div>
 
-                                <div class="col-12">
-                                    <a class="btn btn-yellow" href="#">Build Package</a>
+                            </div>
+
+                            <hr>
+                            <br>
+                            <h3>Destinations</h3>
+                            <br>
+
+
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <button id="add-country" class="btn btn-success"><i class="fa fa-plus"></i> Add Country</button>
+                                <br>
+                                <br>
+                                </div>
+                                {{--Countries--}}
+                                <div id="countries" class="col-lg-12 col-md-12">
+                                    {{--Country 1--}}
+                                    <div id="country-1" class="country-section">
+                                        <div class="row">
+                                            {{--Country Input--}}
+                                            <div class="col-lg-6 col-md-6">
+                                                <label class="single-input-wrap">
+                                                    <span class="single-input-title"><i class="fa fa-map-marker"></i> Country</span>
+                                                    <input id="country" type="text">
+                                                </label>
+                                            </div>
+                                            {{--Add City Button--}}
+                                            <div class="col-lg-3 col-md-3" style="padding-top: 28px;">
+                                                <button onclick="event.preventDefault();addCity('#cities-1');" style="width: 100%;" class="btn btn-success"><i class="fa fa-plus"></i> Add City</button>
+                                            </div>
+                                            {{--Remove Country Button--}}
+                                            <div class="col-lg-3 col-md-3" style="padding-top: 28px;">
+                                                <button onclick="event.preventDefault();removeHTML('#country-1')" style="width: 100%;" class="btn btn-danger"><i class="fa fa-trash"></i> Remove Country</button>
+                                            </div>
+                                        </div>
+                                        {{--Cities--}}
+                                        <div id="cities-1" class="row" style="padding-left: 45px;padding-right: 45px;">
+                                            <div id="cities-1-first" class="col-lg-12 col-md-12 city-section">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6">
+                                                        <label class="single-input-wrap">
+                                                            <span class="single-input-title"><i class="fa fa-map-marker"></i> City</span>
+                                                            <input id="city" type="text">
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3">
+                                                        <label class="single-input-wrap">
+                                                            <span class="single-input-title"><i class="fa fa-star"></i> Nights</span>
+                                                            <input id="nights" type="number">
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3" style="margin-top: 28px;">
+                                                        <button onclick="event.preventDefault();removeHTML('#cities-1-first')" style="width: 100%;" class="btn btn-danger"><i class="fa fa-trash"></i> Remove City</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <br>
+                                    </div>
                                 </div>
                             </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-12" style="text-align: center;">
+                                    <a class="btn btn-yellow" onclick="event.preventDefault();buildPackage()"><i class="fa fa-save"></i> Build Package</a>
+                                </div>
+                            </div>
+
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <br>
+    <br>
     <!-- blog-comment-area start -->
+    <script>
+        let no_of_countries = 1;
+
+        $("#add-country").on("click", function (e) {
+            e.preventDefault();
+            no_of_countries++;
+            $("#countries").append(
+                `<div id="country-${no_of_countries}" class="country-section">
+                    <div class="row">
+                        {{--Country Input--}}
+                        <div class="col-lg-6 col-md-6">
+                            <label class="single-input-wrap">
+                                <span class="single-input-title"><i class="fa fa-map-marker"></i> Country</span>
+                                <input id="country" type="text">
+                            </label>
+                        </div>
+                        {{--Add City Button--}}
+                        <div class="col-lg-3 col-md-3" style="padding-top: 28px;">
+                            <button onclick="event.preventDefault();addCity('#cities-${no_of_countries}')" style="width: 100%;" class="btn btn-success add-city"><i class="fa fa-plus"></i> Add City</button>
+                        </div>
+                        {{--Remove Country Button--}}
+                        <div class="col-lg-3 col-md-3" style="padding-top: 28px;">
+                            <button onclick="event.preventDefault();removeHTML('#country-${no_of_countries}')" style="width: 100%;" class="btn btn-danger"><i class="fa fa-trash"></i> Remove Country</button>
+                        </div>
+                    </div>
+                    {{--Cities--}}
+                    <div id="cities-${no_of_countries}" class="row" style="padding-left: 45px;padding-right: 45px;">
+                        <div id="city-${no_of_countries}-first" class="col-lg-12 col-md-12 city-section">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <label class="single-input-wrap">
+                                        <span class="single-input-title"><i class="fa fa-map-marker"></i> City</span>
+                                        <input id="city" type="text">
+                                    </label>
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <label class="single-input-wrap">
+                                        <span class="single-input-title"><i class="fa fa-star"></i> Nights</span>
+                                        <input id="nights" type="number">
+                                    </label>
+                                </div>
+                                <div class="col-lg-3 col-md-3" style="margin-top: 28px;">
+                                    <button onclick="event.preventDefault();removeHTML('#city-${no_of_countries}-first')" style="width: 100%;" class="btn btn-danger"><i class="fa fa-trash"></i> Remove City</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </div>`);
+        });
+
+
+        function addCity(selector) {
+            let newID = Math.floor((Math.random() * 10000));
+            $(selector).append(
+            `<div id="city-${newID}" class="col-lg-12 col-md-12 city-section">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <label class="single-input-wrap">
+                            <span class="single-input-title"><i class="fa fa-map-marker"></i> City</span>
+                            <input id="city" type="text">
+                        </label>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <label class="single-input-wrap">
+                            <span class="single-input-title"><i class="fa fa-star"></i> Nights</span>
+                            <input id="nights" type="number">
+                        </label>
+                    </div>
+                    <div class="col-lg-3 col-md-3" style="margin-top: 28px;">
+                        <button onclick="event.preventDefault();removeHTML('#city-${newID}')" style="width: 100%;" class="btn btn-danger"><i class="fa fa-trash"></i> Remove City</button>
+                    </div>
+                </div>
+            </div>`);
+        }
+
+        function removeHTML(selector) {
+            $(selector).remove();
+        }
+
+        function buildPackage() {
+            let travelDate = $("#travel_date").val().split('/');
+            let form = {
+                travel_date: travelDate[2]+'-'+travelDate[1]+'-'+travelDate[0],
+                flexibility: $("#flexibility").val(),
+                budget: $("#budget").val(),
+                room_type: $("#room_type").val(),
+                hotel_rating: $("#hotel_rating").val(),
+                hotel_location: $("#hotel_location").val(),
+                booking: {
+                    name: $("#name").val(),
+                    email: $("#email").val(),
+                    phone: $("#phone").val(),
+                    adults: $("#adults").val(),
+                    children: $("#children").val(),
+                    infants: $("#infants").val()
+                },
+                destinations: []
+            };
+            $('.country-section').each(function(index,element){
+                $(element).find('.city-section').each(function(index2,element2){
+                    form.destinations.push({
+                       country: $(element).find('#country').val(),
+                       city: $(element2).find('#city').val(),
+                       nights: $(element2).find('#nights').val()
+                    });
+                });
+            });
+            $.ajax({
+                url: '/api/custom-package',
+                method: 'POST',
+                data: JSON.stringify(form),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function (data, textStatus, xhr) {
+                    if(xhr.status === 200) {
+                        window.location.href = "/submitted";
+                    }
+                }
+            })
+        }
+
+    </script>
 @endsection
