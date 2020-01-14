@@ -12,19 +12,13 @@
             <div class="col-lg-4 col-md-6">
                 <div class="footer-widget widget">
                     <div class="about_us_widget">
-                        <a href="index.html" class="footer-logo">
-                            <img src="/images/website/logo.png" alt="footer logo">
+                        <a style="font-weight: bold;color: white;font-size: 22px;" href="http://127.0.0.1:8000" class="main-logo">
+                            Pack'N Go
                         </a>
-                        <p>We believe brand interaction is key in commu- nication. Real innovations and a positive customer experience are the heart of successful communication.</p>
+                        <p>We are young & sincere travel consultants, who are passionate about trips, possess profound knowledge & will gladly help you with tailored travel packages.</p>
                         <ul class="social-icon">
                             <li>
-                                <a class="facebook" href="https://www.facebook.com/codingeek.net/" target="_blank"><i class="fa fa-facebook  "></i></a>
-                            </li>
-                            <li>
-                                <a class="twitter" href="https://twitter.com/codingeeknet" target="_blank"><i class="fa fa-twitter  "></i></a>
-                            </li>
-                            <li>
-                                <a class="pinterest" href="https://www.instagram.com/codingeeknet/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                <a class="facebook" href="https://www.facebook.com/packndgo/" target="_blank"><i class="fa fa-facebook  "></i></a>
                             </li>
                         </ul>
                     </div>
@@ -36,17 +30,15 @@
                         <h4 class="widget-title">Contact us</h4>
                         <p>
                             <i class="fa fa-map-marker"></i>
-                            <span>Manama Tower, Badda Link Road, Badda Dhaka, Bangladesh</span>
+                            <span>Villa 224, Northern 90th Rd, 5th district, Cairo, Egypt</span>
                         </p>
                         <p class="location">
                             <i class="fa fa-envelope-o"></i>
-                            <span>travelpoint@gmail.com</span>
+                            <span>info@packandgo-me.com</span>
                         </p>
                         <p class="telephone">
                             <i class="fa fa-phone base-color"></i>
-                            <span>
-                                    +088 012121240
-                                </span>
+                            <span>+01011211886</span>
                         </p>
                     </div>
                 </div>
@@ -55,25 +47,11 @@
                 <div class="footer-widget widget">
                     <h4 class="widget-title">Quick Link</h4>
                     <ul class="widget_nav_menu">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Destination</a></li>
-                        <li><a href="#">Tours</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-widget widget">
-                    <h4 class="widget-title">Instagram Gallery</h4>
-                    <ul class="widget-instagram-feed">
-                        <li><a href="#"><img src="/images/website/instagram/1.png" alt="img"></a></li>
-                        <li><a href="#"><img src="/images/website/instagram/2.png" alt="img"></a></li>
-                        <li><a href="#"><img src="/images/website/instagram/3.png" alt="img"></a></li>
-                        <li><a href="#"><img src="/images/website/instagram/4.png" alt="img"></a></li>
-                        <li><a href="#"><img src="/images/website/instagram/5.png" alt="img"></a></li>
-                        <li><a href="#"><img src="/images/website/instagram/6.png" alt="img"></a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/package">Packages</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/contact-us">Contact</a></li>
                     </ul>
                 </div>
             </div>

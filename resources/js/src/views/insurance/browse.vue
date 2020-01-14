@@ -7,7 +7,7 @@
                     <vs-th>Image</vs-th>
                     <vs-th>Name</vs-th>
                     <vs-th>Telephone</vs-th>
-                    <vs-th>Passport #</vs-th>
+                    <vs-th>Address</vs-th>
                     <vs-th>Created At</vs-th>
                     <vs-th>Action</vs-th>
                 </template>
@@ -18,7 +18,7 @@
                         </vs-td>
 
                         <vs-td :data="insurance.image">
-                            <img v-if="insurance.image" :src="`${insurance.image.url}`" width="50px" height="50px">
+                            <a v-if="insurance.image" :href="`${insurance.image.url}`" target="_blank"><img :src="`${insurance.image.url}`" width="50px" height="50px"></a>
                             <b v-else>No Image</b>
                         </vs-td>
 
@@ -30,13 +30,45 @@
                             {{ insurance.phone}}
                         </vs-td>
 
-                        <vs-td :data="insurance.passport_number">
-                            {{ insurance.passport_number}}
+                        <vs-td :data="insurance.address">
+                            {{ insurance.address}}
                         </vs-td>
 
                         <vs-td :data="insurance.created_at">
                             {{ insurance.created_at}}
                         </vs-td>
+
+                        <template class="expand-user" slot="expand">
+                            <div class="con-expand-users w-full">
+                                <vs-row v-if="!insurance.image">
+                                    <vs-col vs-xs="6" vs-sm="4" vs-lg="3" >
+                                        <label class="font-bold">Passport Name: </label>
+                                        {{insurance.passport_name}}
+                                    </vs-col>
+                                    <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                        <label class="font-bold">Birth Date: </label>
+                                        {{insurance.birth_date}}
+                                    </vs-col>
+                                    <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                        <label class="font-bold">Expire Date: </label>
+                                        {{insurance.expire_date}}
+                                    </vs-col>
+                                    <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                        <label class="font-bold">Nationality: </label>
+                                        {{insurance.nationality}}
+                                    </vs-col>
+                                    <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                        <label class="font-bold">Gender: </label>
+                                        {{insurance.gender}}
+                                    </vs-col>
+                                    <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                        <label class="font-bold">Passport Number: </label>
+                                        {{insurance.passport_number}}
+                                    </vs-col>
+                                </vs-row>
+
+                            </div>
+                        </template>
 
                         <vs-td>
                             <vs-row>

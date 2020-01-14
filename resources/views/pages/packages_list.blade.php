@@ -32,7 +32,7 @@
                             @if(sizeof($package->medias) > 0)
                                 <div class="blur-thumb" style="background-image:url({{$package->medias[0]->url}});"></div>
                             @else
-                                <div class="blur-thumb" style="background-image:url(/images/website/destination-list/16.png);"></div>
+                                <div class="blur-thumb" style="background-image:url(/images/website/destination-list/5.png);"></div>
                             @endif
                             <div class="details">
                                 <div class="tp-review-meta">

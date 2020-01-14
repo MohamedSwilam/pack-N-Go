@@ -26,7 +26,7 @@
                         </vs-td>
 
                         <vs-td :data="client.telephone">
-                            {{ client.telephone}}
+                            {{ client.phone}}
                         </vs-td>
 
                         <vs-td :data="client.adults">
@@ -46,6 +46,90 @@
                                 </div>
                             </vs-row>
                         </vs-td>
+                        <template class="expand-user" slot="expand">
+                            <div class="con-expand-users w-full">
+                                <vs-row v-if="client.package">
+                                    <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                        <label class="font-bold">Title: </label>
+                                        {{client.package.title}}
+                                    </vs-col>
+                                    <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                        <label class="font-bold">Rate: </label>
+                                        {{client.package.price}} {{client.package.currency}}
+                                    </vs-col>
+                                    <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                        <label class="font-bold">Period: </label>
+                                        {{client.package.days}} Days / {{client.package.nights}} Nights
+                                    </vs-col>
+                                    <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                        <label class="font-bold">Rate: </label>
+                                        {{client.package.rate}} Stars
+                                    </vs-col>
+                                    <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                        <label class="font-bold">Season: </label>
+                                        {{client.package.season}}
+                                    </vs-col>
+                                    <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                        <label class="font-bold">Date: </label>
+                                        {{client.package.date}}
+                                    </vs-col>
+                                </vs-row>
+                                <template v-if="client.custom_package">
+                                    <h2>Custom Package</h2>
+                                    <vs-row>
+                                        <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                            <label class="font-bold">Date: </label>
+                                            {{client.custom_package.travel_date}}
+                                        </vs-col>
+                                        <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                            <label class="font-bold">Flexibility: </label>
+                                            {{client.custom_package.flexibility}} Days
+                                        </vs-col>
+                                        <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                            <label class="font-bold">Budget: </label>
+                                            {{client.custom_package.budget}}
+                                        </vs-col>
+                                        <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                            <label class="font-bold">Flexibility: </label>
+                                            {{client.custom_package.flexibility}}
+                                        </vs-col>
+                                        <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                            <label class="font-bold">Room Type: </label>
+                                            {{client.custom_package.room_type}}
+                                        </vs-col>
+                                        <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                            <label class="font-bold">Hotel Rating: </label>
+                                            {{client.custom_package.hotel_rating}} Stars
+                                        </vs-col>
+                                        <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                            <label class="font-bold">Hotel Location: </label>
+                                            {{client.custom_package.hotel_location}}
+                                        </vs-col>
+                                        <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                            <label class="font-bold">Notes: </label>
+                                            {{client.custom_package.notes}}
+                                        </vs-col>
+                                    </vs-row>
+                                    <h3>Destinations: </h3>
+                                    <template v-for="dest in client.custom_package.destinations">
+                                        <vs-row >
+                                            <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                                <label class="font-bold">Country: </label>
+                                                {{dest.country}}
+                                            </vs-col>
+                                            <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                                <label class="font-bold">City: </label>
+                                                {{dest.city}}
+                                            </vs-col>
+                                            <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                                <label class="font-bold">Nights: </label>
+                                                {{dest.nights}} Night
+                                            </vs-col>
+                                        </vs-row>
+                                    </template>
+                                </template>
+                            </div>
+                        </template>
                     </vs-tr>
                 </template>
             </vs-table>
@@ -59,7 +143,7 @@
     export default {
         name: "Client",
         mounted() {
-            this.getClients(Date.now());
+            this.getClients();
         },
         data: function (){
             return {
@@ -71,15 +155,12 @@
         },
         methods: {
             getClients(){
-                this.$vs.loading({container: this.$refs.browse, scale: 0.5});
                 this.$store.dispatch('client/getData', '')
                     .then(response => {
-                        this.$vs.loading.close(this.$refs.browse);
                         this.clients = response.data.data.data;
                     })
                     .catch(error => {
                         console.log(error);
-                        this.$vs.loading.close(this.$refs.browse);
                         this.$vs.notify({
                             title: 'Error',
                             text: error.response.data.error,

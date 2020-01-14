@@ -2,22 +2,22 @@ import axios from "../../axios/index.js"
 export default {
     getAll(filters) {
         //filters=?paginate=5&sortAsc=id
-        return axios.get(`client${filters}`)
+        return axios.get(`booking${filters}`)
     },
 
     view(id) {
-        return axios.get(`client/${id}`)
+        return axios.get(`booking/${id}`)
     },
 
     create(data) {
-        return axios.post(`client`, data)
+        return axios.post(`booking`, data)
     },
 
     update(id, data) {
-        return axios.post(`client/${id}`, data)
+        return axios.post(`booking/${id}`, data)
     },
 
     delete(id) {
-        return axios.delete(`client/${id}`)
+        return axios.delete(`booking/${id}`)
     }
 }
