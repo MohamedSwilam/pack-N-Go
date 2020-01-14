@@ -108,11 +108,11 @@
                                         <span class="single-input-title"><i class="fa fa-star"></i> Hotel Rating</span>
                                         <select id="hotel_rating" class="nice-select custom-select">
                                             <option value="Any">Any</option>
-                                            <option value="1 Star">1 Star</option>
-                                            <option value="2 Star">2 Star</option>
-                                            <option value="3 Star">3 Star</option>
-                                            <option value="4 Star">4 Star</option>
-                                            <option value="5 Star">5 Star</option>
+                                            <option value="1">1 Star</option>
+                                            <option value="2">2 Star</option>
+                                            <option value="3">3 Star</option>
+                                            <option value="4">4 Star</option>
+                                            <option value="5">5 Star</option>
                                         </select>
                                     </label>
                                 </div>
@@ -287,8 +287,9 @@
         }
 
         function buildPackage() {
+            let travelDate = $("#travel_date").val().split('/');
             let form = {
-                travel_date: $("#travel_date").val(),
+                travel_date: travelDate[2]+'-'+travelDate[1]+'-'+travelDate[0],
                 flexibility: $("#flexibility").val(),
                 budget: $("#budget").val(),
                 room_type: $("#room_type").val(),
@@ -302,20 +303,33 @@
                     children: $("#children").val(),
                     infants: $("#infants").val()
                 },
-                destination: []
+                destinations: []
             };
             $('.country-section').each(function(index,element){
-                    // console.log('country-'+index);
                 $(element).find('.city-section').each(function(index2,element2){
-                    // console.log('city-'+index2);
-                    form.destination.push({
+                    form.destinations.push({
                        country: $(element).find('#country').val(),
                        city: $(element2).find('#city').val(),
                        nights: $(element2).find('#nights').val()
                     });
                 });
             });
-            console.log(form);
+            $.ajax({
+                url: '/api/custom-package',
+                method: 'POST',
+                data: JSON.stringify(form),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function (data, textStatus, xhr) {
+                    if(xhr.status === 200) {
+                        window.location.href = "/submitted";
+                    }
+                }
+            })
         }
 
     </script>

@@ -62,19 +62,19 @@ class CustomPackageController extends Controller
 
         $booking->customPackage()->save($custom_package);
 
-//        foreach ($request->validated()['destinations'] as $destination){
-//            $destination = Destination::create($destination);
-//            $custom_package->destinations()->save($destination);
-//        }
-
-        foreach (json_decode($request->validated()['destinations']) as $destination){
-            $destination = Destination::create([
-                'city' => $destination->city,
-                'nights' => $destination->nights,
-                'country' => $destination->country,
-            ]);
-            $custom_package->destination()->save($destination);
+        foreach ($request->validated()['destinations'] as $destination){
+            $destination = Destination::create($destination);
+            $custom_package->destinations()->save($destination);
         }
+
+//        foreach (json_decode($request->validated()['destinations']) as $destination){
+//            $destination = Destination::create([
+//                'city' => $destination->city,
+//                'nights' => $destination->nights,
+//                'country' => $destination->country,
+//            ]);
+//            $custom_package->destination()->save($destination);
+//        }
 
         return $this->respond(
             'Custom Package Created Successfully',
