@@ -35,38 +35,46 @@
             <div class="row">
                 <div class="col-xl-5 offset-xl-1 col-lg-6">
                     <div class="thumb">
-                        <img src="/images/website/others/11.png" alt="img">
+                        <img src="/images/website/others/11.jpg" alt="img">
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-6">
-                    <form class="tp-form-wrap">
+                    <form class="tp-form-wrap" action="/contact-us" method="post">
+                        {{csrf_field()}}
                         <div class="row">
                             <div class="col-md-6">
                                 <label class="single-input-wrap style-two">
-                                    <span class="single-input-title">Name</span>
-                                    <input type="text">
+                                    <span class="single-input-title">Name <span style="color: red">*</span></span>
+                                    <input type="text" name="name" placeholder="Name" required>
                                 </label>
                             </div>
                             <div class="col-md-6">
                                 <label class="single-input-wrap style-two">
-                                    <span class="single-input-title">Number</span>
-                                    <input type="text">
+                                    <span class="single-input-title">Phone <span style="color: red">*</span></span>
+                                    <input type="text" name="phone" placeholder="Phone" required>
                                 </label>
                             </div>
                             <div class="col-lg-12">
                                 <label class="single-input-wrap style-two">
-                                    <span class="single-input-title">Email</span>
-                                    <input type="text">
+                                    <span class="single-input-title">Email <span style="color: red">*</span></span>
+                                    <input type="email" name="email" placeholder="Email" required>
                                 </label>
                             </div>
                             <div class="col-lg-12">
                                 <label class="single-input-wrap style-two">
-                                    <span class="single-input-title">Message</span>
-                                    <textarea></textarea>
+                                    <span class="single-input-title">Message <span style="color: red">*</span></span>
+                                    <textarea name="message" placeholder="Message" required></textarea>
                                 </label>
                             </div>
-                            <div class="col-12">
-                                <a class="btn btn-yellow" href="#">Send Message</a>
+                            <button class="col-12 btn btn-yellow">
+                                Send Message
+                            </button>
+                            <div class="row">
+                                @foreach($errors->all() as $error)
+                                    <div class="col-md-12" style="color: red;">
+                                        *{{$error}}<br>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </form>

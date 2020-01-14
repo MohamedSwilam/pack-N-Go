@@ -258,20 +258,20 @@
                         <h3 class="col-md-12">Personal Information</h3>
                         <div class="col-md-6">
                             <label class="single-input-wrap style-two">
-                                <span class="single-input-title">Name</span>
-                                <input type="text" name="name">
+                                <span class="single-input-title">Name <span style="color: red">*</span></span>
+                                <input type="text" name="name" required>
                             </label>
                         </div>
                         <div class="col-md-6">
                             <label class="single-input-wrap style-two">
-                                <span class="single-input-title">Address</span>
-                                <input type="text" name="address">
+                                <span class="single-input-title">Address <span style="color: red">*</span></span>
+                                <input type="text" name="address" required>
                             </label>
                         </div>
                         <div class="col-md-6">
                             <label class="single-input-wrap style-two">
-                                <span class="single-input-title">Phone</span>
-                                <input type="text" name="phone">
+                                <span class="single-input-title">Phone <span style="color: red">*</span></span>
+                                <input type="text" name="phone" required>
                             </label>
                         </div>
                     </div>
@@ -334,11 +334,13 @@
                         <div class="col-12 justify-content-center">
                             <input class="btn btn-yellow mt-3 text-center" type="submit" value="Submit">
                         </div>
-                        @foreach($errors->all() as $error)
-                            <div style="color: red">
-                                *{{$error}}<br>
-                            </div>
-                        @endforeach
+                        <div class="row">
+                            @foreach($errors->all() as $error)
+                                <div class="col-md-12" style="color: red;">
+                                    *{{$error}}<br>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </form>
             </div>

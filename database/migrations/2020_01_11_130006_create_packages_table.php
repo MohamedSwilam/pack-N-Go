@@ -16,7 +16,7 @@ class CreatePackagesTable extends Migration
         Schema::create('packages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title')->nullable();
-            $table->string('description')->nullable();
+            $table->string('description', 5000)->nullable();
             $table->double('price')->nullable();
             $table->string('currency')->nullable();
             $table->string('season')->nullable();
