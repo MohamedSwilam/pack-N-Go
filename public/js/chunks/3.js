@@ -57,6 +57,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "browse",
   mounted: function mounted() {
@@ -244,13 +255,26 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("vs-td", { attrs: { data: blog.image.url } }, [
-                            _c("img", {
-                              attrs: {
-                                src: "" + blog.image.url,
-                                width: "50px",
-                                height: "50px"
-                              }
-                            })
+                            blog.image
+                              ? _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: "" + blog.image.url,
+                                      target: "_blank"
+                                    }
+                                  },
+                                  [
+                                    _c("img", {
+                                      attrs: {
+                                        src: "" + blog.image.url,
+                                        width: "50px",
+                                        height: "50px"
+                                      }
+                                    })
+                                  ]
+                                )
+                              : _vm._e()
                           ]),
                           _vm._v(" "),
                           _c("vs-td", { attrs: { data: blog.title } }, [
@@ -268,6 +292,38 @@ var render = function() {
                                 "\n                    "
                             )
                           ]),
+                          _vm._v(" "),
+                          _c(
+                            "template",
+                            { staticClass: "expand-user", slot: "expand" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "con-expand-users w-full" },
+                                [
+                                  _c(
+                                    "vs-row",
+                                    [
+                                      _c("vs-col", [
+                                        _c(
+                                          "label",
+                                          { staticClass: "font-bold" },
+                                          [_vm._v("Description: ")]
+                                        ),
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(blog.description) +
+                                            "\n                                "
+                                        )
+                                      ])
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ]
+                          ),
                           _vm._v(" "),
                           _c(
                             "vs-td",
@@ -311,7 +367,7 @@ var render = function() {
                             1
                           )
                         ],
-                        1
+                        2
                       )
                     })
                   }

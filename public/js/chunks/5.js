@@ -68,12 +68,96 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Client",
   mounted: function mounted() {
-    this.getClients(Date.now());
+    this.getClients();
   },
   data: function data() {
     return {
@@ -87,18 +171,10 @@ __webpack_require__.r(__webpack_exports__);
     getClients: function getClients() {
       var _this = this;
 
-      this.$vs.loading({
-        container: this.$refs.browse,
-        scale: 0.5
-      });
       this.$store.dispatch('client/getData', '').then(function (response) {
-        _this.$vs.loading.close(_this.$refs.browse);
-
         _this.clients = response.data.data.data;
       }).catch(function (error) {
         console.log(error);
-
-        _this.$vs.loading.close(_this.$refs.browse);
 
         _this.$vs.notify({
           title: 'Error',
@@ -290,7 +366,7 @@ var render = function() {
                                   [
                                     _vm._v(
                                       "\n                        " +
-                                        _vm._s(client.telephone) +
+                                        _vm._s(client.phone) +
                                         "\n                    "
                                     )
                                   ]
@@ -364,9 +440,586 @@ var render = function() {
                                     ])
                                   ],
                                   1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "template",
+                                  {
+                                    staticClass: "expand-user",
+                                    slot: "expand"
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "con-expand-users w-full"
+                                      },
+                                      [
+                                        client.package
+                                          ? _c(
+                                              "vs-row",
+                                              [
+                                                _c(
+                                                  "vs-col",
+                                                  {
+                                                    attrs: {
+                                                      "vs-xs": "6",
+                                                      "vs-sm": "4",
+                                                      "vs-lg": "3"
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "label",
+                                                      {
+                                                        staticClass: "font-bold"
+                                                      },
+                                                      [_vm._v("Title: ")]
+                                                    ),
+                                                    _vm._v(
+                                                      "\n                                    " +
+                                                        _vm._s(
+                                                          client.package.title
+                                                        ) +
+                                                        "\n                                "
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "vs-col",
+                                                  {
+                                                    attrs: {
+                                                      "vs-xs": "6",
+                                                      "vs-sm": "4",
+                                                      "vs-lg": "3"
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "label",
+                                                      {
+                                                        staticClass: "font-bold"
+                                                      },
+                                                      [_vm._v("Rate: ")]
+                                                    ),
+                                                    _vm._v(
+                                                      "\n                                    " +
+                                                        _vm._s(
+                                                          client.package.price
+                                                        ) +
+                                                        " " +
+                                                        _vm._s(
+                                                          client.package
+                                                            .currency
+                                                        ) +
+                                                        "\n                                "
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "vs-col",
+                                                  {
+                                                    attrs: {
+                                                      "vs-xs": "6",
+                                                      "vs-sm": "4",
+                                                      "vs-lg": "3"
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "label",
+                                                      {
+                                                        staticClass: "font-bold"
+                                                      },
+                                                      [_vm._v("Period: ")]
+                                                    ),
+                                                    _vm._v(
+                                                      "\n                                    " +
+                                                        _vm._s(
+                                                          client.package.days
+                                                        ) +
+                                                        " Days / " +
+                                                        _vm._s(
+                                                          client.package.nights
+                                                        ) +
+                                                        " Nights\n                                "
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "vs-col",
+                                                  {
+                                                    attrs: {
+                                                      "vs-xs": "6",
+                                                      "vs-sm": "4",
+                                                      "vs-lg": "3"
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "label",
+                                                      {
+                                                        staticClass: "font-bold"
+                                                      },
+                                                      [_vm._v("Rate: ")]
+                                                    ),
+                                                    _vm._v(
+                                                      "\n                                    " +
+                                                        _vm._s(
+                                                          client.package.rate
+                                                        ) +
+                                                        " Stars\n                                "
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "vs-col",
+                                                  {
+                                                    attrs: {
+                                                      "vs-xs": "6",
+                                                      "vs-sm": "4",
+                                                      "vs-lg": "3"
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "label",
+                                                      {
+                                                        staticClass: "font-bold"
+                                                      },
+                                                      [_vm._v("Season: ")]
+                                                    ),
+                                                    _vm._v(
+                                                      "\n                                    " +
+                                                        _vm._s(
+                                                          client.package.season
+                                                        ) +
+                                                        "\n                                "
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "vs-col",
+                                                  {
+                                                    attrs: {
+                                                      "vs-xs": "6",
+                                                      "vs-sm": "4",
+                                                      "vs-lg": "3"
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "label",
+                                                      {
+                                                        staticClass: "font-bold"
+                                                      },
+                                                      [_vm._v("Date: ")]
+                                                    ),
+                                                    _vm._v(
+                                                      "\n                                    " +
+                                                        _vm._s(
+                                                          client.package.date
+                                                        ) +
+                                                        "\n                                "
+                                                    )
+                                                  ]
+                                                )
+                                              ],
+                                              1
+                                            )
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        client.custom_package
+                                          ? [
+                                              _c("h2", [
+                                                _vm._v("Custom Package")
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "vs-row",
+                                                [
+                                                  _c(
+                                                    "vs-col",
+                                                    {
+                                                      attrs: {
+                                                        "vs-xs": "6",
+                                                        "vs-sm": "4",
+                                                        "vs-lg": "3"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "label",
+                                                        {
+                                                          staticClass:
+                                                            "font-bold"
+                                                        },
+                                                        [_vm._v("Date: ")]
+                                                      ),
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            client
+                                                              .custom_package
+                                                              .travel_date
+                                                          ) +
+                                                          "\n                                    "
+                                                      )
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "vs-col",
+                                                    {
+                                                      attrs: {
+                                                        "vs-xs": "6",
+                                                        "vs-sm": "4",
+                                                        "vs-lg": "3"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "label",
+                                                        {
+                                                          staticClass:
+                                                            "font-bold"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "Flexibility: "
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            client
+                                                              .custom_package
+                                                              .flexibility
+                                                          ) +
+                                                          " Days\n                                    "
+                                                      )
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "vs-col",
+                                                    {
+                                                      attrs: {
+                                                        "vs-xs": "6",
+                                                        "vs-sm": "4",
+                                                        "vs-lg": "3"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "label",
+                                                        {
+                                                          staticClass:
+                                                            "font-bold"
+                                                        },
+                                                        [_vm._v("Budget: ")]
+                                                      ),
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            client
+                                                              .custom_package
+                                                              .budget
+                                                          ) +
+                                                          "\n                                    "
+                                                      )
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "vs-col",
+                                                    {
+                                                      attrs: {
+                                                        "vs-xs": "6",
+                                                        "vs-sm": "4",
+                                                        "vs-lg": "3"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "label",
+                                                        {
+                                                          staticClass:
+                                                            "font-bold"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "Flexibility: "
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            client
+                                                              .custom_package
+                                                              .flexibility
+                                                          ) +
+                                                          "\n                                    "
+                                                      )
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "vs-col",
+                                                    {
+                                                      attrs: {
+                                                        "vs-xs": "6",
+                                                        "vs-sm": "4",
+                                                        "vs-lg": "3"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "label",
+                                                        {
+                                                          staticClass:
+                                                            "font-bold"
+                                                        },
+                                                        [_vm._v("Room Type: ")]
+                                                      ),
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            client
+                                                              .custom_package
+                                                              .room_type
+                                                          ) +
+                                                          "\n                                    "
+                                                      )
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "vs-col",
+                                                    {
+                                                      attrs: {
+                                                        "vs-xs": "6",
+                                                        "vs-sm": "4",
+                                                        "vs-lg": "3"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "label",
+                                                        {
+                                                          staticClass:
+                                                            "font-bold"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "Hotel Rating: "
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            client
+                                                              .custom_package
+                                                              .hotel_rating
+                                                          ) +
+                                                          " Stars\n                                    "
+                                                      )
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "vs-col",
+                                                    {
+                                                      attrs: {
+                                                        "vs-xs": "6",
+                                                        "vs-sm": "4",
+                                                        "vs-lg": "3"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "label",
+                                                        {
+                                                          staticClass:
+                                                            "font-bold"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "Hotel Location: "
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            client
+                                                              .custom_package
+                                                              .hotel_location
+                                                          ) +
+                                                          "\n                                    "
+                                                      )
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "vs-col",
+                                                    {
+                                                      attrs: {
+                                                        "vs-xs": "6",
+                                                        "vs-sm": "4",
+                                                        "vs-lg": "3"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "label",
+                                                        {
+                                                          staticClass:
+                                                            "font-bold"
+                                                        },
+                                                        [_vm._v("Notes: ")]
+                                                      ),
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            client
+                                                              .custom_package
+                                                              .notes
+                                                          ) +
+                                                          "\n                                    "
+                                                      )
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c("h3", [
+                                                _vm._v("Destinations: ")
+                                              ]),
+                                              _vm._v(" "),
+                                              _vm._l(
+                                                client.custom_package
+                                                  .destinations,
+                                                function(dest) {
+                                                  return [
+                                                    _c(
+                                                      "vs-row",
+                                                      [
+                                                        _c(
+                                                          "vs-col",
+                                                          {
+                                                            attrs: {
+                                                              "vs-xs": "6",
+                                                              "vs-sm": "4",
+                                                              "vs-lg": "3"
+                                                            }
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "label",
+                                                              {
+                                                                staticClass:
+                                                                  "font-bold"
+                                                              },
+                                                              [
+                                                                _vm._v(
+                                                                  "Country: "
+                                                                )
+                                                              ]
+                                                            ),
+                                                            _vm._v(
+                                                              "\n                                            " +
+                                                                _vm._s(
+                                                                  dest.country
+                                                                ) +
+                                                                "\n                                        "
+                                                            )
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "vs-col",
+                                                          {
+                                                            attrs: {
+                                                              "vs-xs": "6",
+                                                              "vs-sm": "4",
+                                                              "vs-lg": "3"
+                                                            }
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "label",
+                                                              {
+                                                                staticClass:
+                                                                  "font-bold"
+                                                              },
+                                                              [_vm._v("City: ")]
+                                                            ),
+                                                            _vm._v(
+                                                              "\n                                            " +
+                                                                _vm._s(
+                                                                  dest.city
+                                                                ) +
+                                                                "\n                                        "
+                                                            )
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "vs-col",
+                                                          {
+                                                            attrs: {
+                                                              "vs-xs": "6",
+                                                              "vs-sm": "4",
+                                                              "vs-lg": "3"
+                                                            }
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "label",
+                                                              {
+                                                                staticClass:
+                                                                  "font-bold"
+                                                              },
+                                                              [
+                                                                _vm._v(
+                                                                  "Nights: "
+                                                                )
+                                                              ]
+                                                            ),
+                                                            _vm._v(
+                                                              "\n                                            " +
+                                                                _vm._s(
+                                                                  dest.nights
+                                                                ) +
+                                                                " Night\n                                        "
+                                                            )
+                                                          ]
+                                                        )
+                                                      ],
+                                                      1
+                                                    )
+                                                  ]
+                                                }
+                                              )
+                                            ]
+                                          : _vm._e()
+                                      ],
+                                      2
+                                    )
+                                  ]
                                 )
                               ],
-                              1
+                              2
                             )
                           })
                         }
@@ -374,7 +1027,7 @@ var render = function() {
                     ],
                     null,
                     false,
-                    2100537339
+                    1059877841
                   )
                 },
                 [

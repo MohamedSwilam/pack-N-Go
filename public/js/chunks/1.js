@@ -6744,7 +6744,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ([{
-  url: "/",
+  url: "/dashboard",
   name: "Home",
   slug: "home",
   icon: "HomeIcon"
@@ -6781,6 +6781,13 @@ __webpack_require__.r(__webpack_exports__);
   icon: "ClipboardIcon",
   i18n: "insurance",
   permission: 'browse-insurance'
+}, {
+  url: "/dashboard/contact-us",
+  name: "Contact Us",
+  slug: "contactUs",
+  icon: "ClipboardIcon",
+  i18n: "contactUs",
+  permission: 'browse-contact-us'
 }, {
   name: "Settings",
   icon: "SettingsIcon",
