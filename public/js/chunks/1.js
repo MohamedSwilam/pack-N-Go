@@ -6767,7 +6767,7 @@ __webpack_require__.r(__webpack_exports__);
   slug: "client",
   icon: "UsersIcon",
   i18n: "Employee",
-  permission: 'browse-client'
+  permission: 'browse-booking'
 }, {
   url: "/dashboard/blog",
   name: "Blog",
