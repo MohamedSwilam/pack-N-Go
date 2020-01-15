@@ -1,5 +1,5 @@
 <template>
-    <div class="vx-col w-full mb-base" v-if="can('browse-client')">
+    <div class="vx-col w-full mb-base" v-if="can('browse-booking')">
         <vx-card ref="browse" title="Clients List" collapse-action refreshContentAction @refresh="getClients">
             <vs-table search :data="clients">
                 <template slot="thead">
