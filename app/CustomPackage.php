@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CustomPackage extends Model
 {
-    protected $with = ['booking', 'destinations'];
+    protected $with = ['destinations'];
 
     protected $fillable = ['travel_date','flexibility','budget','room_type','hotel_rating','hotel_location','notes'];
 

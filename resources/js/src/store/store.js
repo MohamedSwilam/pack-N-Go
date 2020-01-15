@@ -17,6 +17,7 @@ import moduleClient from './client/moduleClient';
 import moduleBlog from './blog/moduleBlog';
 import moduleInsurance from './insurance/moduleInsurance';
 import moduleRolesAndPermissions from './roles-and-permissions/moduleRolesAndPermissions';
+import moduleContactUs from './contactUs/moduleContactUs';
 
 
 const vuexLocal = new VuexPersistence({
@@ -36,6 +37,7 @@ export default new Vuex.Store({
         blog: moduleBlog,
         insurance: moduleInsurance,
         rolesAndPermissions: moduleRolesAndPermissions,
+        contactUs: moduleContactUs,
     },
     plugins: [vuexLocal.plugin],
     strict: process.env.NODE_ENV !== 'production'

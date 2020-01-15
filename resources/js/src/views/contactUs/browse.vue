@@ -1,51 +1,42 @@
 <template>
     <div class="vx-col w-full mb-base">
-        <vx-card ref="browse" title="Blog List" collapse-action refreshContentAction @refresh="getBlogs">
-            <vs-table search :data="blogs">
-                <template slot="header">
-                    <vs-button v-if="can('create-post')" to="/dashboard/blog/create" size="small" icon-pack="feather" icon="icon-plus">Create Blog</vs-button>
-                </template>
+        <vx-card ref="browse" title="Contact Us" collapse-action refreshContentAction @refresh="getContactUs">
+            <vs-table search :data="contactUsArr">
                 <template slot="thead">
                     <vs-th>#</vs-th>
-                    <vs-th>Image</vs-th>
-                    <vs-th>Title</vs-th>
-                    <vs-th>Created At</vs-th>
+                    <vs-th>Email</vs-th>
+                    <vs-th>Name</vs-th>
+                    <vs-th>Telephone</vs-th>
+                    <vs-th>Message</vs-th>
                     <vs-th>Action</vs-th>
                 </template>
                 <template slot-scope="{data}">
-                    <vs-tr :key="index" v-for="(blog, index) in blogs">
-                        <vs-td :data="blog.id">
+                    <vs-tr :key="index" v-for="(con, index) in contactUsArr">
+                        <vs-td :data="con.id">
                             {{ index+1 }}
                         </vs-td>
 
-                        <vs-td :data="blog.image.url">
-                            <a v-if="blog.image" :href="`${blog.image.url}`" target="_blank"><img :src="`${blog.image.url}`" width="50px" height="50px"></a>
+                        <vs-td :data="con.email">
+                            {{ con.email}}
                         </vs-td>
 
-                        <vs-td :data="blog.title">
-                            {{ blog.title}}
+                        <vs-td :data="con.name">
+                            {{ con.name}}
                         </vs-td>
 
-                        <vs-td :data="blog.created_at">
-                            {{ blog.created_at}}
+                        <vs-td :data="con.phone">
+                            {{ con.phone}}
                         </vs-td>
 
-                        <template class="expand-user" slot="expand">
-                            <div class="con-expand-users w-full">
-                                <vs-row>
-                                    <vs-col>
-                                        <label class="font-bold">Description: </label>
-                                        {{blog.description}}
-                                    </vs-col>
-                                </vs-row>
-                            </div>
-                        </template>
+                        <vs-td :data="con.message">
+                            {{ con.message}}
+                        </vs-td>
 
                         <vs-td>
                             <vs-row>
                                 <div class="flex mb-4">
-                                    <div class="w-1/3 ml-5" v-if="can('delete-post')">
-                                        <vs-button :id="`btn-delete-${blog.id}`" class="vs-con-loading__container" radius color="danger" type="border" icon-pack="feather" icon="icon-trash" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):confirmDeleteBlog(blog)"></vs-button>
+                                    <div class="w-1/3 ml-5" v-if="can('delete-contact-us')">
+                                        <vs-button :id="`btn-delete-${con.id}`" class="vs-con-loading__container" radius color="danger" type="border" icon-pack="feather" icon="icon-trash" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):confirmDeleteContactUs(con)"></vs-button>
                                     </div>
                                 </div>
                             </vs-row>
@@ -61,19 +52,19 @@
     export default {
         name: "browse",
         mounted() {
-            this.getBlogs();
+            this.getContactUs();
         },
         data: function (){
             return {
-                blogs: [],
+                contactUsArr: [],
                 is_requesting: false
             }
         },
         methods: {
-            getBlogs(){
-                this.$store.dispatch('blog/getData', '')
+            getContactUs(){
+                this.$store.dispatch('contactUs/getData', '')
                     .then(response => {
-                        this.blogs = response.data.data.data;
+                        this.contactUsArr = response.data.data.data;
                     })
                     .catch(error => {
                         console.log(error);
@@ -87,27 +78,27 @@
                     });
             },
 
-            confirmDeleteBlog(blog)
+            confirmDeleteContactUs(con)
             {
                 this.$vs.dialog({
                     type: 'confirm',
                     color: 'danger',
                     title: `Are you sure!`,
                     text: 'This data can not be retrieved again.',
-                    accept: this.deleteBlog,
-                    parameters: [blog]
+                    accept: this.deleteContactUs,
+                    parameters: [con]
                 });
             },
 
-            deleteBlog(params)
+            deleteContactUs(params)
             {
                 this.is_requesting=true;
                 this.$vs.loading({container: `#btn-delete-${params[0].id}`, color: 'danger', scale: 0.45});
-                this.$store.dispatch('blog/delete', params[0].id)
+                this.$store.dispatch('contactUs/delete', params[0].id)
                     .then(response => {
                         this.is_requesting = false;
                         this.$vs.loading.close(`#btn-delete-${params[0].id} > .con-vs-loading`);
-                        this.blogs = this.blogs.filter(blog => {return blog.id !== params[0].id});
+                        this.contactUsArr = this.contactUsArr.filter(contactUs => {return contactUs.id !== params[0].id});
                         this.$vs.notify({
                             title: 'Success',
                             text: response.data.message,

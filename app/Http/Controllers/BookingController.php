@@ -27,7 +27,7 @@ class BookingController extends Controller
         return $this->respond(
             'Data Loaded Successfully',
             fractal(
-                (new IndexResponse(Booking::query()))->execute()
+                (new IndexResponse(Booking::with('customPackage')))->execute()
                 , new BookingTransformer()
             )
         );
