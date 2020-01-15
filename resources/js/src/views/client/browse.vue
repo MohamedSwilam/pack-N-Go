@@ -40,7 +40,7 @@
                         <vs-td>
                             <vs-row>
                                 <div class="flex mb-4">
-                                    <div class="w-1/3 ml-5" v-if="can('delete-client')">
+                                    <div class="w-1/3 ml-5" v-if="can('delete-booking')">
                                         <vs-button :id="`btn-client-delete-${client.id}`" class="vs-con-loading__container" radius color="danger" type="border" icon-pack="feather" icon="icon-trash" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):confirmDeleteClient(client)"></vs-button>
                                     </div>
                                 </div>
