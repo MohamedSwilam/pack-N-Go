@@ -187,7 +187,7 @@ const router = new Router({
                         ],
                         pageTitle: 'Client',
                         pageTitle_i18n: 'Client',
-                        permission: 'view-client'
+                        permission: 'browse-booking'
                     }
                 },{
                     path: '/dashboard/contact-us',

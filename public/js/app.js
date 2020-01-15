@@ -73102,7 +73102,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         }],
         pageTitle: 'Client',
         pageTitle_i18n: 'Client',
-        permission: 'view-client'
+        permission: 'browse-booking'
       }
     }, {
       path: '/dashboard/contact-us',
