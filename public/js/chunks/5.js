@@ -401,7 +401,7 @@ var render = function() {
                                   [
                                     _c("vs-row", [
                                       _c("div", { staticClass: "flex mb-4" }, [
-                                        _vm.can("delete-client")
+                                        _vm.can("delete-booking")
                                           ? _c(
                                               "div",
                                               { staticClass: "w-1/3 ml-5" },
@@ -1027,7 +1027,7 @@ var render = function() {
                     ],
                     null,
                     false,
-                    1059877841
+                    2115627521
                   )
                 },
                 [
