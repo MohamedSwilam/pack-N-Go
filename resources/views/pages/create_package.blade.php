@@ -289,7 +289,7 @@
         function buildPackage() {
             let travelDate = $("#travel_date").val().split('/');
             let form = {
-                travel_date: travelDate[2]+'-'+travelDate[1]+'-'+travelDate[0],
+                travel_date: travelDate[2]+'-'+travelDate[0]+'-'+travelDate[1],
                 flexibility: $("#flexibility").val(),
                 budget: $("#budget").val(),
                 room_type: $("#room_type").val(),
