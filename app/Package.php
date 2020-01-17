@@ -30,6 +30,11 @@ class Package extends Model
         return $this->hasMany(Accommodation::class);
     }
 
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
+
     public function medias()
     {
         return $this->morphMany(Media::class, 'mediable');

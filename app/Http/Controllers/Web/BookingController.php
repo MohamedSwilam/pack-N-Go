@@ -6,6 +6,7 @@ use App\Booking;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\BookingRequest;
 use App\IndexResponse;
+use App\Package;
 use App\Transformers\BookingTransformer;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
@@ -28,6 +29,10 @@ class BookingController extends Controller
         $data = $request->validated();
 
         $booking = Booking::create($data);
+
+        $package = Package::where('id', $data['package_id'])->first();
+
+        $package->bookings()->save($booking);
 
         return redirect(route('submitted'));
     }

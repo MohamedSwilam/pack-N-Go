@@ -52,7 +52,10 @@ class EmployeeController extends Controller
         $this->authorize('store', User::class);
 
         $data = $request->except('role');
-        $data['image'] = download_image('image', config('paths.user-image.create'));
+
+        if (\request()->hasFile('image')){
+            $data['image'] = download_file(\request()->file('image'), config('paths.image.create'));
+        }
         $data['email_verified_at'] = now();
         $data['password'] = bcrypt($request->password);
 
