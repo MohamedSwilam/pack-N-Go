@@ -411,8 +411,7 @@ var render = function() {
                                                     "vs-con-loading__container",
                                                   attrs: {
                                                     id:
-                                                      "btn-client-delete-" +
-                                                      client.id,
+                                                      "btn-delete-" + client.id,
                                                     radius: "",
                                                     color: "danger",
                                                     type: "border",
@@ -1027,7 +1026,7 @@ var render = function() {
                     ],
                     null,
                     false,
-                    2115627521
+                    995475605
                   )
                 },
                 [
