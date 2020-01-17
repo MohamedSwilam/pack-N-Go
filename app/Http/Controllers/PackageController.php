@@ -55,7 +55,8 @@ class PackageController extends Controller
         $this->authorize('store', Package::class);
 
         $data = $request->validated();
-        $data['home_page'] = $data['home_page']?1:0;
+
+        $data['home_page'] = $data['home_page'] == 'true'? 1:0;
 
         $package = Package::create($data);
 
@@ -93,14 +94,15 @@ class PackageController extends Controller
             ]);
             $package->accommodations()->save($accommodation);
         }
-
-        foreach ($request->validated()['images'] as $image){
-            $data = [
-                'old_name' => $image->getClientOriginalName(),
-            ];
-            $data['url'] = download_file($image, config('paths.create'));
-            $image = Media::create($data);
-            $package->medias()->save($image);
+        if (array_key_exists('images', $request->validated())){
+            foreach ($request->validated()['images'] as $image){
+                $data = [
+                    'old_name' => $image->getClientOriginalName(),
+                ];
+                $data['url'] = download_file($image, config('paths.image.create'));
+                $image = Media::create($data);
+                $package->medias()->save($image);
+            }
         }
 
         return $this->respond(

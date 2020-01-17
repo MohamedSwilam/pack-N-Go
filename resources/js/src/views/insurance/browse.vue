@@ -41,7 +41,7 @@
                         <template class="expand-user" slot="expand">
                             <div class="con-expand-users w-full">
                                 <vs-row v-if="!insurance.image">
-                                    <vs-col vs-xs="6" vs-sm="4" vs-lg="3" >
+                                    <vs-col vs-xs="6" vs-sm="6" vs-lg="6" >
                                         <label class="font-bold">Passport Name: </label>
                                         {{insurance.passport_name}}
                                     </vs-col>
@@ -64,6 +64,22 @@
                                     <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
                                         <label class="font-bold">Passport Number: </label>
                                         {{insurance.passport_number}}
+                                    </vs-col>
+                                    <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                        <label class="font-bold">Country: </label>
+                                        {{insurance.country}}
+                                    </vs-col>
+                                    <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                        <label class="font-bold">Start Date: </label>
+                                        {{insurance.start_date}}
+                                    </vs-col>
+                                    <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                        <label class="font-bold">Duration: </label>
+                                        {{insurance.duration}}
+                                    </vs-col>
+                                    <vs-col vs-xs="6" vs-sm="6" vs-lg="6">
+                                        <label class="font-bold">Insurance Type: </label>
+                                        {{insurance.insurance_type}}
                                     </vs-col>
                                 </vs-row>
 

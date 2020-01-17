@@ -8,7 +8,9 @@ class Insurance extends Model
 {
     protected $with = ['image'];
 
-    protected $fillable = ['name','birth_date','expire_date','passport_number','gender','nationality', 'address', 'phone', 'passport_name'];
+    protected $fillable = ['name','birth_date', 'country', 'duration', 'start_date', 'insurance_type',
+        'expire_date','passport_number','gender','nationality',
+        'address', 'phone', 'passport_name'];
 
     public function image()
     {

@@ -68,7 +68,7 @@
         <script src="{{ asset(mix('js/website/isotope.pkgd.min.js')) }}"></script>
         <script src="{{ asset(mix('js/website/swiper.min.js')) }}"></script>
         <script src="{{ asset(mix('js/website/jquery.nice-select.min.js')) }}"></script>
-        <script src="{{ asset(mix('js/website/jquery-ui.min.js')) }}"></script>
+        <script src="{{ asset(mix('js/website/jquery-ui.min.js')) }}"></script>/
 
         <!-- main js -->
         <script src="{{ asset(mix('js/website/main.js')) }}"></script>

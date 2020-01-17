@@ -144,7 +144,6 @@
                                 </div>
                                 <div class="details">
                                     <div class="location">
-                                        <span class="location-name"><img src="/images/website/icons/1.png" alt="img">Africa</span>
                                         <span class="tp-review-meta float-right">
                                             @for($i=0;$i<$package->rate;$i++)
                                                 <i class="ic-yellow fa fa-star"></i>
@@ -242,7 +241,7 @@
 
 
     <!-- newslatter area Start -->
-    <div class="newslatter-area pd-top-110">
+    <div class="newslatter-area pd-top-110" id="insurance">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-9">
@@ -272,6 +271,48 @@
                             <label class="single-input-wrap style-two">
                                 <span class="single-input-title">Phone <span style="color: red">*</span></span>
                                 <input type="text" name="phone" required>
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="single-input-wrap style-two">
+                                <span class="single-input-title">Insurance Type<span style="color: red">*</span></span>
+                                <select class="single-input-wrap style-two" name="insurance_type">
+                                    @foreach($insurance_types as $insurance)
+                                        <option value="{{$insurance}}">
+                                            {{$insurance}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="single-input-wrap style-two">
+                                <span class="single-input-title">Duration<span style="color: red">*</span></span>
+                                <select class="single-input-wrap style-two" name="duration">
+                                    @foreach($durations as $duration)
+                                        <option value="{{$duration}}">
+                                            {{$duration}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="single-input-wrap style-two">
+                                <span class="single-input-title">Desired Country<span style="color: red">*</span></span>
+                                <select class="single-input-wrap style-two" name="country">
+                                    @foreach($countries as $country)
+                                        <option value="{{$country}}">
+                                            {{$country}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="single-input-wrap style-two">
+                                <span class="single-input-title">Start Date<span style="color: red">*</span></span>
+                                <input type="date" name="start_date">
                             </label>
                         </div>
                     </div>
@@ -306,13 +347,26 @@
                                 <div class="col-md-6">
                                     <label class="single-input-wrap style-two">
                                         <span class="single-input-title">Gender</span>
-                                        <input type="text" name="gender">
+                                        <select class="single-input-wrap style-two" name="gender">
+                                            <option value="male">
+                                                Male
+                                            </option>
+                                            <option value="female">
+                                                Female
+                                            </option>
+                                        </select>
                                     </label>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="single-input-wrap style-two">
                                         <span class="single-input-title">Nationality</span>
-                                        <input type="text" name="nationality">
+                                        <select class="single-input-wrap style-two" name="nationality">
+                                            @foreach($countries as $country)
+                                                <option value="{{$country}}">
+                                                    {{$country}}
+                                                </option>
+                                            @endforeach
+                                        </select>
                                     </label>
                                 </div>
                             </div>

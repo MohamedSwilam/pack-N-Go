@@ -18,8 +18,9 @@
                             {{ index+1 }}
                         </vs-td>
 
-                        <vs-td :data="blog.image.url">
+                        <vs-td :data="blog.image">
                             <a v-if="blog.image" :href="`${blog.image.url}`" target="_blank"><img :src="`${blog.image.url}`" width="50px" height="50px"></a>
+                            <b v-else>No Image</b>
                         </vs-td>
 
                         <vs-td :data="blog.title">
