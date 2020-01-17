@@ -171,32 +171,20 @@ __webpack_require__.r(__webpack_exports__);
       roles: [],
       form: {
         home_page: false,
-        title: 'ddod',
-        date: '2018-05-02',
-        price: 10000,
-        currency: 'EGP',
-        days: 9,
-        nights: 10,
-        season: 'Summer',
-        rate: 12,
-        description: 'Desc',
+        title: '',
+        date: '',
+        price: 0,
+        currency: '',
+        days: 0,
+        nights: 0,
+        season: '',
+        rate: 0,
+        description: '',
         images: [],
-        schedule: [{
-          day_number: 1,
-          description: 'Desc1'
-        }],
-        inclusions: [{
-          name: 'Inc1'
-        }],
-        exclusions: [{
-          name: 'Exc1'
-        }],
-        accommodations: [{
-          city: 'Ci',
-          hotel: 'ho',
-          rate: 10,
-          nights: 11
-        }]
+        schedule: [],
+        inclusions: [],
+        exclusions: [],
+        accommodations: []
       },
       uploadedImage: null,
       is_requesting: false

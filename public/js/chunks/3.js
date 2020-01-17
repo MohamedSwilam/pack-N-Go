@@ -68,6 +68,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "browse",
   mounted: function mounted() {
@@ -254,7 +255,7 @@ var render = function() {
                             )
                           ]),
                           _vm._v(" "),
-                          _c("vs-td", { attrs: { data: blog.image.url } }, [
+                          _c("vs-td", { attrs: { data: blog.image } }, [
                             blog.image
                               ? _c(
                                   "a",
@@ -274,7 +275,7 @@ var render = function() {
                                     })
                                   ]
                                 )
-                              : _vm._e()
+                              : _c("b", [_vm._v("No Image")])
                           ]),
                           _vm._v(" "),
                           _c("vs-td", { attrs: { data: blog.title } }, [

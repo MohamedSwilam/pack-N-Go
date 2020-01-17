@@ -776,6 +776,16 @@
         });
     }
 
+    $(document).ready(function() {
+        $("#insurance-button").click(function(){
+            if (window.location.pathname != '/'){
+                window.location = '/#insurance';
+            }
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#insurance").offset().top
+            }, 2000);
+        });
+    });
 
 
 
