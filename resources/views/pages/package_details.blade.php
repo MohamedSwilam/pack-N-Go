@@ -55,15 +55,6 @@
                             <div class="details">
                                 <h4 class="title">{{$package->title}}</h4>
                                 <p class="content">{{$package->days}} Days / {{$package->nights}} Nights</p>
-                                <div class="tp-review-meta">
-                                    @for($i = 0; $i<$package->rate; $i++)
-                                        <i class="ic-yellow fa fa-star"></i>
-                                    @endfor
-                                    @for($i = 0; $i<5-$package->rate; $i++)
-                                        <i class="fa fa-star"></i>
-                                    @endfor
-                                    <span>{{$package->rate}}</span>
-                                </div>
                             </div>
                         </div>
                         <div class="col-xl-9 col-lg-8">
@@ -88,17 +79,16 @@
         <div class="container" style="margin-bottom: 45px;">
             <div class="row">
                 <h4 class="single-page-small-title">Accommodation</h4>
-                <table>
-                    <thead style="background-color: #0c112e;color: white;padding: 5px;">
+                <table width="100%">
+                    <thead style="background-color: #40a0d0;color: white;padding: 5px;">
                     <tr style="text-align: center;line-height: 17px;padding: 5px;">
-                        <th style="width: 10%;padding: 15px;">City</th>
-                        <th style="width: 5%;padding: 15px;">Nights</th>
-                        <th style="width: 10%;padding: 15px;">Hotels / Standard</th>
-                        <th style="width: 10%;padding: 15px;">Rate</th>
-                        <th style="width: 15%;padding: 15px;">Per Person in Double inside Cabin</th>
-                        <th style="width: 15%;padding: 15px;">Per Person in Single inside Cabin</th>
-                        <th style="width: 15%;padding: 15px;">Per Person in Double balcony Cabin</th>
-                        <th style="width: 15%;padding: 15px;">Per Person in Single balcony Cabin</th>
+                        <th style="width: 15%;padding: 15px;">City</th>
+                        <th style="width: 15%;padding: 15px;">Nights</th>
+                        <th style="width: 20%;padding: 15px;">Hotels / Standard</th>
+                        <th style="width: 10%;padding: 15px;">TBL</th>
+                        <th style="width: 15%;padding: 15px;">DBL</th>
+                        <th style="width: 10%;padding: 15px;">SGL</th>
+                        <th style="width: 10%;padding: 15px;">Child</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -106,18 +96,20 @@
                         <tr style="text-align: center;border-bottom: 1px solid #0c112e;">
                             <td style="padding: 15px;">{{$accommodation->city}}</td>
                             <td style="padding: 15px;">{{$accommodation->nights}}</td>
-                            <td style="padding: 15px;">{{$accommodation->hotel}}</td>
                             <td style="padding: 15px;">
+                                {{$accommodation->hotel}}
+                                <br>
                                 @for($i = 0; $i<$accommodation->rate; $i++)
                                     <i class="ic-yellow fa fa-star"></i>
                                 @endfor
                                 @for($i = 0; $i<5-$accommodation->rate; $i++)
                                     <i class="fa fa-star"></i>
-                                @endfor</td>
-                            <td style="padding: 15px;">{{$accommodation->dbl}}</td>
-                            <td style="padding: 15px;">{{$accommodation->sgl}}</td>
-                            <td style="padding: 15px;">{{$accommodation->dbl_balcony}}</td>
-                            <td style="padding: 15px;">{{$accommodation->sgl_balcony}}</td>
+                                @endfor
+                            </td>
+                            <td style="padding: 15px;">{{$accommodation->tbl}} {{$package->currency}}</td>
+                            <td style="padding: 15px;">{{$accommodation->dbl}} {{$package->currency}}</td>
+                            <td style="padding: 15px;">{{$accommodation->sgl}} {{$package->currency}}</td>
+                            <td style="padding: 15px;">{{$accommodation->child}} {{$package->currency}}</td>
 
                         </tr>
                     @endforeach
@@ -137,7 +129,7 @@
                                 <h4 class="single-page-small-title">Inclusions</h4>
                                 @foreach($package->inclusions as $inclusion)
                                     <p>
-                                        <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
+                                        <i style="display: table-cell;color: #40a0d0;" class="fa fa-check"></i>
                                         <span style="display: table-cell;">{{$inclusion->name}}</span>
                                     </p>
                                 @endforeach
@@ -147,7 +139,7 @@
 
                                 @foreach($package->exclusions as $exclusion)
                                     <p>
-                                        <i style="display: table-cell;color: #071c55;" class="fa fa-check"></i>
+                                        <i style="display: table-cell;color: #40a0d0;" class="fa fa-check"></i>
                                         <span style="display: table-cell;">{{$exclusion->name}}</span>
                                     </p>
                                 @endforeach
@@ -156,22 +148,30 @@
                         <div class="package-included-location">
                             <h4 class="single-page-small-title">Your Itinerary</h4>
                             <div class="row">
-                                <div class="timeline">
-                                    <div class="timeline__group">
-                                        @foreach($package->schedules as $schedule)
-                                        <div class="timeline__box">
-                                            <div class="timeline__date">
-                                                <span class="timeline__month">Day {{$schedule->day}}</span>
-                                            </div>
-                                            <div class="timeline__post">
-                                                <div class="timeline__content">
-                                                    <p>{{$schedule->description}}</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <article class="page">
+                                    <ul class="timeline">
+                                    @foreach($package->schedules as $schedule)
+                                        <li class="timeline-milestone is-completed timeline-start">
+                                                        <div class="timeline-action">
+                                                            <h2 class="title">Day {{$schedule->day}}</h2>
+                                                            <div class="content">
+                                                                {{$schedule->description}}
+                                                            </div>
+                                                        </div>
+                                                    </li>
+{{--                                        <div class="timeline__box">--}}
+{{--                                            <div class="timeline__date">--}}
+{{--                                                <span class="timeline__month">Day {{$schedule->day}}</span>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="timeline__post">--}}
+{{--                                                <div class="timeline__content">--}}
+{{--                                                    <p>{{$schedule->description}}</p>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
                                         @endforeach
-                                    </div>
-                                </div>
+                                    </ul>
+                                </article>
                             </div>
                         </div>
                     </div>
@@ -228,148 +228,6 @@
     <!-- tour details area End -->
     <style>
 
-        .timeline{
-            --uiTimelineMainColor: var(--timelineMainColor, #071c55);
-            --uiTimelineSecondaryColor: var(--timelineSecondaryColor, #fff);
-
-            position: relative;
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
-
-        .timeline:before{
-            content: "";
-            width: 4px;
-            height: 100%;
-            background-color: var(--uiTimelineMainColor);
-
-            position: absolute;
-            top: 0;
-        }
-
-        .timeline__group{
-            position: relative;
-        }
-
-        .timeline__group:not(:first-of-type){
-            margin-top: 4rem;
-        }
-
-        .timeline__year{
-            padding: .5rem 1.5rem;
-            color: var(--uiTimelineSecondaryColor);
-            background-color: var(--uiTimelineMainColor);
-
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        .timeline__box{
-            position: relative;
-        }
-
-        .timeline__box:not(:last-of-type){
-            margin-bottom: 30px;
-        }
-
-        .timeline__box:before{
-            content: "";
-            width: 100%;
-            height: 2px;
-            background-color: var(--uiTimelineMainColor);
-
-            position: absolute;
-            left: 0;
-            z-index: -1;
-        }
-
-        .timeline__date{
-            min-width: 65px;
-            position: absolute;
-            left: 0;
-
-            box-sizing: border-box;
-            padding: .5rem 1.5rem;
-            text-align: center;
-
-            background-color: var(--uiTimelineMainColor);
-            color: var(--uiTimelineSecondaryColor);
-        }
-
-        .timeline__day{
-            font-size: 2rem;
-            font-weight: 700;
-            display: block;
-        }
-
-        .timeline__month{
-            display: block;
-            font-size: .8em;
-            text-transform: uppercase;
-        }
-
-        .timeline__post{
-            padding: 1.5rem 2rem;
-            border-radius: 2px;
-            border-left: 3px solid var(--uiTimelineMainColor);
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);
-            background-color: var(--uiTimelineSecondaryColor);
-        }
-
-        @media screen and (min-width: 641px){
-
-            .timeline:before{
-                left: 30px;
-            }
-
-            .timeline__group{
-                padding-top: 55px;
-            }
-
-            .timeline__box{
-                padding-left: 80px;
-            }
-
-            .timeline__box:before{
-                top: 50%;
-                transform: translateY(-50%);
-            }
-
-            .timeline__date{
-                top: 50%;
-                margin-top: -27px;
-            }
-        }
-
-        @media screen and (max-width: 640px){
-
-            .timeline:before{
-                left: 0;
-            }
-
-            .timeline__group{
-                padding-top: 40px;
-            }
-
-            .timeline__box{
-                padding-left: 20px;
-                padding-top: 70px;
-            }
-
-            .timeline__box:before{
-                top: 90px;
-            }
-
-            .timeline__date{
-                top: 0;
-            }
-        }
-
-        .timeline{
-            --timelineMainColor: #071c55;
-            font-size: 16px;
-        }
 
         /*
         =====
@@ -392,7 +250,6 @@
         }
 
         body{
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
             font-size: 1.6rem;
             color: #222;
 
@@ -414,5 +271,197 @@
         p:last-child{
             margin-bottom: 0;
         }
+
+        .timeline {
+            list-style: none;
+            margin: 25px 0 22px;
+            padding: 0;
+            position: relative;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .timeline:after {
+            border: 6px solid;
+            border-top-width: 13px;
+            border-color: #40a0d0 transparent transparent transparent;
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -19px;
+            left: 15px;
+        }
+
+        .timeline-horizontal:after {
+            border-top-width: 6px;
+            border-left-width: 13px;
+            border-color: transparent transparent transparent #40a0d0;
+            top: 15px;
+            right: 0;
+            bottom: auto;
+            left: auto;
+        }
+        .timeline-horizontal .timeline-milestone {
+            border-top: 2px solid #40a0d0;
+            display: inline;
+            float: left;
+            margin: 20px 0 0 0;
+            padding: 40px 0 0 0;
+        }
+        .timeline-horizontal .timeline-milestone:before {
+            top: -17px;
+            left: auto;
+        }
+        .timeline-horizontal .timeline-milestone.is-completed:after {
+            top: -17px;
+            left: 0;
+        }
+
+        .timeline-milestone {
+            border-left: 2px solid #40a0d0;
+            margin: 0 0 0 20px;
+            padding: 0 0 5px 25px;
+            position: relative;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .timeline-milestone:before {
+            border: 7px solid #40a0d0;
+            border-radius: 50%;
+            content: "";
+            display: block;
+            position: absolute;
+            left: -17px;
+            width: 32px;
+            height: 32px;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .timeline-milestone.is-completed:before {
+            background-color: #40a0d0;
+        }
+        .timeline-milestone.is-completed:after {
+            color: #FFF;
+            content: "\f00c";
+            display: block;
+            font-family: "FontAwesome";
+            line-height: 32px;
+            position: absolute;
+            top: 0;
+            left: -17px;
+            text-align: center;
+            width: 32px;
+            height: 32px;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .timeline-milestone.is-current:before {
+            background-color: #EEE;
+        }
+        .timeline-milestone.is-future:before {
+            background-color: #8DACB8;
+            border: 0;
+        }
+        .timeline-milestone.is-future .timeline-action .title {
+            color: #8DACB8;
+        }
+
+        .timeline-action {
+            background-color: #FFF;
+            padding: 12px 10px 12px 20px;
+            position: relative;
+            top: -15px;
+        }
+        .timeline-action.is-expandable .title {
+            cursor: pointer;
+            position: relative;
+        }
+        .timeline-action.is-expandable .title:focus {
+            outline: 0;
+            text-decoration: underline;
+        }
+        .timeline-action.is-expandable .title:after {
+            border: 6px solid #666;
+            border-color: transparent transparent transparent #666;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 6px;
+            right: 0;
+        }
+        .timeline-action.is-expandable .content {
+            display: none;
+        }
+        .timeline-action.is-expandable.is-expanded .title:after {
+            border-color: #666 transparent transparent transparent;
+            top: 10px;
+            right: 5px;
+        }
+        .timeline-action.is-expandable.is-expanded .content {
+            display: block;
+        }
+        .timeline-action .title, .timeline-action .content {
+            word-wrap: break-word;
+        }
+        .timeline-action .title {
+            color: #40a0d0;
+            font-size: 18px;
+            margin: 0;
+        }
+        .timeline-action .date {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .timeline-action .content {
+            font-size: 14px;
+        }
+
+        .file-list {
+            line-height: 1.4;
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        body {
+            background-color: #EEE;
+            font-family: Helvetica, Arial, Verdana, sans-serif;
+        }
+
+        h1, h2, h3{
+            font-family: var(--body-font);
+        }
+
+        .page {
+            max-width: 1200px;
+            margin: 40px 30px;
+        }
+
+        a {
+            color: #40a0d0;
+            text-decoration: none;
+        }
+        a:hover, a:focus {
+            text-decoration: underline;
+        }
+
+        .video-link:before {
+            content: "\f03d";
+            display: inline-block;
+            font-family: "FontAwesome";
+            margin-right: 5px;
+        }
+
+        a[href*=".pdf"]:before {
+            content: "\f0f6";
+            display: inline-block;
+            font-family: "FontAwesome";
+            margin-right: 8px;
+        }
+
+
     </style>
 @endsection

@@ -35,15 +35,6 @@
                                 <div class="blur-thumb" style="background-image:url(/images/website/destination-list/5.png);"></div>
                             @endif
                             <div class="details">
-                                <div class="tp-review-meta">
-                                    @for($i = 0; $i<$package->rate; $i++)
-                                        <i class="ic-yellow fa fa-star"></i>
-                                    @endfor
-                                    @for($i = 0; $i<5-$package->rate; $i++)
-                                        <i class="fa fa-star"></i>
-                                    @endfor
-                                    <span>{{number_format($package->rate, 1)}}</span>
-                                </div>
                                 <h4 class="title"><a href="{{route('package_details', $package->id)}}">{{$package->title}}</a></h4>
                                 <p class="content">{{$package->description}}</p>
                                 <div class="list-price-meta">

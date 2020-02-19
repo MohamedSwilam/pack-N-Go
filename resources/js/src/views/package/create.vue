@@ -29,7 +29,10 @@
                                 </div>
                             </div>
                             <div class="vx-col md:w-1/2 w-full mt-5">
-                                <vs-input label="Currency"  v-model="form.currency" class="w-full" />
+                                <input type="radio" name="currency" v-model="form.currency" value="LE"/>
+                                <label>LE</label>
+                                <input type="radio" name="currency" v-model="form.currency" value="$"/>
+                                <label>$</label>
                             </div>
                             <div class="vx-col md:w-1/2 w-full mt-5">
                                 <div class="centerx pt-6">
@@ -43,11 +46,6 @@
                             </div>
                             <div class="vx-col md:w-1/2 w-full mt-5">
                                 <vs-input label="Season" v-model="form.season" class="w-full" />
-                            </div>
-                            <div class="vx-col md:w-1/2 w-full mt-5">
-                                <div class="centerx pt-6">
-                                    <vs-input-number v-model="form.rate" label="Rate:"/>
-                                </div>
                             </div>
                             <div class="vx-col md:w-1/2 w-full mt-5">
                                 <input type="file" class="form-control" @change="uploadImages" multiple>
@@ -132,6 +130,26 @@
                                     <vs-input-number v-model="accommodation.rate" label="Rate:"/>
                                 </div>
                             </div>
+                            <div class="vx-col md:w-1/2 w-full mt-5">
+                                <div class="centerx pt-6">
+                                    <vs-input-number v-model="accommodation.tbl" label="Triple:"/>
+                                </div>
+                            </div>
+                            <div class="vx-col md:w-1/2 w-full mt-5">
+                                <div class="centerx pt-6">
+                                    <vs-input-number v-model="accommodation.dbl" label="Double:"/>
+                                </div>
+                            </div>
+                            <div class="vx-col md:w-1/2 w-full mt-5">
+                                <div class="centerx pt-6">
+                                    <vs-input-number v-model="accommodation.sgl" label="Single:"/>
+                                </div>
+                            </div>
+                            <div class="vx-col md:w-1/2 w-full mt-5">
+                                <div class="centerx pt-6">
+                                    <vs-input-number v-model="accommodation.child" label="Child:"/>
+                                </div>
+                            </div>
                             <div class="vx-col w-full">
                                 <vs-button class="mt-5" @click="removeAccommodation(index)" size="small" icon-pack="feather" color="danger" icon="icon-trash">Remove Row</vs-button>
                             </div>
@@ -166,8 +184,10 @@
                     days: 0,
                     nights: 0,
                     season: '',
-                    rate: 0,
                     description: '',
+                    dbl: 0,
+                    sgl: 0,
+                    child: 0,
                     images: [],
                     schedule: [
                     ],
@@ -237,7 +257,10 @@
                     city: '',
                     hotel: '',
                     rate: 1,
-                    nights: 1
+                    nights: 1,
+                    dbl: 0,
+                    sgl: 0,
+                    child: 0,
                 });
             },
 

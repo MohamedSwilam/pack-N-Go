@@ -143,14 +143,6 @@
                                     @endif
                                 </div>
                                 <div class="details">
-                                    <div class="location">
-                                        <span class="tp-review-meta float-right">
-                                            @for($i=0;$i<$package->rate;$i++)
-                                                <i class="ic-yellow fa fa-star"></i>
-                                            @endfor
-                                            <span>{{$package->rate}}</span>
-                                        </span>
-                                    </div>
                                     <h3>{{$package->title}}</h3>
                                     <ul class="package-meta">
                                         <li class="tp-price-meta">

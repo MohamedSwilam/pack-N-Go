@@ -4925,91 +4925,94 @@ var render = function() {
                 },
                 [
                   _vm._l(_vm.menuItemsUpdated, function(item, index) {
-                    return [
-                      item.header && !_vm.verticalNavMenuItemsMin
-                        ? _c(
-                            "span",
-                            {
-                              key: "header-" + index,
-                              staticClass: "navigation-header truncate"
-                            },
-                            [
-                              _vm._v(
-                                "\n            " +
-                                  _vm._s(item.header) +
-                                  "\n          "
-                              )
-                            ]
-                          )
-                        : !item.header
-                        ? [
-                            !item.submenu
-                              ? _c(
-                                  "v-nav-menu-item",
-                                  {
-                                    key: "item-" + index,
-                                    attrs: {
-                                      index: index,
-                                      to:
-                                        item.slug !== "external"
-                                          ? item.url
-                                          : null,
-                                      href:
-                                        item.slug === "external"
-                                          ? item.url
-                                          : null,
-                                      icon: item.icon,
-                                      target: item.target,
-                                      isDisabled: item.isDisabled,
-                                      slug: item.slug
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "span",
-                                      {
-                                        directives: [
-                                          {
-                                            name: "show",
-                                            rawName: "v-show",
-                                            value: !_vm.verticalNavMenuItemsMin,
-                                            expression:
-                                              "!verticalNavMenuItemsMin"
-                                          }
-                                        ],
-                                        staticClass: "truncate"
-                                      },
-                                      [_vm._v(_vm._s(item.name))]
-                                    ),
-                                    _vm._v(" "),
-                                    item.tag &&
-                                    (_vm.isMouseEnter || !_vm.reduce)
-                                      ? _c(
-                                          "vs-chip",
-                                          {
-                                            staticClass: "ml-auto",
-                                            attrs: { color: item.tagColor }
-                                          },
-                                          [_vm._v(_vm._s(item.tag))]
-                                        )
-                                      : _vm._e()
-                                  ],
-                                  1
-                                )
-                              : [
-                                  _c("v-nav-menu-group", {
-                                    key: "group-" + index,
-                                    attrs: {
-                                      openHover: _vm.openGroupHover,
-                                      group: item,
-                                      groupIndex: index,
-                                      open: _vm.isGroupActive(item)
-                                    }
-                                  })
+                    return _vm.can(item.permission) ||
+                      item.permission === undefined
+                      ? [
+                          item.header && !_vm.verticalNavMenuItemsMin
+                            ? _c(
+                                "span",
+                                {
+                                  key: "header-" + index,
+                                  staticClass: "navigation-header truncate"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n            " +
+                                      _vm._s(item.header) +
+                                      "\n          "
+                                  )
                                 ]
-                          ]
-                        : _vm._e()
-                    ]
+                              )
+                            : !item.header
+                            ? [
+                                !item.submenu
+                                  ? _c(
+                                      "v-nav-menu-item",
+                                      {
+                                        key: "item-" + index,
+                                        attrs: {
+                                          index: index,
+                                          to:
+                                            item.slug !== "external"
+                                              ? item.url
+                                              : null,
+                                          href:
+                                            item.slug === "external"
+                                              ? item.url
+                                              : null,
+                                          icon: item.icon,
+                                          target: item.target,
+                                          isDisabled: item.isDisabled,
+                                          slug: item.slug
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "span",
+                                          {
+                                            directives: [
+                                              {
+                                                name: "show",
+                                                rawName: "v-show",
+                                                value: !_vm.verticalNavMenuItemsMin,
+                                                expression:
+                                                  "!verticalNavMenuItemsMin"
+                                              }
+                                            ],
+                                            staticClass: "truncate"
+                                          },
+                                          [_vm._v(_vm._s(item.name))]
+                                        ),
+                                        _vm._v(" "),
+                                        item.tag &&
+                                        (_vm.isMouseEnter || !_vm.reduce)
+                                          ? _c(
+                                              "vs-chip",
+                                              {
+                                                staticClass: "ml-auto",
+                                                attrs: { color: item.tagColor }
+                                              },
+                                              [_vm._v(_vm._s(item.tag))]
+                                            )
+                                          : _vm._e()
+                                      ],
+                                      1
+                                    )
+                                  : [
+                                      _c("v-nav-menu-group", {
+                                        key: "group-" + index,
+                                        attrs: {
+                                          openHover: _vm.openGroupHover,
+                                          group: item,
+                                          groupIndex: index,
+                                          open: _vm.isGroupActive(item)
+                                        }
+                                      })
+                                    ]
+                              ]
+                            : _vm._e()
+                        ]
+                      : _vm._e()
                   })
                 ],
                 2
