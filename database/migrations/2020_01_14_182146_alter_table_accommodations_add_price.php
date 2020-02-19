@@ -15,9 +15,9 @@ class AlterTableAccommodationsAddPrice extends Migration
     {
         Schema::table('accommodations', function (Blueprint $table) {
             $table->string('dbl')->nullable();
+            $table->string('tbl')->nullable();
             $table->string('sgl')->nullable();
-            $table->string('dbl_balcony')->nullable();
-            $table->string('sgl_balcony')->nullable();
+            $table->string('child')->nullable();
         });
     }
     /**

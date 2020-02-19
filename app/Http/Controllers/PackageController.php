@@ -91,6 +91,10 @@ class PackageController extends Controller
                 'nights' => $accommodation->nights,
                 'hotel' => $accommodation->hotel,
                 'rate' => $accommodation->rate,
+                'tbl' => $accommodation->tbl,
+                'dbl' => $accommodation->dbl,
+                'sgl' => $accommodation->sgl,
+                'child' => $accommodation->child,
             ]);
             $package->accommodations()->save($accommodation);
         }
