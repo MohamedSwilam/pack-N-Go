@@ -178,6 +178,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -198,6 +199,7 @@ __webpack_require__.r(__webpack_exports__);
         season: '',
         description: '',
         dbl: 0,
+        tbl: 0,
         sgl: 0,
         child: 0,
         images: [],
@@ -724,6 +726,102 @@ var render = function() {
                               })
                             ],
                             1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "vx-col md:w-1/2 w-full mt-5" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "centerx pt-6" },
+                                [
+                                  _c("vs-input-number", {
+                                    attrs: { label: "Triple:" },
+                                    model: {
+                                      value: _vm.form.tbl,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "tbl", $$v)
+                                      },
+                                      expression: "form.tbl"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "vx-col md:w-1/2 w-full mt-5" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "centerx pt-6" },
+                                [
+                                  _c("vs-input-number", {
+                                    attrs: { label: "Double:" },
+                                    model: {
+                                      value: _vm.form.dbl,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "dbl", $$v)
+                                      },
+                                      expression: "form.dbl"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "vx-col md:w-1/2 w-full mt-5" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "centerx pt-6" },
+                                [
+                                  _c("vs-input-number", {
+                                    attrs: { label: "Single:" },
+                                    model: {
+                                      value: _vm.form.sgl,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "sgl", $$v)
+                                      },
+                                      expression: "form.sgl"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "vx-col md:w-1/2 w-full mt-5" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "centerx pt-6" },
+                                [
+                                  _c("vs-input-number", {
+                                    attrs: { label: "Child:" },
+                                    model: {
+                                      value: _vm.form.child,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "child", $$v)
+                                      },
+                                      expression: "form.child"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]
                           )
                         ])
                       ]
@@ -1088,106 +1186,6 @@ var render = function() {
                                             _vm.$set(accommodation, "rate", $$v)
                                           },
                                           expression: "accommodation.rate"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "vx-col md:w-1/2 w-full mt-5" },
-                                [
-                                  _c(
-                                    "div",
-                                    { staticClass: "centerx pt-6" },
-                                    [
-                                      _c("vs-input-number", {
-                                        attrs: { label: "Triple:" },
-                                        model: {
-                                          value: accommodation.tbl,
-                                          callback: function($$v) {
-                                            _vm.$set(accommodation, "tbl", $$v)
-                                          },
-                                          expression: "accommodation.tbl"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "vx-col md:w-1/2 w-full mt-5" },
-                                [
-                                  _c(
-                                    "div",
-                                    { staticClass: "centerx pt-6" },
-                                    [
-                                      _c("vs-input-number", {
-                                        attrs: { label: "Double:" },
-                                        model: {
-                                          value: accommodation.dbl,
-                                          callback: function($$v) {
-                                            _vm.$set(accommodation, "dbl", $$v)
-                                          },
-                                          expression: "accommodation.dbl"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "vx-col md:w-1/2 w-full mt-5" },
-                                [
-                                  _c(
-                                    "div",
-                                    { staticClass: "centerx pt-6" },
-                                    [
-                                      _c("vs-input-number", {
-                                        attrs: { label: "Single:" },
-                                        model: {
-                                          value: accommodation.sgl,
-                                          callback: function($$v) {
-                                            _vm.$set(accommodation, "sgl", $$v)
-                                          },
-                                          expression: "accommodation.sgl"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "vx-col md:w-1/2 w-full mt-5" },
-                                [
-                                  _c(
-                                    "div",
-                                    { staticClass: "centerx pt-6" },
-                                    [
-                                      _c("vs-input-number", {
-                                        attrs: { label: "Child:" },
-                                        model: {
-                                          value: accommodation.child,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              accommodation,
-                                              "child",
-                                              $$v
-                                            )
-                                          },
-                                          expression: "accommodation.child"
                                         }
                                       })
                                     ],

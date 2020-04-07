@@ -19,11 +19,12 @@ Route::get('/package/{id}', 'Web\PackageController@show')->name('package_details
 
 Route::get('/blog', 'Web\BlogController@index')->name('blog');
 
-Route::view('/about', 'pages.about')->name('about');
-Route::view('/create-package', 'pages.create_package')->name('create_package');
-Route::view('/contact-us', 'pages.contact_us')->name('contact_us');
-Route::get('/dashboard', 'ApplicationController')->where('any', '.*');
-Route::get('/dashboard/{any}', 'ApplicationController')->where('any', '.*');
+Route::view('about', 'pages.about')->name('about');
+Route::get('create-package', 'Web\CustomPackageController@create')->name('create_package');
+Route::view('contact-us', 'pages.contact_us')->name('contact_us');
+Route::get('insurance', 'Web\InsuranceController@create')->name('insurance');
+Route::get('dashboard', 'ApplicationController')->where('any', '.*');
+Route::get('dashboard/{any}', 'ApplicationController')->where('any', '.*');
 
 Route::post('insurance', 'Web\InsuranceController@store');
 Route::post('booking', 'Web\BookingController@store');

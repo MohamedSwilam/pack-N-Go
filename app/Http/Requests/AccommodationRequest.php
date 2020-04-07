@@ -30,9 +30,6 @@ class AccommodationRequest extends FormRequest
                 'nights' => 'required|integer',
                 'hotel' => 'required',
                 'rate' => 'required',
-                'dbl' => 'required',
-                'sgl' => 'required',
-                'child' => 'required',
                 'package_id' => 'required|exists:packages,id',
             ];
         }

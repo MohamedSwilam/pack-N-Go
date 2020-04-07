@@ -27,7 +27,6 @@ class InsuranceRequest extends FormRequest
             'name' => 'required',
             'phone' => 'required',
             'address' => 'required',
-            'country' => 'required',
             'insurance_type' => 'required',
             'duration' => 'required',
             'start_date' => 'required',

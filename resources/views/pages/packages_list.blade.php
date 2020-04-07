@@ -12,7 +12,7 @@
                     <div class="breadcrumb-inner">
                         <h1 class="page-title">Package List</h1>
                         <ul class="page-list">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li>Package List</li>
                         </ul>
                     </div>
@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row">
                 @foreach($packages as $package)
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                         <div class="single-destinations-list style-four">
                             @if(sizeof($package->medias) > 0)
                                 <div class="blur-thumb" style="background-image:url({{$package->medias[0]->url}});"></div>

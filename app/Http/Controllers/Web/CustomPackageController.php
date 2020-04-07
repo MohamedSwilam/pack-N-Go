@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Booking;
+use App\Country;
 use App\CustomPackage;
 use App\Destination;
 use App\Http\Controllers\Controller;
@@ -16,6 +17,13 @@ use Illuminate\Http\Response;
 
 class CustomPackageController extends Controller
 {
+    public function create()
+    {
+        return view('pages.create_package')->with([
+            'countries' => Country::with('cities')->get()
+        ]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

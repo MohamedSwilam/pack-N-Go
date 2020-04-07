@@ -23,7 +23,7 @@
 
     <!-- blog area start -->
     <div class="blog-details-area pd-top-120">
-        <div class="container">
+        <div class="container w-75">
             <div class="row">
                 <div class="col-lg-12">
                     <!-- blog-comment-area start -->
@@ -150,7 +150,13 @@
                                             <div class="col-lg-6 col-md-6">
                                                 <label class="single-input-wrap">
                                                     <span class="single-input-title"><i class="fa fa-map-marker"></i> Country</span>
-                                                    <input id="country" type="text">
+                                                    <select id="country-select-1" class="country" onchange="countrySelected('#country-select-1', '1')">
+                                                        @foreach($countries as $index => $country)
+                                                            <option value="{{$country->name}}">
+                                                                {{$country->name}}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
                                                 </label>
                                             </div>
                                             {{--Add City Button--}}
@@ -164,25 +170,7 @@
                                         </div>
                                         {{--Cities--}}
                                         <div id="cities-1" class="row" style="padding-left: 45px;padding-right: 45px;">
-                                            <div id="cities-1-first" class="col-lg-12 col-md-12 city-section">
-                                                <div class="row">
-                                                    <div class="col-lg-6 col-md-6">
-                                                        <label class="single-input-wrap">
-                                                            <span class="single-input-title"><i class="fa fa-map-marker"></i> City</span>
-                                                            <input id="city" type="text">
-                                                        </label>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-3">
-                                                        <label class="single-input-wrap">
-                                                            <span class="single-input-title"><i class="fa fa-star"></i> Nights</span>
-                                                            <input id="nights" type="number">
-                                                        </label>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-3" style="margin-top: 28px;">
-                                                        <button onclick="event.preventDefault();removeHTML('#cities-1-first')" style="width: 100%;" class="btn btn-danger"><i class="fa fa-trash"></i> Remove City</button>
-                                                    </div>
-                                                </div>
-                                            </div>
+
                                         </div>
                                         <br>
                                         <br>
@@ -207,10 +195,22 @@
     <!-- blog-comment-area start -->
     <script>
         let no_of_countries = 1;
+        var countries = @json($countries);
+        var country_index = 0;
 
         $("#add-country").on("click", function (e) {
             e.preventDefault();
             no_of_countries++;
+
+            var countriesSelect =`<select id="country-select-${no_of_countries}" class="country"
+                                    onchange="countrySelected('#country-select-${no_of_countries}', ${no_of_countries})">`;
+            for(var i = 0;i< countries.length; i++){
+                countriesSelect += `<option value="${countries[i].name}">
+                                   ${countries[i].name}
+                    </option>`;
+            }
+            countriesSelect += "</select>";
+
             $("#countries").append(
                 `<div id="country-${no_of_countries}" class="country-section">
                     <div class="row">
@@ -218,7 +218,7 @@
                         <div class="col-lg-6 col-md-6">
                             <label class="single-input-wrap">
                                 <span class="single-input-title"><i class="fa fa-map-marker"></i> Country</span>
-                                <input id="country" type="text">
+                                ${countriesSelect}
                             </label>
                         </div>
                         {{--Add City Button--}}
@@ -232,25 +232,7 @@
                     </div>
                     {{--Cities--}}
                     <div id="cities-${no_of_countries}" class="row" style="padding-left: 45px;padding-right: 45px;">
-                        <div id="city-${no_of_countries}-first" class="col-lg-12 col-md-12 city-section">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <label class="single-input-wrap">
-                                        <span class="single-input-title"><i class="fa fa-map-marker"></i> City</span>
-                                        <input id="city" type="text">
-                                    </label>
-                                </div>
-                                <div class="col-lg-3 col-md-3">
-                                    <label class="single-input-wrap">
-                                        <span class="single-input-title"><i class="fa fa-star"></i> Nights</span>
-                                        <input id="nights" type="number">
-                                    </label>
-                                </div>
-                                <div class="col-lg-3 col-md-3" style="margin-top: 28px;">
-                                    <button onclick="event.preventDefault();removeHTML('#city-${no_of_countries}-first')" style="width: 100%;" class="btn btn-danger"><i class="fa fa-trash"></i> Remove City</button>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                     <br>
                     <br>
@@ -260,13 +242,23 @@
 
         function addCity(selector) {
             let newID = Math.floor((Math.random() * 10000));
+
+            var citiesSelect = '<select class="city">';
+            var cities = countries[country_index].cities;
+            for(var i = 0;i< cities.length; i++){
+                citiesSelect += `<option value="${cities[i].name}">
+                                   ${cities[i].name}
+                    </option>`;
+            }
+            citiesSelect += "</select>";
+
             $(selector).append(
             `<div id="city-${newID}" class="col-lg-12 col-md-12 city-section">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <label class="single-input-wrap">
                             <span class="single-input-title"><i class="fa fa-map-marker"></i> City</span>
-                            <input id="city" type="text">
+                            ${citiesSelect}
                         </label>
                     </div>
                     <div class="col-lg-3 col-md-3">
@@ -280,6 +272,21 @@
                     </div>
                 </div>
             </div>`);
+        }
+
+        function countrySelected(selector, number){
+           var selectedCountry = $(selector).children("option:selected")[0].value;
+
+           $(`#cities-${number}`).empty();
+
+           for (var i = 0; i < countries.length; i++){
+               console.log(i);
+               if (selectedCountry == countries[i].name){
+                   country_index = i;
+                   console.log(country_index);
+                   break;
+               }
+           }
         }
 
         function removeHTML(selector) {
@@ -308,8 +315,8 @@
             $('.country-section').each(function(index,element){
                 $(element).find('.city-section').each(function(index2,element2){
                     form.destinations.push({
-                       country: $(element).find('#country').val(),
-                       city: $(element2).find('#city').val(),
+                       country: $(element).find('.country').val(),
+                       city: $(element2).find('.city').val(),
                        nights: $(element2).find('#nights').val()
                     });
                 });

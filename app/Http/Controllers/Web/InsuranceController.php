@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Country;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\InsuranceRequest;
 use App\Insurance;
@@ -12,6 +13,15 @@ use Illuminate\Http\Request;
 
 class InsuranceController extends Controller
 {
+    public function create()
+    {
+        return view('pages.insurance')->with([
+            'countries' => Country::all(),
+            'insurance_types' => config('insurances'),
+            'durations' => config('durations'),
+        ]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

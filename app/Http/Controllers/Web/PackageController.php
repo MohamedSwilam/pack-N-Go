@@ -28,7 +28,7 @@ class PackageController extends Controller
     public function index()
     {
         return view('pages.packages_list', [
-            'packages' => Package::paginate(10)
+            'packages' => Package::orderBy('date', 'desc')->paginate(9)
         ]);
     }
 

@@ -61,6 +61,27 @@
                             <div class="vx-col w-full mt-5">
                                 <vs-textarea label="Description" v-model="form.description" />
                             </div>
+
+                            <div class="vx-col md:w-1/2 w-full mt-5">
+                                <div class="centerx pt-6">
+                                    <vs-input-number v-model="form.tbl" label="Triple:"/>
+                                </div>
+                            </div>
+                            <div class="vx-col md:w-1/2 w-full mt-5">
+                                <div class="centerx pt-6">
+                                    <vs-input-number v-model="form.dbl" label="Double:"/>
+                                </div>
+                            </div>
+                            <div class="vx-col md:w-1/2 w-full mt-5">
+                                <div class="centerx pt-6">
+                                    <vs-input-number v-model="form.sgl" label="Single:"/>
+                                </div>
+                            </div>
+                            <div class="vx-col md:w-1/2 w-full mt-5">
+                                <div class="centerx pt-6">
+                                    <vs-input-number v-model="form.child" label="Child:"/>
+                                </div>
+                            </div>
                         </div>
                     </tab-content>
 
@@ -130,26 +151,6 @@
                                     <vs-input-number v-model="accommodation.rate" label="Rate:"/>
                                 </div>
                             </div>
-                            <div class="vx-col md:w-1/2 w-full mt-5">
-                                <div class="centerx pt-6">
-                                    <vs-input-number v-model="accommodation.tbl" label="Triple:"/>
-                                </div>
-                            </div>
-                            <div class="vx-col md:w-1/2 w-full mt-5">
-                                <div class="centerx pt-6">
-                                    <vs-input-number v-model="accommodation.dbl" label="Double:"/>
-                                </div>
-                            </div>
-                            <div class="vx-col md:w-1/2 w-full mt-5">
-                                <div class="centerx pt-6">
-                                    <vs-input-number v-model="accommodation.sgl" label="Single:"/>
-                                </div>
-                            </div>
-                            <div class="vx-col md:w-1/2 w-full mt-5">
-                                <div class="centerx pt-6">
-                                    <vs-input-number v-model="accommodation.child" label="Child:"/>
-                                </div>
-                            </div>
                             <div class="vx-col w-full">
                                 <vs-button class="mt-5" @click="removeAccommodation(index)" size="small" icon-pack="feather" color="danger" icon="icon-trash">Remove Row</vs-button>
                             </div>
@@ -186,6 +187,7 @@
                     season: '',
                     description: '',
                     dbl: 0,
+                    tbl: 0,
                     sgl: 0,
                     child: 0,
                     images: [],
