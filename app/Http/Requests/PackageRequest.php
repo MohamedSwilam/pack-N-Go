@@ -35,6 +35,10 @@ class PackageRequest extends FormRequest
                 'date' => 'required|date',
                 'season' => 'required',
                 'home_page' => 'required',
+                'tbl' => 'required',
+                'dbl' => 'required',
+                'sgl' => 'required',
+                'child' => 'required',
                 'inclusions' => 'required',
                 'inclusions.*.name' => 'required',
                 'exclusions' => 'required',
@@ -49,10 +53,6 @@ class PackageRequest extends FormRequest
                 'accommodations.*.nights' => 'required|integer',
                 'accommodations.*.hotel' => 'required',
                 'accommodations.*.rate' => 'required',
-                'accommodations.*.tbl' => 'required',
-                'accommodations.*.dbl' => 'required',
-                'accommodations.*.sgl' => 'required',
-                'accommodations.*.child' => 'required',
                 'images' => '',
             ];
         }

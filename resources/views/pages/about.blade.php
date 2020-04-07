@@ -11,7 +11,7 @@
                     <div class="breadcrumb-inner">
                         <h1 class="page-title">About Us</h1>
                         <ul class="page-list">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li>About Us</li>
                         </ul>
                     </div>

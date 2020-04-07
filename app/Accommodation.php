@@ -9,5 +9,5 @@ class Accommodation extends Model
 {
     use PackageItem;
 
-    protected $fillable = ['city', 'nights', 'hotel', 'rate', 'package_id', 'tbl', 'dbl', 'sgl', 'child'];
+    protected $fillable = ['city', 'nights', 'hotel', 'rate', 'package_id'];
 }

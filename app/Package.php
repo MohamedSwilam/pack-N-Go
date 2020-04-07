@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Package extends Model
 {
-    protected $fillable = ['title','description','price','currency','season','days','nights','rate','date', 'home_page'];
+    protected $fillable = ['title', 'description', 'price', 'currency',
+        'season', 'days', 'nights', 'rate', 'date', 'home_page',
+        'tbl', 'dbl', 'sgl', 'child'];
 
     protected $with = ['inclusions', 'exclusions', 'schedules', 'accommodations', 'medias'];
 

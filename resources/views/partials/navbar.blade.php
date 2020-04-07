@@ -51,7 +51,7 @@
                     <a href="{{route('contact_us')}}">Contact Us</a>
                 </li>
                 <li id="insurance-button">
-                    <a href="#insurance">Insurance</a>
+                    <a href="{{route('insurance')}}">Insurance</a>
                 </li>
             </ul>
         </div>

@@ -11,7 +11,7 @@
                     <div class="breadcrumb-inner">
                         <h1 class="page-title">Package Details</h1>
                         <ul class="page-list">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li>Package Details</li>
                         </ul>
                     </div>
@@ -92,7 +92,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($package->accommodations as $accommodation)
+                    @foreach($package->accommodations as $index => $accommodation)
                         <tr style="text-align: center;border-bottom: 1px solid #0c112e;">
                             <td style="padding: 15px;">{{$accommodation->city}}</td>
                             <td style="padding: 15px;">{{$accommodation->nights}}</td>
@@ -106,11 +106,12 @@
                                     <i class="fa fa-star"></i>
                                 @endfor
                             </td>
-                            <td style="padding: 15px;">{{$accommodation->tbl}} {{$package->currency}}</td>
-                            <td style="padding: 15px;">{{$accommodation->dbl}} {{$package->currency}}</td>
-                            <td style="padding: 15px;">{{$accommodation->sgl}} {{$package->currency}}</td>
-                            <td style="padding: 15px;">{{$accommodation->child}} {{$package->currency}}</td>
-
+                            @if($index == 0)
+                                <td style="padding: 15px; border-right: 1px solid #0c112e; border-left: 1px solid #0c112e;" rowspan="{{sizeof($package->accommodations)}}">{{$package->tbl}} {{$package->currency}}</td>
+                                <td style="padding: 15px; border-right: 1px solid #0c112e; border-left: 1px solid #0c112e;" rowspan="{{sizeof($package->accommodations)}}">{{$package->dbl}} {{$package->currency}}</td>
+                                <td style="padding: 15px; border-right: 1px solid #0c112e; border-left: 1px solid #0c112e;" rowspan="{{sizeof($package->accommodations)}}">{{$package->sgl}} {{$package->currency}}</td>
+                                <td style="padding: 15px; border-left: 1px solid #0c112e;" rowspan="{{sizeof($package->accommodations)}}">{{$package->child}} {{$package->currency}}</td>
+                            @endif
                         </tr>
                     @endforeach
                     </tbody>

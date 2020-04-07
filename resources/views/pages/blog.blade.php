@@ -13,7 +13,7 @@
                     <div class="breadcrumb-inner">
                         <h1 class="page-title">Blog</h1>
                         <ul class="page-list">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li>Blog</li>
                         </ul>
                     </div>
