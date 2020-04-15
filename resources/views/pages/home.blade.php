@@ -150,6 +150,7 @@
                                             <p>Duration</p>
                                             <h2>{{$package->days}} Days / {{$package->nights}} Nights</h2>
                                         </li>
+                                        <br>
                                         <li class="tp-price-meta">
                                             <p><i class="fa fa-tag"></i></p>
                                             <p>Price</p>

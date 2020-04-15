@@ -3566,7 +3566,9 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .single-destinations-list .thumb {
     position: relative;
     background: var(--main-color-two);
-    overflow: hidden; }
+    overflow: hidden;
+    height: 250px;
+}
 .single-destinations-list .thumb img {
     -webkit-transition: all 0.8s ease;
     -moz-transition: all 0.8s ease;
@@ -4848,7 +4850,9 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     margin-right: 6px; }
 .single-package-card .details h3 {
     font-weight: 700;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    min-height: 80px;
+}
 .single-package-card .package-meta .tp-price-meta:last-child {
     margin-right: 0; }
 .single-package-card.style-two {
