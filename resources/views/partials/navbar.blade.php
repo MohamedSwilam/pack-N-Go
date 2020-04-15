@@ -5,7 +5,7 @@
         <div class="responsive-mobile-menu">
             <div class="mobile-logo">
                 <a style="font-weight: bold;color: black;font-size: 25px;" href="{{route('home')}}">
-                    Pack'N Go
+                    <img src="{{asset('images/logo/logo 1.png')}}" alt="">
                 </a>
             </div>
             <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#tp_main_menu"
@@ -28,18 +28,15 @@
         <div class="collapse navbar-collapse" id="tp_main_menu">
             <div class="logo-wrapper desktop-logo">
                 <a style="font-weight: bold;color: white;font-size: 22px;" href="{{route('home')}}" class="main-logo">
-                    Pack'N Go
+                    <img src="{{asset('images/logo/logo 2.png')}}" alt="">
                 </a>
                 <a style="font-weight: bold;color: black;font-size: 22px;" href="{{route('home')}}" class="sticky-logo">
-                    Pack'N Go
+                    <img src="{{asset('images/logo/logo 1.png')}}" alt="">
                 </a>
             </div>
             <ul class="navbar-nav">
                 <li>
                     <a href="{{route('home')}}">Home</a>
-                </li>
-                <li>
-                    <a href="{{route('about')}}">About Us</a>
                 </li>
                 <li>
                     <a href="{{route('package_list')}}">Packages</a>
