@@ -40,7 +40,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label class="single-input-wrap style-two">
-                                        <span class="single-input-title">Name *like JOHN DOE*</span>
+                                        <span class="single-input-title">Name *full name like passport*</span>
                                         <input type="text" name="passport_name">
                                     </label>
                                 </div>
