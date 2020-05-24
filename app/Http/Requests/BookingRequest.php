@@ -28,8 +28,8 @@ class BookingRequest extends FormRequest
             'name' => 'required',
             'phone' => 'required',
             'adults' => 'required',
-            'children' => 'required',
-            'infants' => 'required',
+            'children' => '',
+            'infants' => '',
             'package_id' => 'exists:packages,id',
         ];
     }

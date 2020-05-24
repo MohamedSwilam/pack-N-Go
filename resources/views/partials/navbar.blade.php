@@ -48,7 +48,16 @@
                     <a href="{{route('contact_us')}}">Contact Us</a>
                 </li>
                 <li id="insurance-button">
-                    <a href="{{route('insurance')}}">Insurance</a>
+                    <div class="dropdown">
+                        <a class="dropbtn">Services</a>
+                        <div class="dropdown-content">
+                            <a href="{{route('insurance')}}">Insurance</a>
+                            <a href="{{route('visa')}}">Visa</a>
+                        </div>
+                    </div>
+                </li>
+                <li id="insurance-button">
+                    <a href="#about-us">About Us</a>
                 </li>
             </ul>
         </div>

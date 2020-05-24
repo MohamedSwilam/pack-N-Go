@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 
 class InsuranceController extends Controller
 {
-    public function create()
+    public function view()
     {
         return view('pages.insurance')->with([
             'countries' => Country::all(),

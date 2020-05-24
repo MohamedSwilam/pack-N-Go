@@ -91,15 +91,15 @@
                         </p>
                         <p>
                             <i class="fa fa-clock-o"></i>
-                            <span>Office Hour 9:00 to 5:00 Fridays and Saturdays are off</span>
+                            <span>Office Hour 9:00 to 5:00</span>
                         </p>
                         <p>
                             <i class="fa fa-envelope"></i>
-                            <span>Email: <span>info@packandgo-me.com</span></span>
+                            <span>info@packandgo-me.com</span>
                         </p>
                         <p>
                             <i class="fa fa-phone"></i>
-                            <span>telephone: <span>+01011211886</span></span>
+                            <span>+01011211886</span>
                         </p>
                     </div>
                 </div>
