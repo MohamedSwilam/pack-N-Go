@@ -152,9 +152,9 @@
                                 <article class="page">
                                     <ul class="timeline">
                                     @foreach($package->schedules as $schedule)
+                                        <h2 id="title">Day {{$schedule->day}}</h2>
                                         <li class="timeline-milestone is-completed timeline-start">
                                                         <div class="timeline-action">
-                                                            <h2 class="title">Day {{$schedule->day}}</h2>
                                                             <div class="content">
                                                                 {{$schedule->description}}
                                                             </div>
@@ -180,6 +180,7 @@
                 <div class="col-lg-4">
                     <div class="sidebar-area sidebar-area-4">
                         <div class="widget tour-list-widget">
+                            <h3>Reservation Form</h3>
                             <div class="widget-tour-list-meta">
                                 <form action="/booking" method="post">
                                     {{csrf_field()}}
@@ -199,13 +200,13 @@
                                     <div class="single-widget-search-input">
                                         <input type="number" placeholder="Adults" name="adults" required>
                                     </div>
-                                    <div class="single-widget-search-input-title">#Children  <span style="color: red">*</span></div>
+                                    <div class="single-widget-search-input-title">#Children</div>
                                     <div class="single-widget-search-input">
-                                        <input type="number" placeholder="Children" name="children" required>
+                                        <input type="number" placeholder="Children" name="children">
                                     </div>
-                                    <div class="single-widget-search-input-title">#Infants  <span style="color: red">*</span></div>
+                                    <div class="single-widget-search-input-title">#Infants</div>
                                     <div class="single-widget-search-input">
-                                        <input type="number" placeholder="Infants" name="infants" required>
+                                        <input type="number" placeholder="Infants" name="infants">
                                     </div>
                                     <input type="hidden" name="package_id" value="{{$package->id}}">
                                     <button class="text-lg-center text-left btn btn-yellow">
@@ -275,7 +276,7 @@
 
         .timeline {
             list-style: none;
-            margin: 25px 0 22px;
+            margin: 25px 0 22px 50px;
             padding: 0;
             position: relative;
             -moz-box-sizing: border-box;
@@ -419,6 +420,12 @@
         }
         .timeline-action .content {
             font-size: 14px;
+        }
+
+        #title{
+            position: absolute;
+            left: -85px;
+            font-size: 25px;
         }
 
         .file-list {

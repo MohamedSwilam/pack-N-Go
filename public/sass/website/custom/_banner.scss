@@ -47,7 +47,7 @@
         		font-weight: 400;
         		color: $white;
         		span {
-        			color: #f1f1f1; 
+        			color: #f1f1f1;
         			font-weight: 200;
         		}
         	}
@@ -101,7 +101,7 @@
 	    line-height: 50px;
 	    text-align: center;
 	    border-radius: 50%;
-    } 
+    }
     .slick-prev {
 		left: -60px;
 		cursor: pointer;
@@ -192,7 +192,7 @@
 /*------------------------------------------------
 	## Video banner
 ------------------------------------------------*/
-.video-banner-area { 
+.video-banner-area {
 	overflow: hidden;
 	position: relative;
 	&:before {
@@ -339,7 +339,7 @@
 		            transform: translateY(4px); }
 		          100% {
 		            -webkit-transform: translateY(-1px);
-		            transform: translateY(-1px); } 
+		            transform: translateY(-1px); }
 		        }
 
 		        @keyframes top-image-bounce {
@@ -351,7 +351,7 @@
 		            transform: translateY(4px); }
 		          100% {
 		            -webkit-transform: translateY(-1px);
-		            transform: translateY(-1px); } 
+		            transform: translateY(-1px); }
 		        }
 		    }
 		}
@@ -415,7 +415,7 @@
 	            transform: translateY(4px); }
 	          100% {
 	            -webkit-transform: translateY(-1px);
-	            transform: translateY(-1px); } 
+	            transform: translateY(-1px); }
 	        }
 
 	        @keyframes top-image-bounce {
@@ -427,7 +427,7 @@
 	            transform: translateY(4px); }
 	          100% {
 	            -webkit-transform: translateY(-1px);
-	            transform: translateY(-1px); } 
+	            transform: translateY(-1px); }
 	        }
 	    }
 	}

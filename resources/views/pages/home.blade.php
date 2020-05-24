@@ -18,20 +18,61 @@
     <!-- search popup End -->
 
     <!-- banner area start -->
-    <div class="main-banner-area jarallax" style="background-image: url(/images/website/banner/4.png);">
-        <div class="content">
+    <div class="main-banner-area jarallax travelus-area" style="background-image: url(/images/website/banner/4.png);">
+        <div class="content container">
             <div class="container">
                 <h2>Explore, Discover, Travel</h2>
                 <h1>ADVENTURE</h1>
                 <h1 class="shadow">ADVENTURE</h1>
-                <div class="scroll-down">
-                    <a href="#intro" class="text-center">
-                        <span></span>
-                        <i class="la la-long-arrow-down"></i>
-                    </a>
+            </div>
+        </div>
+
+        <!-- package area end -->
+        <div class="package-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-8">
+                        <div class="section-title section-title-left-border style-two">
+                            <h2 class="title">Featured Packages</h2>
+                            {{--                                <p>Vivamus eget aliquam dui. Integer eu arcu vel arcu suscipit ultrices quis non mauris. Aenean scelerisque, sem eu dictum commodo, velit nisi</p>--}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    @foreach($packages as $package)
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="0.1s" data-wow-delay="0.1s">
+                                <div class="thumb">
+                                    @if(count($package->medias))
+                                        <img src="{{$package->medias[0]->url}}" alt="img">
+                                    @else
+                                        <img src="/images/website/destination-list/8.png" alt="img">
+                                    @endif
+                                </div>
+                                <div class="details">
+                                    <h3>{{$package->title}}</h3>
+                                    <ul class="package-meta">
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-clock-o"></i></p>
+                                            <p>Duration</p>
+                                            <h2>{{$package->days}} Days / {{$package->nights}} Nights</h2>
+                                        </li>
+                                        <br>
+                                        <li class="tp-price-meta">
+                                            <p><i class="fa fa-tag"></i></p>
+                                            <p>Price</p>
+                                            <h2>{{$package->price}} {{$package->currency}} </h2>
+                                        </li>
+                                    </ul>
+                                    <a class="btn btn-gray" href="{{route('package_details', $package->id)}}">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
+        <!-- package area end -->
     </div>
     <!-- banner area end -->
 
@@ -86,8 +127,7 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-8">
                     <div class="section-title section-title-left-border style-two">
-                        <h2 class="title">Lets Go Travel with Us</h2>
-                        <p>Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac. Ut sit amet erat nec nibh rhoncus varius in non lorem. Donec interdum, lectus in convallis pulvinar, enim elit porta sapien, vel finibus erat felis sed neque. Etiam aliquet neque sagittis erat tincidunt aliquam.</p>
+                        <h2 class="title">Why Choos Pack'N Go</h2>
                     </div>
                 </div>
             </div>
@@ -95,83 +135,39 @@
                 <li class="col-lg-2 col-sm-4 single-travelus-wrap">
                     <div class="single-travelus text-center">
                         <div class="icons">
-                            <img src="/images/website/icons/27.png" alt="img">
+                            <img src="/images/website/icons/dollar.png" alt="img">
                         </div>
-                        <h4>Search</h4>
+                        <h4>Our Standard Trips Adorable Price</h4>
                     </div>
                 </li>
                 <li class="col-lg-2 col-sm-4 single-travelus-wrap">
                     <div class="single-travelus text-center">
                         <div class="icons">
-                            <img src="/images/website/icons/28.png" alt="img">
+                            <img src="/images/website/icons/team.png" alt="img">
                         </div>
-                        <h4>Book</h4>
+                        <h4>Expert Team</h4>
+                        <br>
                     </div>
                 </li>
                 <li class="col-lg-2 col-sm-4 single-travelus-wrap">
                     <div class="single-travelus text-center">
                         <div class="icons">
-                            <img src="/images/website/icons/27.png" alt="img">
+                            <img src="/images/website/icons/247.png" alt="img">
                         </div>
-                        <h4>Travel</h4>
+                        <h4>24/7 Support</h4>
+                        <br>
                     </div>
                 </li>
                 <li class="col-lg-5 offset-xl-1 single-travelus-wrap">
                     <img src="/images/website/others/15.png" alt="img">
                 </li>
             </ul>
-            <!-- package area end -->
-            <div class="package-area pd-top-105">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-8">
-                            <div class="section-title section-title-left-border style-two">
-                                <h2 class="title">Best Packages For You</h2>
-                                <p>Vivamus eget aliquam dui. Integer eu arcu vel arcu suscipit ultrices quis non mauris. Aenean scelerisque, sem eu dictum commodo, velit nisi</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        @foreach($packages as $package)
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
-                            <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="0.1s" data-wow-delay="0.1s">
-                                <div class="thumb">
-                                    @if(count($package->medias))
-                                        <img src="{{$package->medias[0]->url}}" alt="img">
-                                    @else
-                                        <img src="/images/website/destination-list/8.png" alt="img">
-                                    @endif
-                                </div>
-                                <div class="details">
-                                    <h3>{{$package->title}}</h3>
-                                    <ul class="package-meta">
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-clock-o"></i></p>
-                                            <p>Duration</p>
-                                            <h2>{{$package->days}} Days / {{$package->nights}} Nights</h2>
-                                        </li>
-                                        <br>
-                                        <li class="tp-price-meta">
-                                            <p><i class="fa fa-tag"></i></p>
-                                            <p>Price</p>
-                                            <h2>{{$package->price}} {{$package->currency}} </h2>
-                                        </li>
-                                    </ul>
-                                    <a class="btn btn-gray" href="{{route('package_details', $package->id)}}">Book Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-            <!-- package area end -->
         </div>
     </div>
     <!-- travelus area start -->
 
     <!-- video area start -->
-    <div class="video-area tp-video-area pd-top-110" style="background-image: url('/images/website/bg/7.png');">
+    <div class="video-area tp-video-area pd-top-110" style="background-image: url('/images/website/bg/7.png');" id="about-us">
         <div class="container">
             <div class="row">
                 <div class="col-xl-5 col-lg-6 align-self-center wow animated fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">

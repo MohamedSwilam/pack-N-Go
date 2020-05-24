@@ -9,7 +9,7 @@
 <footer class="footer-area" style="background-image: url(/images/website/bg/2.png);">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-6 col-md-6">
                 <div class="footer-widget widget">
                     <div class="about_us_widget">
                         <a style="font-weight: bold;color: white;font-size: 22px;" href="http://127.0.0.1:8000" class="main-logo">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="footer-widget widget">
                     <h4 class="widget-title">Quick Link</h4>
                     <ul class="widget_nav_menu">
