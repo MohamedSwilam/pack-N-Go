@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-if="can('create-employee')" class="vx-col w-full mb-base">
+        <div v-if="can('create-package')" class="vx-col w-full mb-base">
             <vx-card ref="create" title="Create Package">
                 <form-wizard color="rgba(var(--vs-primary), 1)" :title="null" :subtitle="null" finishButtonText="Submit" @on-complete="create">
                     <tab-content title="Package Details" class="mb-5">
@@ -45,7 +45,9 @@
                                 </div>
                             </div>
                             <div class="vx-col md:w-1/2 w-full mt-5">
-                                <vs-input label="Season" v-model="form.season" class="w-full" />
+                                <vs-select label="Season" autocomplete label-placeholder="Season" icon-pack="feather" icon="icon-chevron-down"  color="primary" class="w-full" v-model="form.season">
+                                    <vs-select-item :key="index" :value="item" :text="item" v-for="(item, index) in seasons" />
+                                </vs-select>
                             </div>
                             <div class="vx-col md:w-1/2 w-full mt-5">
                                 <input type="file" class="form-control" @change="uploadImages" multiple>
@@ -200,6 +202,7 @@
                     accommodations: [
                     ]
                 },
+                seasons: ['winter', 'summer', 'fall', 'spring'],
                 uploadedImage: null,
                 is_requesting: false
             }

@@ -21,9 +21,13 @@ use App\Policies\PermissionPolicy;
 use App\Policies\PostPolicy;
 use App\Policies\RolePolicy;
 use App\Policies\SchedulePolicy;
+use App\Policies\VisaDemandPolicy;
+use App\Policies\VisaPolicy;
 use App\Post;
 use App\Schedule;
 use App\User;
+use App\Visa;
+use App\VisaDemand;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Passport\Passport;
@@ -51,6 +55,8 @@ class AuthServiceProvider extends ServiceProvider
         Insurance::class => InsurancePolicy::class,
         ContactUs::class => ContactUsPolicy::class,
         CustomPackage::class => CustomPackagePolicy::class,
+        Visa::class => VisaPolicy::class,
+        VisaDemand::class => VisaDemandPolicy::class,
     ];
 
     /**

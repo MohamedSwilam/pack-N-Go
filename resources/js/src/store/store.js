@@ -18,6 +18,8 @@ import moduleBlog from './blog/moduleBlog';
 import moduleInsurance from './insurance/moduleInsurance';
 import moduleRolesAndPermissions from './roles-and-permissions/moduleRolesAndPermissions';
 import moduleContactUs from './contactUs/moduleContactUs';
+import moduleVisa from "./visa/moduleVisa";
+import moduleVisaDemand from "./visaDemand/moduleVisaDemand";
 
 
 const vuexLocal = new VuexPersistence({
@@ -38,6 +40,8 @@ export default new Vuex.Store({
         insurance: moduleInsurance,
         rolesAndPermissions: moduleRolesAndPermissions,
         contactUs: moduleContactUs,
+        visa: moduleVisa,
+        visaDemand: moduleVisaDemand,
     },
     plugins: [vuexLocal.plugin],
     strict: process.env.NODE_ENV !== 'production'

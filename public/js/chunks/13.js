@@ -179,6 +179,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -208,6 +210,7 @@ __webpack_require__.r(__webpack_exports__);
         exclusions: [],
         accommodations: []
       },
+      seasons: ['winter', 'summer', 'fall', 'spring'],
       uploadedImage: null,
       is_requesting: false
     };
@@ -408,7 +411,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.can("create-employee")
+    _vm.can("create-package")
       ? _c(
           "div",
           { staticClass: "vx-col w-full mb-base" },
@@ -657,17 +660,34 @@ var render = function() {
                             "div",
                             { staticClass: "vx-col md:w-1/2 w-full mt-5" },
                             [
-                              _c("vs-input", {
-                                staticClass: "w-full",
-                                attrs: { label: "Season" },
-                                model: {
-                                  value: _vm.form.season,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.form, "season", $$v)
+                              _c(
+                                "vs-select",
+                                {
+                                  staticClass: "w-full",
+                                  attrs: {
+                                    label: "Season",
+                                    autocomplete: "",
+                                    "label-placeholder": "Season",
+                                    "icon-pack": "feather",
+                                    icon: "icon-chevron-down",
+                                    color: "primary"
                                   },
-                                  expression: "form.season"
-                                }
-                              })
+                                  model: {
+                                    value: _vm.form.season,
+                                    callback: function($$v) {
+                                      _vm.$set(_vm.form, "season", $$v)
+                                    },
+                                    expression: "form.season"
+                                  }
+                                },
+                                _vm._l(_vm.seasons, function(item, index) {
+                                  return _c("vs-select-item", {
+                                    key: index,
+                                    attrs: { value: item, text: item }
+                                  })
+                                }),
+                                1
+                              )
                             ],
                             1
                           ),

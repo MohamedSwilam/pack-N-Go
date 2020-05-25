@@ -23,9 +23,40 @@
     <!-- breadcrumb area End -->
 
     <!-- tour list area End -->
-    <div class="tour-list-area pd-top-120">
+    <div class="tour-list-area pd-top-50">
+        <div class="container justify-content-center filters pd-bottom-50">
+            Filters:
+            <form method="get" action="/package/filter">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="single-input-wrap style-two">
+                            <input type="number" name="min" value="{{request()->min}}" placeholder="Min Price">
+                        </label>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="single-input-wrap style-two">
+                            <input type="number" name="max" value="{{request()->max}}" placeholder="Max Price">
+                        </label>
+                    </div>
+                    <select class="col-md-3" style="height: 40px" name="season">
+                        <option value=""></option>
+                        <option value="winter">Winter</option>
+                        <option value="summer">Summer</option>
+                        <option value="fall">Fall</option>
+                        <option value="spring">Spring</option>
+                    </select>
+                    <input type="hidden" name="paginate" value="9">
+                    <button class="col-3 btn btn-yellow">
+                        Search
+                    </button>
+                </div>
+            </form>
+        </div>
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
+                @if(sizeof($packages) == 0)
+                    <h1>No Data Found</h1>
+                @endif
                 @foreach($packages as $package)
                     <div class="col-lg-4">
                         <div class="single-destinations-list style-four">

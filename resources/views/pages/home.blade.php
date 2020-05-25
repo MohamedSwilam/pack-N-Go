@@ -173,8 +173,7 @@
                 <div class="col-xl-5 col-lg-6 align-self-center wow animated fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
                     <div class="section-title mb-lg-0 mb-4 text-center text-lg-left">
                         <h2 class="title">What Do You Know <br> About US</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when unknown printer took a galley of type and scrambled it to make a type specimen book. It has not only five centuries</p>
-                        <a class="btn btn-yellow" href="{{route('about')}}"><span>Read More<i class="la la-arrow-right"></i></span></a>
+                        <p>We are young & sincere travel consultants, who are passionate about trips, possess profound knowledge & will gladly help you with tailored travel packages.</p>
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-6 offset-xl-1 wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
@@ -214,7 +213,7 @@
                                 @endif
                             </div>
                             <div class="details">
-                                <h4 class="title">{{$package->title}}</h4>
+                                <a href="/package/{{$package->id}}"><h4 class="title">{{$package->title}}</h4></a>
                                 <p class="content">{{$package->description}}</p>
                                 <div class="tp-price-meta">
                                     <h2>{{$package->price}} {{$package->currency}}</h2>

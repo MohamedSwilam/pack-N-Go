@@ -1,49 +1,62 @@
 <template>
-    <div class="vx-col w-full mb-base" v-if="can('browse-package')">
-        <vx-card ref="browse" title="Packages List" collapse-action refreshContentAction @refresh="getPackages">
-            <vs-table search :data="packages">
+    <div class="vx-col w-full mb-base" v-if="can('browse-visa')">
+        <vx-card ref="browse" title="Visas List" collapse-action refreshContentAction @refresh="getVisas">
+            <vs-table search :data="visas">
                 <template slot="header">
-                    <vs-button v-if="can('browse-package')" to="/dashboard/package/create" size="small" icon-pack="feather" icon="icon-plus">Create Package</vs-button>
+                    <vs-button v-if="can('browse-visa')" to="/dashboard/visa/create" size="small" icon-pack="feather" icon="icon-plus">Create Visa</vs-button>
                 </template>
                 <template slot="thead">
                     <vs-th>#</vs-th>
-                    <vs-th>Name</vs-th>
-                    <vs-th>Date</vs-th>
+                    <vs-th>Image</vs-th>
+                    <vs-th>Country</vs-th>
                     <vs-th>Price</vs-th>
-                    <vs-th>Is Featured</vs-th>
+                    <vs-th>Extraction Time</vs-th>
+                    <vs-th>Visit Time</vs-th>
+                    <vs-th>Expiry</vs-th>
                     <vs-th>Created At</vs-th>
                     <vs-th>Action</vs-th>
                 </template>
                 <template slot-scope="{data}">
-                    <vs-tr :key="index" v-for="(packageData, index) in packages">
-                        <vs-td :data="packageData.id">
-                            {{ packageData.id }}
+                    <vs-tr :key="index" v-for="(visaData, index) in visas">
+                        <vs-td :data="index">
+                            {{ index+1 }}
                         </vs-td>
 
-                        <vs-td :data="packageData.title">
-                            {{ packageData.title}}
+                        <vs-td :data="visaData.image">
+                            <a v-if="visaData.image" :href="`${visaData.image.url}`" target="_blank"><img :src="`${visaData.image.url}`" width="50px" height="50px"></a>
+                            <b v-else>No Image</b>
                         </vs-td>
 
-                        <vs-td :data="packageData.date">
-                            {{ packageData.date}}
+                        <vs-td :data="visaData.country_name">
+                            {{ visaData.country_name}}
                         </vs-td>
 
-                        <vs-td :data="packageData.price">
-                            {{ packageData.price}}
-                        </vs-td>
-                        <vs-td :data="packageData.home_page">
-                            {{ packageData.home_page}}
+                        <vs-td :data="visaData.price">
+                            {{ visaData.price}} {{ visaData.currency }}
                         </vs-td>
 
-                        <vs-td :data="packageData.created_at">
-                            {{ packageData.created_at}}
+                        <vs-td :data="visaData.extraction_time">
+                            {{ visaData.extraction_time}}
+                        </vs-td>
+
+                        <vs-td :data="visaData.visit_time">
+                            {{ visaData.visit_time}}
+                        </vs-td>
+
+                        <vs-td :data="visaData.expiry">
+                            {{ visaData.expiry}}
+                        </vs-td>
+
+                        <vs-td :data="visaData.created_at">
+                            {{ visaData.created_at}}
                         </vs-td>
 
                         <vs-td>
                             <vs-row>
                                 <div class="flex mb-4">
-                                    <div class="w-1/3 ml-5" v-if="can('delete-package')">
-                                        <vs-button :id="`btn-delete-${packageData.id}`" class="vs-con-loading__container" radius color="danger" type="border" icon-pack="feather" icon="icon-trash" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):confirmDeletePackage(packageData)"></vs-button>
+                                    <vs-button :to="`/dashboard/visa/${visaData.id}`" icon-pack="feather" icon="icon-eye" color="primary" radius type="border"></vs-button>
+                                    <div class="w-1/3 ml-5" v-if="can('delete-visa')">
+                                        <vs-button :id="`btn-delete-${visaData.id}`" class="vs-con-loading__container" radius color="danger" type="border" icon-pack="feather" icon="icon-trash" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):confirmDeleteVisa(visaData)"></vs-button>
                                     </div>
                                 </div>
                             </vs-row>
@@ -59,23 +72,23 @@
     export default {
         name: "browse",
         mounted() {
-            this.getPackages();
+            this.getVisas();
         },
         data: function (){
             return {
                 searchText: "",
                 resultTime: 0,
-                packages: [],
+                visas: [],
                 is_requesting: false
             }
         },
         methods: {
-            getPackages(){
+            getVisas(){
                 // this.$vs.loading({container: this.$refs.browse, scale: 0.5});
-                this.$store.dispatch('package/getData', '')
+                this.$store.dispatch('visa/getData', '')
                     .then(response => {
                         // this.$vs.loading.close(this.$refs.browse);
-                        this.packages = response.data.data.data;
+                        this.visas = response.data.data.data;
                     })
                     .catch(error => {
                         console.log(error);
@@ -90,27 +103,27 @@
                     });
             },
 
-            confirmDeletePackage(type)
+            confirmDeleteVisa(type)
             {
                 this.$vs.dialog({
                     type: 'confirm',
                     color: 'danger',
                     title: `Are you sure!`,
                     text: 'This data can not be retrieved again.',
-                    accept: this.deletePackage,
+                    accept: this.deleteVisa,
                     parameters: [type]
                 });
             },
 
-            deletePackage(params)
+            deleteVisa(params)
             {
                 this.is_requesting=true;
                 this.$vs.loading({container: `#btn-delete-${params[0].id}`, color: 'danger', scale: 0.45});
-                this.$store.dispatch('package/delete', params[0].id)
+                this.$store.dispatch('visa/delete', params[0].id)
                     .then(response => {
                         this.is_requesting = false;
                         this.$vs.loading.close(`#btn-delete-${params[0].id} > .con-vs-loading`);
-                        this.packages = this.packages.filter(type => {return type.id !== params[0].id});
+                        this.visas = this.visas.filter(type => {return type.id !== params[0].id});
                         this.$vs.notify({
                             title: 'Success',
                             text: response.data.message,

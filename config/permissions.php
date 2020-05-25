@@ -275,4 +275,60 @@ return [
             'display_name' => 'Delete Custom Package',
         ],
     ],
+
+    'Visa' => [
+        [
+            'name' => 'create-visa',
+            'guard_name' => 'api',
+            'display_name' => 'Create Visa',
+        ],
+        [
+            'name' => 'browse-visa',
+            'guard_name' => 'api',
+            'display_name' => 'Browse Visa',
+        ],
+        [
+            'name' => 'view-visa',
+            'guard_name' => 'api',
+            'display_name' => 'View Visa',
+        ],
+        [
+            'name' => 'edit-visa',
+            'guard_name' => 'api',
+            'display_name' => 'Edit Visa',
+        ],
+        [
+            'name' => 'delete-visa',
+            'guard_name' => 'api',
+            'display_name' => 'Delete Visa',
+        ],
+    ],
+
+    'Visa Demand' => [
+        [
+            'name' => 'create-visa-demand',
+            'guard_name' => 'api',
+            'display_name' => 'Create Visa Demand',
+        ],
+        [
+            'name' => 'browse-visa-demand',
+            'guard_name' => 'api',
+            'display_name' => 'Browse Visa Demand',
+        ],
+        [
+            'name' => 'view-visa-demand',
+            'guard_name' => 'api',
+            'display_name' => 'View Visa Demand',
+        ],
+        [
+            'name' => 'edit-visa-demand',
+            'guard_name' => 'api',
+            'display_name' => 'Edit Visa Demand',
+        ],
+        [
+            'name' => 'delete-visa-demand',
+            'guard_name' => 'api',
+            'display_name' => 'Delete Visa Demand',
+        ],
+    ],
 ];
