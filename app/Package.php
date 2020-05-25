@@ -44,11 +44,26 @@ class Package extends Model
 
     public function scopeComing($query)
     {
-        $query->where('date', '>=', today());
+        return $query->where('date', '>=', today());
     }
 
     public function scopeHomepage($query)
     {
-        $query->where('home_page', 1);
+        return $query->where('home_page', 1);
+    }
+
+    public function scopeMin($query, $value)
+    {
+        return $query->where('price', '>=', $value);
+    }
+
+    public function scopeMax($query, $value)
+    {
+        return $query->where('price', '<=', $value);
+    }
+
+    public function scopeSeason($query, $value)
+    {
+        return $query->where('season', $value);
     }
 }

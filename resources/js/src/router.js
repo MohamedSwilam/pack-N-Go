@@ -97,6 +97,53 @@ const router = new Router({
                     }
                 },
                 {
+                    path: '/dashboard/visa',
+                    name: 'visa',
+                    component: () => import('./views/visa/browse.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard', i18n: 'Home' },
+                            { title: 'Visa', active: true, i18n: 'Visa' },
+                        ],
+                        pageTitle: 'Visa',
+                        pageTitle_i18n: 'Visa',
+                        permission: 'browse-visa'
+                    }
+                },
+                {
+                    path: '/dashboard/visa/create',
+                    name: 'add-visa',
+                    component: () => import('./views/visa/create.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard', i18n: 'Home' },
+                            { title: 'Visa', url: '/dashboard/visa', i18n: 'Visa' },
+                            { title: 'Add Visa', active: true, i18n: 'AddVisa' },
+                        ],
+                        pageTitle: 'Add Visa',
+                        pageTitle_i18n: 'AddVisa',
+                        permission: 'create-visa'
+                    }
+                },
+                {
+                    path: '/dashboard/visa/:id',
+                    name: 'view-visa',
+                    component: () => import('./views/visa/view.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard', i18n: 'Home' },
+                            { title: 'Visa', url: '/dashboard/visa', i18n: 'Visa' },
+                            { title: 'Visa', active: true, i18n: 'VisaProfile' },
+                        ],
+                        pageTitle: 'Edit Visa',
+                        pageTitle_i18n: 'editVisa',
+                        permission: 'view-visa'
+                    }
+                },
+                {
                     path: '/dashboard/blog/create',
                     name: 'add-blog',
                     component: () => import('./views/blog/create.vue'),

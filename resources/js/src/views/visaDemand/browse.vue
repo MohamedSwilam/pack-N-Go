@@ -1,53 +1,55 @@
 <template>
-    <div class="vx-col w-full mb-base" v-if="can('browse-package')">
-        <vx-card ref="browse" title="Packages List" collapse-action refreshContentAction @refresh="getPackages">
-            <vs-table search :data="packages">
-                <template slot="header">
-                    <vs-button v-if="can('browse-package')" to="/dashboard/package/create" size="small" icon-pack="feather" icon="icon-plus">Create Package</vs-button>
-                </template>
+    <div class="vx-col w-full mb-base" v-if="can('browse-visa-demand')">
+        <vx-card ref="browse" title="Visa Requests" collapse-action refreshContentAction @refresh="getVisaDemands">
+            <vs-table search :data="visas">
                 <template slot="thead">
-                    <vs-th>#</vs-th>
+                    <vs-th>ID</vs-th>
                     <vs-th>Name</vs-th>
-                    <vs-th>Date</vs-th>
-                    <vs-th>Price</vs-th>
-                    <vs-th>Is Featured</vs-th>
+                    <vs-th>Email</vs-th>
+                    <vs-th>Telephone</vs-th>
                     <vs-th>Created At</vs-th>
                     <vs-th>Action</vs-th>
                 </template>
-                <template slot-scope="{data}">
-                    <vs-tr :key="index" v-for="(packageData, index) in packages">
-                        <vs-td :data="packageData.id">
-                            {{ packageData.id }}
+                <template slot-scope="{data : data}">
+                    <vs-tr :key="index" v-for="(visa, index) in data">
+                        <vs-td :data="visa.id">
+                            {{ index+1 }}
                         </vs-td>
 
-                        <vs-td :data="packageData.title">
-                            {{ packageData.title}}
+                        <vs-td :data="visa.name">
+                            {{ visa.name}}
                         </vs-td>
 
-                        <vs-td :data="packageData.date">
-                            {{ packageData.date}}
+                        <vs-td :data="visa.email">
+                            {{ visa.email}}
                         </vs-td>
 
-                        <vs-td :data="packageData.price">
-                            {{ packageData.price}}
-                        </vs-td>
-                        <vs-td :data="packageData.home_page">
-                            {{ packageData.home_page}}
+                        <vs-td :data="visa.phone">
+                            {{ visa.phone}}
                         </vs-td>
 
-                        <vs-td :data="packageData.created_at">
-                            {{ packageData.created_at}}
+                        <vs-td :data="visa.created_at">
+                            {{ visa.created_at}}
                         </vs-td>
 
                         <vs-td>
                             <vs-row>
                                 <div class="flex mb-4">
-                                    <div class="w-1/3 ml-5" v-if="can('delete-package')">
-                                        <vs-button :id="`btn-delete-${packageData.id}`" class="vs-con-loading__container" radius color="danger" type="border" icon-pack="feather" icon="icon-trash" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):confirmDeletePackage(packageData)"></vs-button>
+                                    <div class="w-1/3 ml-5" v-if="can('delete-visa-demand')">
+                                        <vs-button :id="`btn-delete-${visa.id}`" class="vs-con-loading__container" radius color="danger" type="border" icon-pack="feather" icon="icon-trash" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):confirmDeleteVisaDemand(visa)"></vs-button>
                                     </div>
                                 </div>
                             </vs-row>
                         </vs-td>
+                        <template class="expand-user" slot="expand">
+                            <div class="con-expand-users w-full">
+                                <vs-row>
+                                    <vs-col vs-xs="12" vs-sm="12" vs-lg="12">
+                                        {{visa.description}}
+                                    </vs-col>
+                                </vs-row>
+                            </div>
+                        </template>
                     </vs-tr>
                 </template>
             </vs-table>
@@ -56,30 +58,38 @@
 </template>
 
 <script>
+    import "@fortawesome/fontawesome-free/css/all.css"
+    import "@fortawesome/fontawesome-free/js/all.js"
     export default {
-        name: "browse",
+        name: "ViewData",
         mounted() {
-            this.getPackages();
+            this.getVisaDemands();
         },
         data: function (){
             return {
                 searchText: "",
                 resultTime: 0,
-                packages: [],
+                visas: [],
                 is_requesting: false
             }
         },
+        props: {
+            visa_id: {
+                required:false
+            }
+        },
         methods: {
-            getPackages(){
-                // this.$vs.loading({container: this.$refs.browse, scale: 0.5});
-                this.$store.dispatch('package/getData', '')
+            getVisaDemands(){
+                let payload = '';
+                if (this.visa_id){
+                    payload = `?visa=${this.visa_id}`
+                }
+                this.$store.dispatch('visaDemand/getData', payload)
                     .then(response => {
-                        // this.$vs.loading.close(this.$refs.browse);
-                        this.packages = response.data.data.data;
+                        this.visas = response.data.data.data;
                     })
                     .catch(error => {
                         console.log(error);
-                        // this.$vs.loading.close(this.$refs.browse);
                         this.$vs.notify({
                             title: 'Error',
                             text: error.response.data.error,
@@ -90,27 +100,27 @@
                     });
             },
 
-            confirmDeletePackage(type)
+            confirmDeleteVisaDemand(type)
             {
                 this.$vs.dialog({
                     type: 'confirm',
                     color: 'danger',
                     title: `Are you sure!`,
                     text: 'This data can not be retrieved again.',
-                    accept: this.deletePackage,
+                    accept: this.deleteVisaDemand,
                     parameters: [type]
                 });
             },
 
-            deletePackage(params)
+            deleteVisaDemand(params)
             {
                 this.is_requesting=true;
                 this.$vs.loading({container: `#btn-delete-${params[0].id}`, color: 'danger', scale: 0.45});
-                this.$store.dispatch('package/delete', params[0].id)
+                this.$store.dispatch('visaDemand/delete', params[0].id)
                     .then(response => {
                         this.is_requesting = false;
                         this.$vs.loading.close(`#btn-delete-${params[0].id} > .con-vs-loading`);
-                        this.packages = this.packages.filter(type => {return type.id !== params[0].id});
+                        this.visas = this.visas.filter(type => {return type.id !== params[0].id});
                         this.$vs.notify({
                             title: 'Success',
                             text: response.data.message,

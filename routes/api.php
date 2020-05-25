@@ -82,4 +82,17 @@ Route::group(['prefix' => 'custom-package', 'middleware' => 'auth:api'], functio
     Route::resource('', 'CustomPackageController');
 });
 
+Route::group(['prefix' => 'visa', 'middleware' => 'auth:api'], function () {
+    Route::post('{id}', 'VisaController@update');
+    Route::get('{id}', 'VisaController@show');
+    Route::delete('{id}', 'VisaController@destroy');
+    Route::resource('', 'VisaController');
+});
+
+Route::group(['prefix' => 'visa-demand', 'middleware' => 'auth:api'], function () {
+    Route::get('{id}', 'VisaDemandController@show');
+    Route::delete('{id}', 'VisaDemandController@destroy');
+    Route::resource('', 'VisaDemandController');
+});
+
 Route::post('custom-package', 'CustomPackageController@store');

@@ -6785,10 +6785,17 @@ __webpack_require__.r(__webpack_exports__);
   i18n: "insurance",
   permission: 'browse-insurance'
 }, {
+  url: "/dashboard/visa",
+  name: "Visa",
+  slug: "visa",
+  icon: "CreditCardIcon",
+  i18n: "visa",
+  permission: 'browse-visa'
+}, {
   url: "/dashboard/contact-us",
   name: "Contact Us",
   slug: "contactUs",
-  icon: "ClipboardIcon",
+  icon: "AtSignIcon",
   i18n: "contactUs",
   permission: 'browse-contact-us'
 }, {
