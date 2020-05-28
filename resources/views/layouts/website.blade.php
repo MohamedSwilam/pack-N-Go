@@ -11,7 +11,7 @@
 
         <title>@yield('title') {{ config('app.name', 'Pack\'N Go') }}</title>
         <!-- favicon -->
-        <link rel=icon href="../../assets/images/website/favicon.png" sizes="20x20" type="image/png">
+        <link rel="icon" href="/images/logo/logo 2.png" sizes="50x10" type="image/png">
 
         <!-- Additional plugin css -->
         <link rel="stylesheet" href="{{ asset(mix('css/website/bootstrap.min.css'))}}">

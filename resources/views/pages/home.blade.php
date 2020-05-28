@@ -18,7 +18,7 @@
     <!-- search popup End -->
 
     <!-- banner area start -->
-    <div class="main-banner-area jarallax travelus-area" style="background-image: url(/images/website/banner/4.png);">
+    <div class="main-banner-area jarallax travelus-area" style="background-image: url(/storage/background.jpg);">
         <div class="content container">
             <div class="container">
                 <h2>Explore, Discover, Travel</h2>
@@ -40,6 +40,7 @@
                 </div>
                 <div class="row justify-content-center">
                     @foreach($packages as $package)
+                        <a  href="{{route('package_details', $package->id)}}">
                         <div class="col-xl-3 col-lg-4 col-sm-6">
                             <div class="single-package-card style-two wow animated fadeInUp" data-wow-duration="0.1s" data-wow-delay="0.1s">
                                 <div class="thumb">
@@ -68,6 +69,7 @@
                                 </div>
                             </div>
                         </div>
+                        </a>
                     @endforeach
                 </div>
             </div>
@@ -203,6 +205,7 @@
             </div>
             <div class="row">
                 @foreach($latest_packages as $package)
+                    <a  href="{{route('package_details', $package->id)}}">
                     <div class="col-lg-3 col-sm-6">
                         <div class="single-destinations-list style-two wow animated fadeInUp" data-wow-duration="0.4s" data-wow-delay="0.1s">
                             <div class="thumb">
@@ -221,6 +224,7 @@
                             </div>
                         </div>
                     </div>
+                    </a>
                 @endforeach
             </div>
         </div>

@@ -53,6 +53,13 @@ export default [
         permission: 'browse-visa'
     },
     {
+        url: "/dashboard/background",
+        name: "Home Background",
+        slug: "background",
+        icon: "ImageIcon",
+        i18n: "image",
+    },
+    {
         url: "/dashboard/contact-us",
         name: "Contact Us",
         slug: "contactUs",

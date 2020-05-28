@@ -82,7 +82,8 @@ class VisaController extends Controller
                 Visa::where('id', $visa->id)->first(),
                 new VisaTransformer()
             )
-        );    }
+        );
+    }
 
     /**
      * Display the specified resource.

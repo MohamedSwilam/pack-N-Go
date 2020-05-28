@@ -198,15 +198,15 @@
                                     </div>
                                     <div class="single-widget-search-input-title">#Adults <span style="color: red">*</span></div>
                                     <div class="single-widget-search-input">
-                                        <input type="number" placeholder="Adults" name="adults" required>
+                                        <input type="number" min="1" placeholder="Adults" name="adults" required>
                                     </div>
                                     <div class="single-widget-search-input-title">#Children</div>
                                     <div class="single-widget-search-input">
-                                        <input type="number" placeholder="Children" name="children">
+                                        <input type="number" min="1" placeholder="Children" name="children">
                                     </div>
                                     <div class="single-widget-search-input-title">#Infants</div>
                                     <div class="single-widget-search-input">
-                                        <input type="number" placeholder="Infants" name="infants">
+                                        <input type="number" min="1" placeholder="Infants" name="infants">
                                     </div>
                                     <input type="hidden" name="package_id" value="{{$package->id}}">
                                     <button class="text-lg-center text-left btn btn-yellow">

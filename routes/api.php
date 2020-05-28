@@ -96,3 +96,5 @@ Route::group(['prefix' => 'visa-demand', 'middleware' => 'auth:api'], function (
 });
 
 Route::post('custom-package', 'CustomPackageController@store');
+
+Route::post('background', 'BackgroundController@store');

@@ -66,4 +66,9 @@ class Package extends Model
     {
         return $query->where('season', $value);
     }
+
+    public function scopeNights($query, $value)
+    {
+        return $query->where('nights', $value);
+    }
 }
