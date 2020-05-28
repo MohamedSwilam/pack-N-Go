@@ -327,6 +327,19 @@ const router = new Router({
                         pageTitle: "Profile"
                     }
                 },
+                {
+                    path: '/dashboard/background',
+                    name: 'background',
+                    component: () => import('./views/background/create'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard'},
+                            { title: 'Background', active: true}
+                        ],
+                        pageTitle: "Background"
+                    }
+                },
 
             ],
         },

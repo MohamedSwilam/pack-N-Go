@@ -28,7 +28,7 @@
             <div class="row justify-content-center">
                 @foreach($visas as $visa)
                     <div class="col-lg-2">
-                        <div class="single-destinations-list style-four" style="min-height: 150px !important;">
+                        <div class="single-destinations-list style-four" style="min-height: 200px !important;">
                             @if($visa->image)
                                 <div class="blur-thumb" style="background-image:url({{$visa->image->url}});"></div>
                             @else
@@ -36,6 +36,8 @@
                             @endif
                             <div class="details">
                                 <h4 class="title"><a href="{{route('visa_details', $visa->id)}}">{{$visa->country_name}}</a></h4>
+                                <br>
+                                <a class="btn btn-gray" href="{{route('visa_details', $visa->id)}}">View Details</a>
                             </div>
                         </div>
                     </div>

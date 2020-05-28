@@ -28,14 +28,19 @@
             Filters:
             <form method="get" action="/package/filter">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <label class="single-input-wrap style-two">
-                            <input type="number" name="min" value="{{request()->min}}" placeholder="Min Price">
+                            <input type="number" name="min" min="1" value="{{request()->min}}" placeholder="Min Price">
                         </label>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <label class="single-input-wrap style-two">
-                            <input type="number" name="max" value="{{request()->max}}" placeholder="Max Price">
+                            <input type="number" name="max" min="1" value="{{request()->max}}" placeholder="Max Price">
+                        </label>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="single-input-wrap style-two">
+                            <input type="number" name="nights" min="1" value="{{request()->nights}}" placeholder="Nights Number">
                         </label>
                     </div>
                     <select class="col-md-3" style="height: 40px" name="season">
