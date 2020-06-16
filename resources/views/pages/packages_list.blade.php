@@ -64,29 +64,31 @@
                 @endif
                 @foreach($packages as $package)
                     <div class="col-lg-4">
-                        <div class="single-destinations-list style-four">
-                            @if(sizeof($package->medias) > 0)
-                                <div class="blur-thumb" style="background-image:url({{$package->medias[0]->url}});"></div>
-                            @else
-                                <div class="blur-thumb" style="background-image:url(/images/website/destination-list/5.png);"></div>
-                            @endif
-                            <div class="details">
-                                <h4 class="title"><a href="{{route('package_details', $package->id)}}">{{$package->title}}</a></h4>
-                                <p class="content">{{$package->description}}</p>
-                                <div class="list-price-meta">
-                                    <ul class="tp-list-meta d-inline-block">
-                                        <li><i class="fa fa-calendar-o"></i>{{date('t F Y', strtotime($package->date))}}</li>
-                                        <li><i class="fa fa-clock-o"></i> {{$package->days}} Days / {{$package->nights}} Nights</li>
-                                        <li><i class="fa fa-snowflake-o"></i> {{$package->season}}</li>
-                                        <li><i class="fa fa-star"></i>{{number_format($package->rate, 1)}}</li>
-                                    </ul>
-                                    <div class="tp-price-meta d-inline-block">
-                                        <p>Price</p>
-                                        <h2>{{$package->price}} {{$package->currency}}</h2>
+                        <a  href="{{route('package_details', $package->id)}}">
+                            <div class="single-destinations-list style-four">
+                                @if(sizeof($package->medias) > 0)
+                                    <div class="blur-thumb" style="background-image:url({{$package->medias[0]->url}});"></div>
+                                @else
+                                    <div class="blur-thumb" style="background-image:url(/images/website/destination-list/5.png);"></div>
+                                @endif
+                                <div class="details">
+                                    <h4 class="title">{{$package->title}}</h4>
+                                    <p class="content">{{$package->description}}</p>
+                                    <div class="list-price-meta">
+                                        <ul class="tp-list-meta d-inline-block">
+                                            <li><i class="fa fa-calendar-o"></i>{{date('t F Y', strtotime($package->date))}}</li>
+                                            <li><i class="fa fa-clock-o"></i> {{$package->days}} Days / {{$package->nights}} Nights</li>
+                                            <li><i class="fa fa-snowflake-o"></i> {{$package->season}}</li>
+                                            <li><i class="fa fa-star"></i>{{number_format($package->rate, 1)}}</li>
+                                        </ul>
+                                        <div class="tp-price-meta d-inline-block">
+                                            <p>Price</p>
+                                            <h2>{{$package->price}} {{$package->currency}}</h2>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 @endforeach
 

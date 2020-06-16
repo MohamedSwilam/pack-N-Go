@@ -25,12 +25,7 @@
     <div class="contact-area pd-top-108">
         <div class="container">
             <div class="row">
-                <div class="col-xl-5 offset-xl-1 col-lg-6">
-                    <div class="thumb">
-                        <img src="/images/website/others/11.png" alt="img">
-                    </div>
-                </div>
-                <div class="col-xl-5 col-lg-6">
+                <div class="col-xl-12 col-lg-12">
                     <form class="tp-form-wrap" action="/contact-us" method="post">
                         {{csrf_field()}}
                         <div class="row">

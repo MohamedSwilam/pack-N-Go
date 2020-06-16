@@ -27,18 +27,21 @@
         <div class="container">
             <div class="row justify-content-center">
                 @foreach($visas as $visa)
-                    <div class="col-lg-2">
-                        <div class="single-destinations-list style-four" style="min-height: 200px !important;">
-                            @if($visa->image)
-                                <div class="blur-thumb" style="background-image:url({{$visa->image->url}});"></div>
-                            @else
-                                <div class="blur-thumb" style="background-image:url(/images/website/destination-list/5.png);"></div>
-                            @endif
-                            <div class="details">
-                                <h4 class="title"><a href="{{route('visa_details', $visa->id)}}">{{$visa->country_name}}</a></h4>
-                                <br>
-                                <a class="btn btn-gray" href="{{route('visa_details', $visa->id)}}">View Details</a>
+                    <div class="col-lg-2" style="border-radius: 5px;margin: 10px;padding: 10px;background: #F5F5F5;">
+                        <div>
+                            <div class="single-destinations-list style-four" style="min-height: 200px !important;">
+                                @if($visa->image)
+                                    <div class="blur-thumb" style="background-image:url({{$visa->image->url}});"></div>
+                                @else
+                                    <div class="blur-thumb" style="background-image:url(/images/website/destination-list/5.png);"></div>
+                                @endif
+                                <div class="details">
+                                    <h4 class="title">{{$visa->country_name}}</h4>
+                                </div>
                             </div>
+                        </div>
+                        <div class="details" style="text-align: center;">
+                            <a class="btn btn-yellow" href="{{route('visa_details', $visa->id)}}">View Details</a>
                         </div>
                     </div>
                 @endforeach

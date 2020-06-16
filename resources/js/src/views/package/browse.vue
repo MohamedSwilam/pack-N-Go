@@ -42,6 +42,10 @@
                         <vs-td>
                             <vs-row>
                                 <div class="flex mb-4">
+                                    <vs-button :to="`/dashboard/package/${packageData.id}`" icon-pack="feather" icon="icon-eye" color="primary" radius type="border"></vs-button>
+                                    <div class="w-1/3 ml-5" v-if="can('edit-package')">
+                                        <vs-button :to="`/dashboard/package/${packageData.id}/edit`" radius color="warning" type="border" icon-pack="feather" icon="icon-edit"></vs-button>
+                                    </div>
                                     <div class="w-1/3 ml-5" v-if="can('delete-package')">
                                         <vs-button :id="`btn-delete-${packageData.id}`" class="vs-con-loading__container" radius color="danger" type="border" icon-pack="feather" icon="icon-trash" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):confirmDeletePackage(packageData)"></vs-button>
                                     </div>

@@ -14,6 +14,7 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 class PackageController extends Controller
 {
@@ -154,9 +155,67 @@ class PackageController extends Controller
     {
         $this->authorize('update', Package::class);
 
+        $data = $request->validated();
+
+        $data['home_page'] = $data['home_page'] == 'true'? 1:0;
+
         $package = Package::find($id);
 
-        $package->update($request->validated());
+        $package->inclusions()->delete();
+        foreach (json_decode($request->validated()['inclusions']) as $inclusion){
+            $inclusion = Lusion::create([
+                'type' => 1,
+                'name' => $inclusion->name
+            ]);
+            $package->inclusions()->save($inclusion);
+        }
+
+        $package->exclusions()->delete();
+        foreach (json_decode($request->validated()['exclusions']) as $exclusion){
+
+            $exclusion = Lusion::create([
+                'type' => 0,
+                'name' => $exclusion->name
+            ]);
+            $package->exclusions()->save($exclusion);
+        }
+
+        $package->schedules()->delete();
+        foreach (json_decode($request->validated()['schedules']) as $schedule){
+            $schedule = Schedule::create([
+                'day' => $schedule->day,
+                'description' => $schedule->description
+            ]);
+            $package->schedules()->save($schedule);
+        }
+
+        $package->accommodations()->delete();
+        foreach (json_decode($request->validated()['accommodations']) as $accommodation){
+            $accommodation = Accommodation::create([
+                'city' => $accommodation->city,
+                'nights' => $accommodation->nights,
+                'hotel' => $accommodation->hotel,
+                'rate' => $accommodation->rate,
+            ]);
+            $package->accommodations()->save($accommodation);
+        }
+
+        foreach ($package->medias as $media){
+            Storage::delete($media->url);
+        }
+        $package->medias()->delete();
+        if (array_key_exists('images', $request->validated())){
+            foreach ($request->validated()['images'] as $image){
+                $data = [
+                    'old_name' => $image->getClientOriginalName(),
+                ];
+                $data['url'] = download_file($image, config('paths.image.create'));
+                $image = Media::create($data);
+                $package->medias()->save($image);
+            }
+        }
+
+        $package->update($data);
 
         return $this->respond(
             'Updated Successfully',
