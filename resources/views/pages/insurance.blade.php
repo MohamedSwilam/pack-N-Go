@@ -34,6 +34,28 @@
             <div class="row justify-content-center">
                 <form class="tp-form-wrap" method="post" action="/insurance" enctype="multipart/form-data">
                     {{csrf_field()}}
+
+                    <div class="row">
+                        <h3 class="col-md-12">Personal Information</h3>
+                        <div class="col-md-6">
+                            <label class="single-input-wrap style-two">
+                                <span class="single-input-title">Name <span style="color: red">*</span></span>
+                                <input type="text" name="name" required>
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="single-input-wrap style-two">
+                                <span class="single-input-title">Address <span style="color: red">*</span></span>
+                                <input type="text" name="address" required>
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="single-input-wrap style-two">
+                                <span class="single-input-title">Phone <span style="color: red">*</span></span>
+                                <input type="text" name="phone" required>
+                            </label>
+                        </div>
+                    </div>
                     <div class="row">
                         <h3 class="col-md-12">Passport Information</h3>
                         <div class="col-md-7">
@@ -80,7 +102,7 @@
                                         <span class="single-input-title">Nationality</span>
                                         <select class="single-input-wrap style-two" name="nationality">
                                             @foreach($countries as $country)
-                                                <option value="{{$country->name}}">
+                                                <option value="{{$country->name}}" @if(strtolower($country->name) == 'egypt') selected @endif>
                                                     {{$country->name}}
                                                 </option>
                                             @endforeach
@@ -112,25 +134,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <h3 class="col-md-12">Personal Information</h3>
-                        <div class="col-md-6">
-                            <label class="single-input-wrap style-two">
-                                <span class="single-input-title">Name <span style="color: red">*</span></span>
-                                <input type="text" name="name" required>
-                            </label>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="single-input-wrap style-two">
-                                <span class="single-input-title">Address <span style="color: red">*</span></span>
-                                <input type="text" name="address" required>
-                            </label>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="single-input-wrap style-two">
-                                <span class="single-input-title">Phone <span style="color: red">*</span></span>
-                                <input type="text" name="phone" required>
-                            </label>
-                        </div>
+                        <h3 class="col-md-12">Insurance Information</h3>
                         <div class="col-md-6">
                             <label class="single-input-wrap style-two">
                                 <span class="single-input-title">Insurance Type<span style="color: red">*</span></span>
@@ -158,7 +162,7 @@
                         <div class="col-md-6">
                             <label class="single-input-wrap style-two">
                                 <span class="single-input-title">Start Date<span style="color: red">*</span></span>
-                                <input type="date" name="start_date">
+                                <input type="date" name="start_date" min="{{date('Y-m-d')}}">
                             </label>
                         </div>
                     </div>

@@ -49,7 +49,7 @@ const router = new Router({
                         ],
                         pageTitle: 'Package',
                         pageTitle_i18n: 'Package',
-                        permission: 'browse-employee'
+                        permission: 'browse-package'
                     }
                 },
                 {
@@ -65,7 +65,39 @@ const router = new Router({
                         ],
                         pageTitle: 'Create Package',
                         pageTitle_i18n: 'Package',
-                        permission: 'create-employee'
+                        permission: 'create-package'
+                    }
+                },
+                {
+                    path: '/dashboard/package/:id',
+                    name: 'view-package',
+                    component: () => import('./views/package/view.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard', i18n: 'Home' },
+                            { title: 'Package', i18n: 'Package' },
+                            { title: 'View', active: true },
+                        ],
+                        pageTitle: 'View Package',
+                        pageTitle_i18n: 'Package',
+                        permission: 'view-package'
+                    }
+                },
+                {
+                    path: '/dashboard/package/:id/edit',
+                    name: 'edit-package',
+                    component: () => import('./views/package/edit.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard', i18n: 'Home' },
+                            { title: 'Package', i18n: 'Package' },
+                            { title: 'Edit', active: true },
+                        ],
+                        pageTitle: 'Edit Package',
+                        pageTitle_i18n: 'Package',
+                        permission: 'edit-package'
                     }
                 },
                 {

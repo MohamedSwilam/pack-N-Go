@@ -5,11 +5,11 @@
                 <div class="vx-row">
                     <div class="vx-col sm:w-1/2 w-full mb-6">
                         <div class="image-preview" style="display: inline-flex;">
-                            <img alt="employee photo" class="preview" :src="uploadedImage?uploadedImage:'/images/avatar-s-11.png'">
+                            <img alt="background photo" class="preview" :src="uploadedImage?uploadedImage:'/images/avatar-s-11.png'">
                         </div>
                         <div style="display: inline-flex;position: relative;top: -15px;">
                             <input id="img-upload" type="file" @change="previewImage" accept="image/*">
-                            <vs-button size="small" icon-pack="feather" icon="icon-upload" type="gradient" onclick="document.getElementById('img-upload').click()">Upload Employee Photo</vs-button>
+                            <vs-button size="small" icon-pack="feather" icon="icon-upload" type="gradient" onclick="document.getElementById('img-upload').click()">Upload Background Photo</vs-button>
                         </div>
                     </div>
                 </div>

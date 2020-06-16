@@ -65,25 +65,25 @@
                                 <div class="col-lg-6 col-md-6">
                                     <label class="single-input-wrap">
                                         <span class="single-input-title"><i class="fa fa-adjust"></i> Flexibility</span>
-                                        <input id="flexibility" type="number">
+                                        <input id="flexibility" type="number" min="0">
                                     </label>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
                                     <label class="single-input-wrap">
                                         <span class="single-input-title"><i class="fa fa-male"></i> Adults (+12 Years)</span>
-                                        <input id="adults" type="number">
+                                        <input id="adults" type="number" min="1">
                                     </label>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
                                     <label class="single-input-wrap">
                                         <span class="single-input-title"><i class="fa fa-child"></i> Children (2-12 Years)</span>
-                                        <input id="children" type="number">
+                                        <input id="children" type="number" min="1">
                                     </label>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
                                     <label class="single-input-wrap">
                                         <span class="single-input-title"><i class="fa fa-child"></i> Infants (0-2 Years)</span>
-                                        <input id="infants" type="number">
+                                        <input id="infants" type="number" min="1">
                                     </label>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
