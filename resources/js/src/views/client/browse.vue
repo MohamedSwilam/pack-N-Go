@@ -9,6 +9,7 @@
                     <vs-th>Telephone</vs-th>
                     <vs-th>Adults</vs-th>
                     <vs-th>Children</vs-th>
+                    <vs-th>Infants</vs-th>
                     <vs-th>Action</vs-th>
                 </template>
                 <template slot-scope="{data}">
@@ -35,6 +36,10 @@
 
                         <vs-td :data="client.children">
                             {{ client.children}}
+                        </vs-td>
+
+                        <vs-td :data="client.children">
+                            {{ client.infants}}
                         </vs-td>
 
                         <vs-td>

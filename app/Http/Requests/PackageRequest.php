@@ -64,7 +64,6 @@ class PackageRequest extends FormRequest
                 'currency' => '',
                 'days' => 'integer',
                 'nights' => 'integer',
-                'rate' => 'integer',
                 'date' => 'date',
                 'season' => '',
                 'home_page' => 'boolean',
