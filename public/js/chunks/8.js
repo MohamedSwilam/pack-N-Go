@@ -152,6 +152,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -391,6 +396,18 @@ var render = function() {
                                     _vm._v(
                                       "\n                        " +
                                         _vm._s(client.children) +
+                                        "\n                    "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "vs-td",
+                                  { attrs: { data: client.children } },
+                                  [
+                                    _vm._v(
+                                      "\n                        " +
+                                        _vm._s(client.infants) +
                                         "\n                    "
                                     )
                                   ]
@@ -1026,7 +1043,7 @@ var render = function() {
                     ],
                     null,
                     false,
-                    995475605
+                    2365493681
                   )
                 },
                 [
@@ -1045,6 +1062,8 @@ var render = function() {
                       _c("vs-th", [_vm._v("Adults")]),
                       _vm._v(" "),
                       _c("vs-th", [_vm._v("Children")]),
+                      _vm._v(" "),
+                      _c("vs-th", [_vm._v("Infants")]),
                       _vm._v(" "),
                       _c("vs-th", [_vm._v("Action")])
                     ],
