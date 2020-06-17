@@ -79,48 +79,48 @@
     <!-- banner area end -->
 
     <!-- intro area start -->
-    <div id="intro" class="intro-area pd-top-50">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-sm-6 single-intro-two bl-0">
-                    <div class="single-intro style-two">
-                        <div class="thumb">
-                            <img src="/images/website/icons/9.png" alt="img">
-                        </div>
-                        <h4 class="intro-title">Private Transport</h4>
-                        <p>Sponsorships are like unicorns or leprechauns, talked about often but they don’t exist. There is only dollars</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 single-intro-two">
-                    <div class="single-intro style-two">
-                        <div class="thumb">
-                            <img src="/images/website/icons/10.png" alt="img">
-                        </div>
-                        <h4 class="intro-title">Diverse Destinations</h4>
-                        <p>My response usually harsh. Offended at the that a career that’s taken more than a decade to create could be</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 single-intro-two">
-                    <div class="single-intro style-two">
-                        <div class="thumb">
-                            <img src="/images/website/icons/11.png" alt="img">
-                        </div>
-                        <h4 class="intro-title">Great Hotels</h4>
-                        <p>I have always made a living to make movies, never the other way around.I first I washed dishes in a seafood</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 single-intro-two">
-                    <div class="single-intro style-two">
-                        <div class="thumb">
-                            <img src="/images/website/icons/12.png" alt="img">
-                        </div>
-                        <h4 class="intro-title">Fast Booking</h4>
-                        <p>Aenean sed nibh a magna posuere tempor. Nunc faucibus nunc aliquet. Donec congue, nunc vel tempor</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div id="intro" class="intro-area pd-top-50">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-3 col-sm-6 single-intro-two bl-0">--}}
+{{--                    <div class="single-intro style-two">--}}
+{{--                        <div class="thumb">--}}
+{{--                            <img src="/images/website/icons/9.png" alt="img">--}}
+{{--                        </div>--}}
+{{--                        <h4 class="intro-title">Private Transport</h4>--}}
+{{--                        <p>Sponsorships are like unicorns or leprechauns, talked about often but they don’t exist. There is only dollars</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-3 col-sm-6 single-intro-two">--}}
+{{--                    <div class="single-intro style-two">--}}
+{{--                        <div class="thumb">--}}
+{{--                            <img src="/images/website/icons/10.png" alt="img">--}}
+{{--                        </div>--}}
+{{--                        <h4 class="intro-title">Diverse Destinations</h4>--}}
+{{--                        <p>My response usually harsh. Offended at the that a career that’s taken more than a decade to create could be</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-3 col-sm-6 single-intro-two">--}}
+{{--                    <div class="single-intro style-two">--}}
+{{--                        <div class="thumb">--}}
+{{--                            <img src="/images/website/icons/11.png" alt="img">--}}
+{{--                        </div>--}}
+{{--                        <h4 class="intro-title">Great Hotels</h4>--}}
+{{--                        <p>I have always made a living to make movies, never the other way around.I first I washed dishes in a seafood</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-3 col-sm-6 single-intro-two">--}}
+{{--                    <div class="single-intro style-two">--}}
+{{--                        <div class="thumb">--}}
+{{--                            <img src="/images/website/icons/12.png" alt="img">--}}
+{{--                        </div>--}}
+{{--                        <h4 class="intro-title">Fast Booking</h4>--}}
+{{--                        <p>Aenean sed nibh a magna posuere tempor. Nunc faucibus nunc aliquet. Donec congue, nunc vel tempor</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <!-- intro area End -->
 
     <!-- travelus area start -->
