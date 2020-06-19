@@ -157,7 +157,9 @@ class PackageController extends Controller
 
         $data = $request->validated();
 
-        $data['home_page'] = $data['home_page'] == 'true'? 1:0;
+        if ($data['home_page']){
+            $data['home_page'] = $data['home_page'] == 'true'? 1:0;
+        }
 
         $package = Package::find($id);
 
@@ -200,11 +202,11 @@ class PackageController extends Controller
             $package->accommodations()->save($accommodation);
         }
 
-        foreach ($package->medias as $media){
-            Storage::delete($media->url);
-        }
-        $package->medias()->delete();
         if (array_key_exists('images', $request->validated())){
+            foreach ($package->medias as $media){
+                Storage::delete($media->url);
+            }
+            $package->medias()->delete();
             foreach ($request->validated()['images'] as $image){
                 $data = [
                     'old_name' => $image->getClientOriginalName(),
