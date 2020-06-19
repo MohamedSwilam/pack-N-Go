@@ -157,7 +157,7 @@ class PackageController extends Controller
 
         $data = $request->validated();
 
-        if ($data['home_page']){
+        if (array_key_exists('home_page', $data)){
             $data['home_page'] = $data['home_page'] == 'true'? 1:0;
         }
 
