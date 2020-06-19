@@ -66,7 +66,7 @@ class PackageRequest extends FormRequest
                 'nights' => 'integer',
                 'date' => 'date',
                 'season' => '',
-                'home_page' => 'boolean',
+                'home_page' => '',
                 'tbl' => '',
                 'dbl' => '',
                 'sgl' => '',
