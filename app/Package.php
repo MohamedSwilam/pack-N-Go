@@ -10,6 +10,10 @@ class Package extends Model
         'season', 'days', 'nights', 'rate', 'date', 'home_page',
         'tbl', 'dbl', 'sgl', 'child'];
 
+    protected $casts  = [
+        'home_page' => 'boolean'
+    ];
+
     protected $with = ['inclusions', 'exclusions', 'schedules', 'accommodations', 'medias'];
 
     public function inclusions()
