@@ -202,7 +202,7 @@
             e.preventDefault();
             no_of_countries++;
 
-            var countriesSelect =`<select id="country-select-${no_of_countries}" class="country"
+            var countriesSelect =`<select id="country-select-${no_of_countries}" class="country" style="width: 300px;"
                                     onchange="countrySelected('#country-select-${no_of_countries}', ${no_of_countries})">`;
             for(var i = 0;i< countries.length; i++){
                 countriesSelect += `<option value="${countries[i].name}">
@@ -243,7 +243,7 @@
         function addCity(selector) {
             let newID = Math.floor((Math.random() * 10000));
 
-            var citiesSelect = '<select class="city">';
+            var citiesSelect = '<select class="city" style="width: 300px;">';
             var cities = countries[country_index].cities;
             for(var i = 0;i< cities.length; i++){
                 citiesSelect += `<option value="${cities[i].name}">
