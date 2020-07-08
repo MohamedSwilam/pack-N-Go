@@ -197,6 +197,11 @@
         let no_of_countries = 1;
         var countries = @json($countries);
         var country_index = 0;
+        for (let i = 0; i < countries.length; i++) {
+            if (countries[i].name == 'Egypt'){
+                country_index = i;
+            }
+        }
 
         $("#add-country").on("click", function (e) {
             e.preventDefault();
