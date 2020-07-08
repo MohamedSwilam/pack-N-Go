@@ -161,7 +161,7 @@
                                             </div>
                                             {{--Add City Button--}}
                                             <div class="col-lg-3 col-md-3" style="padding-top: 28px;">
-                                                <button onclick="event.preventDefault();addCity('#cities-1');" style="width: 100%;" class="btn btn-success"><i class="fa fa-plus"></i> Add City</button>
+                                                <button onclick="event.preventDefault();addCity('#cities-1', 1);" style="width: 100%;" class="btn btn-success"><i class="fa fa-plus"></i> Add City</button>
                                             </div>
                                             {{--Remove Country Button--}}
                                             <div class="col-lg-3 col-md-3" style="padding-top: 28px;">
@@ -196,22 +196,29 @@
     <script>
         let no_of_countries = 1;
         var countries = @json($countries);
-        var country_index = 0;
+        var country_index = [];
         for (let i = 0; i < countries.length; i++) {
             if (countries[i].name == 'Egypt'){
-                country_index = i;
+                country_index[1] = i;
             }
         }
 
         $("#add-country").on("click", function (e) {
             e.preventDefault();
             no_of_countries++;
+            for (let i = 0; i < countries.length; i++) {
+                if (countries[i].name == 'Egypt'){
+                    country_index[no_of_countries] = i;
+                    console.log(country_index);
+                    break;
+                }
+            }
 
             var countriesSelect =`<select id="country-select-${no_of_countries}" class="country" style="width: 300px;"
                                     onchange="countrySelected('#country-select-${no_of_countries}', ${no_of_countries})">`;
             for(var i = 0;i< countries.length; i++){
-                countriesSelect += `<option value="${countries[i].name}">
-                                   ${countries[i].name}
+                countriesSelect += `<option value="${countries[i].name}" `+((countries[i].name == 'Egypt')? 'selected':'')+
+                                   ` >${countries[i].name}
                     </option>`;
             }
             countriesSelect += "</select>";
@@ -228,7 +235,7 @@
                         </div>
                         {{--Add City Button--}}
                         <div class="col-lg-3 col-md-3" style="padding-top: 28px;">
-                            <button onclick="event.preventDefault();addCity('#cities-${no_of_countries}')" style="width: 100%;" class="btn btn-success add-city"><i class="fa fa-plus"></i> Add City</button>
+                            <button onclick="event.preventDefault();addCity('#cities-${no_of_countries}', ${no_of_countries})" style="width: 100%;" class="btn btn-success add-city"><i class="fa fa-plus"></i> Add City</button>
                         </div>
                         {{--Remove Country Button--}}
                         <div class="col-lg-3 col-md-3" style="padding-top: 28px;">
@@ -245,11 +252,12 @@
         });
 
 
-        function addCity(selector) {
+        function addCity(selector, index) {
             let newID = Math.floor((Math.random() * 10000));
 
             var citiesSelect = '<select class="city" style="width: 300px;">';
-            var cities = countries[country_index].cities;
+            console.log(index+' '+country_index[index]+' '+countries[country_index[index]]);
+            var cities = countries[country_index[index]].cities;
             for(var i = 0;i< cities.length; i++){
                 citiesSelect += `<option value="${cities[i].name}">
                                    ${cities[i].name}
@@ -287,7 +295,7 @@
            for (var i = 0; i < countries.length; i++){
                console.log(i);
                if (selectedCountry == countries[i].name){
-                   country_index = i;
+                   country_index[number] = i;
                    console.log(country_index);
                    break;
                }
