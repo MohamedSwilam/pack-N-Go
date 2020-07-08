@@ -4,7 +4,8 @@
 
 @section('content')
     <!-- breadcrumb area start -->
-    <div class="breadcrumb-area style-two jarallax" style="background-image:url(/images/website/bg/1.png);">
+    <div class="breadcrumb-area style-two jarallax" id="background"
+         style="background-image: url({{$background && isset($background[0])? $background[0]->url:''}});">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -68,7 +69,18 @@
                             <ul class="tp-list-meta border-tp-solid">
                                 <li class="ml-0"><i class="fa fa-calendar-o"></i>{{date('t F Y', strtotime($package->date))}}</li>
                                 <li><i class="fa fa-clock-o"></i> {{$package->days}} Days / {{$package->nights}} Nights</li>
-                                <li><i class="fa fa-snowflake-o"></i> {{$package->season}}</li>
+                                <li>
+                                    @if (strtolower($package->season) == 'winter')
+                                        <i class="fa fa-snowflake-o"></i>
+                                    @elseif(strtolower($package->season) == 'summer')
+                                        <i class="fa fa-sun-o"></i>
+                                    @elseif(strtolower($package->season) == 'fall')
+                                        <i class="fa fa-leaf"></i>
+                                    @elseif(strtolower($package->season) == 'spring')
+                                        <i class="fa fa-tree"></i>
+                                    @else
+                                        <i class="fa fa-sun-o"></i>
+                                        @endif</i> {{$package->season}}</li>
                                 <li><i class="fa fa-star"></i>{{number_format($package->rate, 1)}}</li>
                             </ul>
                         </div>
@@ -126,7 +138,7 @@
                         <p>{{$package->description}}</p>
                         <hr>
                         <div class="row" style="margin-top: 25px;">
-                            <div class="col-lg-6 col-md-6">
+                            <div class="col-12">
                                 <h4 class="single-page-small-title">Inclusions</h4>
                                 @foreach($package->inclusions as $inclusion)
                                     <p>
@@ -135,7 +147,7 @@
                                     </p>
                                 @endforeach
                             </div>
-                            <div class="col-lg-6 col-md-6">
+                            <div class="col-12" style="margin-top: 20px;">
                                 <h4 class="single-page-small-title">Exclusions</h4>
 
                                 @foreach($package->exclusions as $exclusion)
@@ -473,3 +485,19 @@
 
     </style>
 @endsection
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript" ></script>
+<script>
+    var images = @json($background);
+    $(document).ready(function () {
+        var currentBackground = 0;
+
+        function nextBackground() {
+            $("#background").css("background-image", "url('" + images[currentBackground].url + "')");
+            currentBackground++;
+            currentBackground = currentBackground % images.length;
+        }
+        setInterval(nextBackground, 5000)
+    });
+</script>

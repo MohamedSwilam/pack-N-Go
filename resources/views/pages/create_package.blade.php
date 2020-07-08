@@ -150,9 +150,9 @@
                                             <div class="col-lg-6 col-md-6">
                                                 <label class="single-input-wrap">
                                                     <span class="single-input-title"><i class="fa fa-map-marker"></i> Country</span>
-                                                    <select id="country-select-1" class="country" onchange="countrySelected('#country-select-1', '1')">
+                                                    <select id="country-select-1" class="country" onchange="countrySelected('#country-select-1', '1')" style="width: 300px;">
                                                         @foreach($countries as $index => $country)
-                                                            <option value="{{$country->name}}">
+                                                            <option value="{{$country->name}}" @if(strtolower($country->name) == 'egypt') selected @endif>
                                                                 {{$country->name}}
                                                             </option>
                                                         @endforeach

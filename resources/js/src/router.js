@@ -360,7 +360,7 @@ const router = new Router({
                     }
                 },
                 {
-                    path: '/dashboard/background',
+                    path: '/dashboard/background/create',
                     name: 'background',
                     component: () => import('./views/background/create'),
                     beforeEnter: guard,
@@ -370,6 +370,20 @@ const router = new Router({
                             { title: 'Background', active: true}
                         ],
                         pageTitle: "Background"
+                    }
+                },
+                {
+                    path: '/dashboard/background',
+                    name: 'background',
+                    component: () => import('./views/background/browse.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard', i18n: 'Home' },
+                            { title: 'Background', active: true, i18n: 'Background' },
+                        ],
+                        pageTitle: 'Background',
+                        pageTitle_i18n: 'Background',
                     }
                 },
 

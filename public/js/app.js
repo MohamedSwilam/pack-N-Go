@@ -73407,7 +73407,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         pageTitle: "Profile"
       }
     }, {
-      path: '/dashboard/background',
+      path: '/dashboard/background/create',
       name: 'background',
       component: function component() {
         return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ./views/background/create */ "./resources/js/src/views/background/create.vue"));
@@ -73422,6 +73422,26 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
           active: true
         }],
         pageTitle: "Background"
+      }
+    }, {
+      path: '/dashboard/background',
+      name: 'background',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 31).then(__webpack_require__.bind(null, /*! ./views/background/browse.vue */ "./resources/js/src/views/background/browse.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Background',
+          active: true,
+          i18n: 'Background'
+        }],
+        pageTitle: 'Background',
+        pageTitle_i18n: 'Background'
       }
     }]
   }, // =============================================================================

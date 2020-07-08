@@ -1,5 +1,7 @@
 <?php
 
+use App\City;
+use App\Country;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,16 +18,31 @@ class CountriesAndCitiesTableSeeder extends Seeder
         $countries = json_decode($json);
 
         foreach ($countries as $country){
-            $id = \App\Country::create([
-                'name' => $country->name,
-                'region' => $country->region
-            ])->id;
-            foreach ($country->states as $state){
-                \App\City::create([
-                    'name' => $state->name,
-                    'code' => $state->code,
+            $model = Country::where('name', $country->name)->first();
+            if (!$model){
+                $id = Country::create([
+                    'name' => $country->name,
+                    'region' => $country->region
+                ])->id;
+            }
+            else{
+                $id = $model->id;
+            }
+            if (!City::where('name', $country->capital)->first()){
+                City::create([
+                    'name' => $country->capital,
+                    'code' => '',
                     'country_id' => $id
                 ]);
+            }
+            foreach ($country->states as $state){
+                if (!City::where('name', $state->name)->first()){
+                    City::create([
+                        'name' => $state->name,
+                        'code' => $state->code,
+                        'country_id' => $id
+                    ]);
+                }
             }
         }
     }
