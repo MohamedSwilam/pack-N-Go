@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Media extends Model
 {
-    protected $fillable = ['name', 'old_name', 'url'];
+    protected $fillable = ['name', 'old_name', 'url', 'relation'];
 
     public function phoneable()
     {

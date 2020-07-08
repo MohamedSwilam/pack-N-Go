@@ -97,4 +97,8 @@ Route::group(['prefix' => 'visa-demand', 'middleware' => 'auth:api'], function (
 
 Route::post('custom-package', 'CustomPackageController@store');
 
-Route::post('background', 'BackgroundController@store');
+
+Route::group(['prefix' => 'background', 'middleware' => 'auth:api'], function () {
+    Route::delete('{id}', 'MediaController@destroy');
+    Route::resource('', 'MediaController');
+});

@@ -28,7 +28,8 @@ class PackageController extends Controller
     public function index()
     {
         return view('pages.packages_list', [
-            'packages' => Package::orderBy('date', 'desc')->paginate(9)
+            'packages' => Package::orderBy('date', 'desc')->paginate(9),
+            'background' => Media::where('relation', 'background')->get()
         ]);
     }
 
@@ -41,14 +42,16 @@ class PackageController extends Controller
     public function show($id)
     {
         return view('pages.package_details', [
-            'package' => Package::where('id', $id)->first()
+            'package' => Package::where('id', $id)->first(),
+            'background' => Media::where('relation', 'background')->get()
         ]);
     }
 
     public function filter()
     {
         return view('pages.packages_list', [
-            'packages' => (new IndexResponse(Package::orderBy('date', 'desc')))->execute()
+            'packages' => (new IndexResponse(Package::orderBy('date', 'desc')))->execute(),
+            'background' => Media::where('relation', 'background')->get()
         ]);
     }
 }

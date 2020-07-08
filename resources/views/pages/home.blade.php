@@ -2,7 +2,6 @@
 
 @section('title') Home |   @endsection
 
-
 @section('content')
 
     <!-- search popup start -->
@@ -18,7 +17,8 @@
     <!-- search popup End -->
 
     <!-- banner area start -->
-    <div class="main-banner-area jarallax travelus-area" style="background-image: url(/storage/background.jpg);">
+    <div class="main-banner-area jarallax travelus-area" id="background"
+         style="background-image: url({{$background && isset($background[0])? $background[0]->url:''}});">
         <div class="content container">
             <div class="container">
                 <h2>Explore, Discover, Travel</h2>
@@ -236,3 +236,18 @@
 
     <!-- newslatter area End -->
 @endsection
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript" ></script>
+<script>
+    var images = @json($background);
+    $(document).ready(function () {
+        var currentBackground = 0;
+
+        function nextBackground() {
+            $("#background").css("background-image", "url('" + images[currentBackground].url + "')");
+            currentBackground++;
+            currentBackground = currentBackground % images.length;
+        }
+        setInterval(nextBackground, 5000)
+    });
+</script>
