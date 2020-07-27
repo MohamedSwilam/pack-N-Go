@@ -31,6 +31,7 @@ class CustomPackageRequest extends FormRequest
             'hotel_rating' => 'required',
             'hotel_location' => 'required',
             'notes' => '',
+            'hostel' => 'required',
             'booking.email' => 'required|email',
             'booking.name' => 'required',
             'booking.phone' => 'required',

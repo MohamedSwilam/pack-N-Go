@@ -55,6 +55,7 @@ class CustomPackageController extends Controller
     public function store(CustomPackageRequest $request)
     {
         $data = $request->validated();
+        $data['hostel'] = $data['hostel'] == "on"? 1:0;
 
         $booking = Booking::create($data['booking']);
 
