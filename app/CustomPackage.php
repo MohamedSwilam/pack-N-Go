@@ -8,7 +8,7 @@ class CustomPackage extends Model
 {
     protected $with = ['destinations'];
 
-    protected $fillable = ['travel_date','flexibility','budget','room_type','hotel_rating','hotel_location','notes'];
+    protected $fillable = ['travel_date','flexibility','budget','room_type','hotel_rating','hotel_location','notes', 'hostel'];
 
     public function booking()
     {

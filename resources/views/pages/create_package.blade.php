@@ -126,6 +126,12 @@
                                         </select>
                                     </label>
                                 </div>
+                                <div class="col-lg-1 col-md-1">
+                                    <label class="single-input-wrap style-two">
+                                        <span class="single-input-title"><i class="fa fa-map-marker"></i> Hostel</span>
+                                        <input type="checkbox" name="hostel" style="height: 30px;width: 30px;">
+                                    </label>
+                                </div>
 
                             </div>
 

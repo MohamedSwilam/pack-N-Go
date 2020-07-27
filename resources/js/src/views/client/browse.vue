@@ -111,6 +111,10 @@
                                             {{client.custom_package.hotel_location}}
                                         </vs-col>
                                         <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+                                            <label class="font-bold">Hostel: </label>
+                                            {{client.custom_package.hostel? 'Yes':'No'}}
+                                        </vs-col>
+                                        <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
                                             <label class="font-bold">Notes: </label>
                                             {{client.custom_package.notes}}
                                         </vs-col>
