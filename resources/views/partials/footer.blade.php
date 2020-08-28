@@ -1,7 +1,7 @@
 
 <!-- back to top area start -->
 <div class="back-to-top">
-    <span class="back-top"><i class="fa fa-angle-up"></i></span>
+    <span class="back-top"><i class="fa fa-angle-up" style="margin-top: 20%"></i></span>
 </div>
 <!-- back to top area end -->
 
@@ -18,7 +18,7 @@
                         <p>We are young & sincere travel consultants, who are passionate about trips, possess profound knowledge & will gladly help you with tailored travel packages.</p>
                         <ul class="social-icon">
                             <li>
-                                <a class="facebook" href="https://www.facebook.com/packndgo/" target="_blank"><i class="fa fa-facebook  "></i></a>
+                                <a class="facebook" href="https://www.facebook.com/packndgo/" target="_blank"><i class="fab fa-facebook  " style="margin-top: 30%;"></i></a>
                             </li>
                         </ul>
                     </div>
