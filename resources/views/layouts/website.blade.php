@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="{{ asset('css/website/jquery-ui.min.css')}}">
         <!-- icons -->
         <link rel="stylesheet" href="{{ asset('css/website/font-awesome.min.css')}}">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <link rel="stylesheet" href="{{ asset('css/website/themify-icons.css')}}">
         <link rel="stylesheet" href="{{ asset('css/website/line-awesome.min.css')}}">
         <!-- main css -->
@@ -55,10 +56,10 @@
             </div>
             <div style="position: fixed;left: 0;bottom: 0;width: 100%;">
                 <a href="https://wa.me/0020096221116" style="text-align: center;float: left;margin: 50px;" target="_blank">
-                    <i class="fa fa-4x fa-whatsapp" aria-hidden="true" style="background: #00E676;color: white;border-radius: 50%;height: 80px;width: 80px;line-height: 80px;"></i>
+                    <i class="fab fa-4x fa-whatsapp" aria-hidden="true" style="background: #00E676;color: white;border-radius: 50%;height: 80px;width: 80px;line-height: 80px;"></i>
                 </a>
                 <a href="https://m.me/276869939156008" style="text-align: center;float: right;margin: 50px;" target="_blank">
-                    <i class="fa fa-4x fa-facebook" aria-hidden="true" style="background: #4267B2;color: white;border-radius: 50%;height: 80px;width: 80px;line-height: 80px;"></i>
+                    <i class="fab fa-4x fa-facebook-messenger" aria-hidden="true" style="background: #4267B2;color: white;border-radius: 50%;height: 80px;width: 80px;line-height: 80px;"></i>
                 </a>
             </div>
         </div>

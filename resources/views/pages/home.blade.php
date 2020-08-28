@@ -137,7 +137,7 @@
                 <li class="col-lg-2 col-sm-4 single-travelus-wrap">
                     <div class="single-travelus text-center">
                         <div class="icons">
-                            <img src="/images/website/icons/dollar.png" alt="img">
+                            <img src="/images/website/icons/dollar.png" alt="img" style="margin-top: 35%">
                         </div>
                         <h4>Our Standard Trips Adorable Price</h4>
                     </div>
@@ -145,7 +145,7 @@
                 <li class="col-lg-2 col-sm-4 single-travelus-wrap">
                     <div class="single-travelus text-center">
                         <div class="icons">
-                            <img src="/images/website/icons/team.png" alt="img">
+                            <img src="/images/website/icons/team.png" alt="img" style="margin-top: 32%">
                         </div>
                         <h4>Expert Team</h4>
                         <br>
@@ -154,7 +154,7 @@
                 <li class="col-lg-2 col-sm-4 single-travelus-wrap">
                     <div class="single-travelus text-center">
                         <div class="icons">
-                            <img src="/images/website/icons/247.png" alt="img">
+                            <img src="/images/website/icons/247.png" alt="img" style="margin-top: 32%">
                         </div>
                         <h4>24/7 Support</h4>
                         <br>
@@ -184,7 +184,7 @@
                             <img src="/images/website/video.png" alt="video">
                         </div>
                         <div class="video-popup-btn">
-                            <a href="https://www.youtube.com/watch?v=c7XEhXZ_rsk" class="video-play-btn mfp-iframe"><i class="fa fa-play"></i></a>
+                            <a href="https://www.youtube.com/watch?v=c7XEhXZ_rsk" class="video-play-btn mfp-iframe"><i class="fa fa-play" style="margin-top: 35%;"></i></a>
                         </div>
                     </div>
                 </div>
