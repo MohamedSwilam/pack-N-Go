@@ -1,9 +1,4 @@
 
-<!-- back to top area start -->
-<div class="back-to-top">
-    <span class="back-top"><i class="fa fa-angle-up" style="margin-top: 20%"></i></span>
-</div>
-<!-- back to top area end -->
 
 <!-- footer area start -->
 <footer class="footer-area" style="background-image: url(/images/website/bg/2.png);">
@@ -29,7 +24,7 @@
                     <div class="widget-contact">
                         <h4 class="widget-title">Contact us</h4>
                         <p>
-                            <i class="fa fa-map-marker"></i>
+                            <i class="iclass fa fa-map-marker"></i>
                             <span>Villa 224, Northern 90th Rd, 5th district, Cairo, Egypt</span>
                         </p>
                         <p class="location">
@@ -71,3 +66,12 @@
     </div>
 </footer>
 <!-- footer area end -->
+<style>
+ .iclass {
+     margin-right: 12px;
+     width: auto;
+     float: left;
+     padding-top: 5px;
+     color: var(--main-color-one);
+ }
+</style>
