@@ -62,31 +62,31 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label class="single-input-wrap style-two">
-                                        <span class="single-input-title">Name *full name like passport*</span>
+                                        <span class="single-input-title">Name *full <na></na>me like passport*<span style="color: red">*</span></span>
                                         <input type="text" name="passport_name">
                                     </label>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="single-input-wrap style-two">
-                                        <span class="single-input-title">Birth Date</span>
+                                        <span class="single-input-title">Birth Date<span style="color: red">*</span></span>
                                         <input type="date" name="birth_date">
                                     </label>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="single-input-wrap style-two">
-                                        <span class="single-input-title">Passport Number</span>
+                                        <span class="single-input-title">Passport Number<span style="color: red">*</span></span>
                                         <input type="text" name="passport_number">
                                     </label>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="single-input-wrap style-two">
-                                        <span class="single-input-title">Expire Date</span>
+                                        <span class="single-input-title">Expire Date<span style="color: red">*</span></span>
                                         <input type="date" name="expire_date">
                                     </label>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="single-input-wrap style-two">
-                                        <span class="single-input-title">Gender</span>
+                                        <span class="single-input-title">Gender<span style="color: red">*</span></span>
                                         <select class="single-input-wrap style-two" name="gender">
                                             <option value="male">
                                                 Male
@@ -99,7 +99,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label class="single-input-wrap style-two">
-                                        <span class="single-input-title">Nationality</span>
+                                        <span class="single-input-title">Nationality<span style="color: red">*</span></span>
                                         <select class="single-input-wrap style-two" name="nationality">
                                             @foreach($countries as $country)
                                                 <option value="{{$country->name}}" @if(strtolower($country->name) == 'egypt') selected @endif>

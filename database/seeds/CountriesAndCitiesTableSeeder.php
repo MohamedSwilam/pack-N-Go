@@ -14,36 +14,36 @@ class CountriesAndCitiesTableSeeder extends Seeder
      */
     public function run()
     {
-        $json = Storage::disk('public')->get('countries.json');
-        $countries = json_decode($json);
+        $json = Storage::disk('public')->get('countries2.json');
+        $countries = json_decode($json,true);
+        $countries_names= array_keys($countries);
 
-        foreach ($countries as $country){
-            $model = Country::where('name', $country->name)->first();
+
+        for($i = 0; $i < count($countries_names); $i++)
+        {
+            $model = Country::where('name', $countries_names[$i])->first();
             if (!$model){
                 $id = Country::create([
-                    'name' => $country->name,
-                    'region' => $country->region
+                    'name' => $countries_names[$i],
+                    'region' => $countries_names[$i]
                 ])->id;
             }
             else{
                 $id = $model->id;
             }
-            if (!City::where('name', $country->capital)->first()){
-                City::create([
-                    'name' => $country->capital,
-                    'code' => '',
-                    'country_id' => $id
-                ]);
-            }
-            foreach ($country->states as $state){
-                if (!City::where('name', $state->name)->first()){
-                    City::create([
-                        'name' => $state->name,
-                        'code' => $state->code,
-                        'country_id' => $id
-                    ]);
-                }
-            }
+
+          foreach ($countries[$countries_names[$i]] as $country) {
+
+
+
+                  if (!City::where('name', $country)->first()) {
+                      City::create([
+                          'name' => $country,
+                          'code' => $country,
+                          'country_id' => $id
+                      ]);
+                  }
+          }
         }
     }
 }
