@@ -19,17 +19,17 @@
             </div>
         </div>
     </div>
-    <!-- breadcrumb area End -->
+    <!-- breadcrumb ax`rea End -->
 
     <!-- tour details area End -->
     <div class="tour-details-area mg-top--70">
         <div class="tour-details-gallery">
-            <div class="container-bg bg-dark-blue">
+            <div class="container-bg bg-dark-blue " style="z-index: inherit;">
                 <div class="container pl-5">
                     <div class="row">
                         <div class="col-xs-9">
                             <div class="details">
-                                <h4 class="title">Required Documents to get {{$visa->country_name}} Visa</h4>
+                                <h4 class="title">General informations to get {{$visa->country_name}} Visa</h4>
                             </div>
                         </div>
                         <div class="col-xl-9 col-lg-8">

@@ -129,7 +129,7 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-8">
                     <div class="section-title section-title-left-border style-two">
-                        <h2 class="title">Why Choos Pack'N Go</h2>
+                        <h2 class="title">Why Choose Pack'N Go</h2>
                     </div>
                 </div>
             </div>

@@ -152,7 +152,7 @@
 
                                 @foreach($package->exclusions as $exclusion)
                                     <p>
-                                        <i style="display: table-cell;color: #40a0d0;" class="fa fa-check"></i>
+                                        <i style="display: table-cell;color: #ff0000;" class="fa fa-times"></i>
                                         <span style="display: table-cell;">{{$exclusion->name}}</span>
                                     </p>
                                 @endforeach
@@ -167,7 +167,7 @@
                                         <h2 id="title">Day {{$schedule->day}}</h2>
                                         <li class="timeline-milestone is-completed timeline-start">
                                                         <div class="timeline-action">
-                                                            <div class="content">
+                                                            <div class="content " style="background-color:;">
                                                                 {{$schedule->description}}
                                                             </div>
                                                         </div>
@@ -384,7 +384,6 @@
         }
 
         .timeline-action {
-            background-color: #FFF;
             padding: 12px 10px 12px 20px;
             position: relative;
             top: -15px;
