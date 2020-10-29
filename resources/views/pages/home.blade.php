@@ -51,7 +51,6 @@
                                     @endif
                                 </div>
                                 <div class="details">
-
                                     <h3>{{$package->title}}</h3>
                                     <ul class="package-meta">
                                         <li class="tp-price-meta">
@@ -60,7 +59,7 @@
                                             <h2>{{$package->days}} Days / {{$package->nights}} Nights</h2>
                                         </li>
                                         <br>
-                                        <li class="tp-price-meta" style="position: relative;margin-top: 5px; right: 10px;">
+                                        <li class="tp-price-meta">
                                             <p><i class="fa fa-tag"></i></p>
                                             <p>Price</p>
                                             <h2>{{$package->price}} {{$package->currency}} </h2>
