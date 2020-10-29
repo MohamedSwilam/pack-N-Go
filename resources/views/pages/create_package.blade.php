@@ -321,6 +321,7 @@
                 room_type: $("#room_type").val(),
                 hotel_rating: $("#hotel_rating").val(),
                 hotel_location: $("#hotel_location").val(),
+
                 hostel: $("#hostel").val(),
                 booking: {
                     name: $("#name").val(),
