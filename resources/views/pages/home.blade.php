@@ -53,7 +53,7 @@
                                 <div class="details">
 
                                     <h3>{{$package->title}}</h3>
-                                    <u  l class="package-meta">
+                                    <ul class="package-meta">
                                         <li class="tp-price-meta">
                                             <p><i class="fa fa-clock-o"></i></p>
                                             <p>Duration</p>
