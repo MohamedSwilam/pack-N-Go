@@ -113,6 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "browse",
   mounted: function mounted() {
@@ -293,9 +294,9 @@ var render = function() {
                         [
                           _c("vs-td", { attrs: { data: insurance.id } }, [
                             _vm._v(
-                              "\n                        " +
+                              "\n                            " +
                                 _vm._s(index + 1) +
-                                "\n                    "
+                                "\n                        "
                             )
                           ]),
                           _vm._v(" "),
@@ -324,25 +325,25 @@ var render = function() {
                           _vm._v(" "),
                           _c("vs-td", { attrs: { data: insurance.name } }, [
                             _vm._v(
-                              "\n                        " +
+                              "\n                            " +
                                 _vm._s(insurance.name) +
-                                "\n                    "
+                                "\n                        "
                             )
                           ]),
                           _vm._v(" "),
                           _c("vs-td", { attrs: { data: insurance.phone } }, [
                             _vm._v(
-                              "\n                        " +
+                              "\n                            " +
                                 _vm._s(insurance.phone) +
-                                "\n                    "
+                                "\n                        "
                             )
                           ]),
                           _vm._v(" "),
                           _c("vs-td", { attrs: { data: insurance.address } }, [
                             _vm._v(
-                              "\n                        " +
+                              "\n                            " +
                                 _vm._s(insurance.address) +
-                                "\n                    "
+                                "\n                        "
                             )
                           ]),
                           _vm._v(" "),
@@ -351,9 +352,9 @@ var render = function() {
                             { attrs: { data: insurance.created_at } },
                             [
                               _vm._v(
-                                "\n                        " +
+                                "\n                            " +
                                   _vm._s(insurance.created_at) +
-                                  "\n                    "
+                                  "\n                        "
                               )
                             ]
                           ),
@@ -386,11 +387,11 @@ var render = function() {
                                                 [_vm._v("Passport Name: ")]
                                               ),
                                               _vm._v(
-                                                "\n                                    " +
+                                                "\n                                        " +
                                                   _vm._s(
                                                     insurance.passport_name
                                                   ) +
-                                                  "\n                                "
+                                                  "\n                                    "
                                               )
                                             ]
                                           ),
@@ -411,9 +412,9 @@ var render = function() {
                                                 [_vm._v("Birth Date: ")]
                                               ),
                                               _vm._v(
-                                                "\n                                    " +
+                                                "\n                                        " +
                                                   _vm._s(insurance.birth_date) +
-                                                  "\n                                "
+                                                  "\n                                    "
                                               )
                                             ]
                                           ),
@@ -434,11 +435,11 @@ var render = function() {
                                                 [_vm._v("Expire Date: ")]
                                               ),
                                               _vm._v(
-                                                "\n                                    " +
+                                                "\n                                        " +
                                                   _vm._s(
                                                     insurance.expire_date
                                                   ) +
-                                                  "\n                                "
+                                                  "\n                                    "
                                               )
                                             ]
                                           ),
@@ -459,11 +460,11 @@ var render = function() {
                                                 [_vm._v("Nationality: ")]
                                               ),
                                               _vm._v(
-                                                "\n                                    " +
+                                                "\n                                        " +
                                                   _vm._s(
                                                     insurance.nationality
                                                   ) +
-                                                  "\n                                "
+                                                  "\n                                    "
                                               )
                                             ]
                                           ),
@@ -484,9 +485,9 @@ var render = function() {
                                                 [_vm._v("Gender: ")]
                                               ),
                                               _vm._v(
-                                                "\n                                    " +
+                                                "\n                                        " +
                                                   _vm._s(insurance.gender) +
-                                                  "\n                                "
+                                                  "\n                                    "
                                               )
                                             ]
                                           ),
@@ -507,11 +508,11 @@ var render = function() {
                                                 [_vm._v("Passport Number: ")]
                                               ),
                                               _vm._v(
-                                                "\n                                    " +
+                                                "\n                                        " +
                                                   _vm._s(
                                                     insurance.passport_number
                                                   ) +
-                                                  "\n                                "
+                                                  "\n                                    "
                                               )
                                             ]
                                           ),
@@ -532,13 +533,92 @@ var render = function() {
                                                 [_vm._v("Country: ")]
                                               ),
                                               _vm._v(
-                                                "\n                                    " +
+                                                "\n                                        " +
                                                   _vm._s(insurance.country) +
-                                                  "\n                                "
+                                                  "\n                                    "
                                               )
                                             ]
                                           ),
                                           _vm._v(" "),
+                                          _c(
+                                            "vs-col",
+                                            {
+                                              attrs: {
+                                                "vs-xs": "6",
+                                                "vs-sm": "4",
+                                                "vs-lg": "3"
+                                              }
+                                            },
+                                            [
+                                              _c(
+                                                "label",
+                                                { staticClass: "font-bold" },
+                                                [_vm._v("Start Date: ")]
+                                              ),
+                                              _vm._v(
+                                                "\n                                        " +
+                                                  _vm._s(insurance.start_date) +
+                                                  "\n                                    "
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "vs-col",
+                                            {
+                                              attrs: {
+                                                "vs-xs": "6",
+                                                "vs-sm": "4",
+                                                "vs-lg": "3"
+                                              }
+                                            },
+                                            [
+                                              _c(
+                                                "label",
+                                                { staticClass: "font-bold" },
+                                                [_vm._v("Duration: ")]
+                                              ),
+                                              _vm._v(
+                                                "\n                                        " +
+                                                  _vm._s(insurance.duration) +
+                                                  "\n                                    "
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "vs-col",
+                                            {
+                                              attrs: {
+                                                "vs-xs": "6",
+                                                "vs-sm": "6",
+                                                "vs-lg": "6"
+                                              }
+                                            },
+                                            [
+                                              _c(
+                                                "label",
+                                                { staticClass: "font-bold" },
+                                                [_vm._v("Insurance Type: ")]
+                                              ),
+                                              _vm._v(
+                                                "\n                                        " +
+                                                  _vm._s(
+                                                    insurance.insurance_type
+                                                  ) +
+                                                  "\n                                    "
+                                              )
+                                            ]
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  insurance.image
+                                    ? _c(
+                                        "vs-row",
+                                        [
                                           _c(
                                             "vs-col",
                                             {
@@ -612,6 +692,7 @@ var render = function() {
                                         ],
                                         1
                                       )
+
                                     : _vm._e()
                                 ],
                                 1

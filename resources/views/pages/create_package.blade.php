@@ -321,11 +321,15 @@
                 room_type: $("#room_type").val(),
                 hotel_rating: $("#hotel_rating").val(),
                 hotel_location: $("#hotel_location").val(),
+
+
+                hostel: $("#hostel").val(),
                 booking: {
                     name: $("#name").val(),
                     email: $("#email").val(),
                     phone: $("#phone").val(),
                     adults: $("#adults").val(),
+
                     children: $("#children").val(),
                     infants: $("#infants").val()
                 },

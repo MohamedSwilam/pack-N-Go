@@ -83,6 +83,24 @@
                                     </vs-col>
                                 </vs-row>
 
+                                <vs-row v-if="insurance.image">
+
+                                <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+
+                                    <label class="font-bold">Start Date: </label>
+                                    {{insurance.start_date}}
+                                </vs-col>
+                                <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+
+                                    <label class="font-bold">Duration: </label>
+                                    {{insurance.duration}}
+                                </vs-col>
+                                <vs-col vs-xs="6" vs-sm="6" vs-lg="6">
+                                    <label class="font-bold">Insurance Type: </label>
+                                    {{insurance.insurance_type}}
+                                </vs-col>
+                                </vs-row>
+
                             </div>
                         </template>
 

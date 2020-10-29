@@ -56,6 +56,7 @@ class CustomPackageController extends Controller
     {
         $data = $request->validated();
         $data['hostel'] = $data['hostel'] == "on"? 1:0;
+        //ff
 
         $booking = Booking::create($data['booking']);
 
