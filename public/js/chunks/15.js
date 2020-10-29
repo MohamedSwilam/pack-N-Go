@@ -113,6 +113,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "browse",
   mounted: function mounted() {
@@ -606,6 +621,85 @@ var render = function() {
                                                     insurance.insurance_type
                                                   ) +
                                                   "\n                                "
+                                              )
+                                            ]
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  insurance.image
+                                    ? _c(
+                                        "vs-row",
+                                        [
+                                          _c(
+                                            "vs-col",
+                                            {
+                                              attrs: {
+                                                "vs-xs": "6",
+                                                "vs-sm": "4",
+                                                "vs-lg": "3"
+                                              }
+                                            },
+                                            [
+                                              _c(
+                                                "label",
+                                                { staticClass: "font-bold" },
+                                                [_vm._v("Start Date: ")]
+                                              ),
+                                              _vm._v(
+                                                "\n                                " +
+                                                  _vm._s(insurance.start_date) +
+                                                  "\n                            "
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "vs-col",
+                                            {
+                                              attrs: {
+                                                "vs-xs": "6",
+                                                "vs-sm": "4",
+                                                "vs-lg": "3"
+                                              }
+                                            },
+                                            [
+                                              _c(
+                                                "label",
+                                                { staticClass: "font-bold" },
+                                                [_vm._v("Duration: ")]
+                                              ),
+                                              _vm._v(
+                                                "\n                                " +
+                                                  _vm._s(insurance.duration) +
+                                                  "\n                            "
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "vs-col",
+                                            {
+                                              attrs: {
+                                                "vs-xs": "6",
+                                                "vs-sm": "6",
+                                                "vs-lg": "6"
+                                              }
+                                            },
+                                            [
+                                              _c(
+                                                "label",
+                                                { staticClass: "font-bold" },
+                                                [_vm._v("Insurance Type: ")]
+                                              ),
+                                              _vm._v(
+                                                "\n                                " +
+                                                  _vm._s(
+                                                    insurance.insurance_type
+                                                  ) +
+                                                  "\n                            "
                                               )
                                             ]
                                           )
