@@ -16,7 +16,6 @@
                         <vs-td :data="insurance.id">
                             {{ index+1 }}
                         </vs-td>
-
                         <vs-td :data="insurance.image">
                             <a v-if="insurance.image" :href="`${insurance.image.url}`" target="_blank"><img :src="`${insurance.image.url}`" width="50px" height="50px"></a>
                             <b v-else>No Image</b>
@@ -41,7 +40,6 @@
                         <template class="expand-user" slot="expand">
                             <div class="con-expand-users w-full">
                                 <vs-row v-if="!insurance.image">
-
                                     <vs-col vs-xs="6" vs-sm="6" vs-lg="6" >
                                         <label class="font-bold">Passport Name: </label>
                                         {{insurance.passport_name}}
@@ -83,6 +81,7 @@
                                         {{insurance.insurance_type}}
                                     </vs-col>
                                 </vs-row>
+
                                 <vs-row v-if="insurance.image">
                                 <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
 <!--                                    <-->

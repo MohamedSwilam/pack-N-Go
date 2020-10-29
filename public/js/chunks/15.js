@@ -113,22 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "browse",
   mounted: function mounted() {
@@ -707,6 +692,7 @@ var render = function() {
                                         ],
                                         1
                                       )
+
                                     : _vm._e()
                                 ],
                                 1
