@@ -84,8 +84,9 @@
                                     </vs-col>
                                 </vs-row>
                                 <vs-row v-if="insurance.image">
+
                                 <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
-<!--                                    <-->
+
                                     <label class="font-bold">Start Date: </label>
                                     {{insurance.start_date}}
                                 </vs-col>
