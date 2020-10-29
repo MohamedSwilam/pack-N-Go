@@ -52,14 +52,14 @@
                                 </div>
                                 <div class="details">
                                     <h3>{{$package->title}}</h3>
-                                    <ul class="package-meta">
+                                    <ul class="package-meta"  >
                                         <li class="tp-price-meta">
                                             <p><i class="fa fa-clock-o"></i></p>
                                             <p>Duration</p>
                                             <h2>{{$package->days}} Days / {{$package->nights}} Nights</h2>
                                         </li>
                                         <br>
-                                        <li class="tp-price-meta">
+                                        <li class="tp-price-meta" style="    margin-top: 5px;position: relative; right: 10px;">
                                             <p><i class="fa fa-tag"></i></p>
                                             <p>Price</p>
                                             <h2>{{$package->price}} {{$package->currency}} </h2>

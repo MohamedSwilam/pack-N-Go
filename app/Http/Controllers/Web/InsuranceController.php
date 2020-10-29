@@ -36,6 +36,7 @@ class InsuranceController extends Controller
 
         if (\request()->hasFile('image')){
             $image = \request()->file('image');
+
             $data = [
                 'old_name' => $image->getClientOriginalName(),
             ];

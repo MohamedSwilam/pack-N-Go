@@ -328,6 +328,7 @@
                     email: $("#email").val(),
                     phone: $("#phone").val(),
                     adults: $("#adults").val(),
+
                     children: $("#children").val(),
                     infants: $("#infants").val()
                 },

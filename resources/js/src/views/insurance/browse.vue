@@ -91,6 +91,7 @@
                                     {{insurance.start_date}}
                                 </vs-col>
                                 <vs-col vs-xs="6" vs-sm="4" vs-lg="3">
+
                                     <label class="font-bold">Duration: </label>
                                     {{insurance.duration}}
                                 </vs-col>
