@@ -52,14 +52,14 @@
                                 </div>
                                 <div class="details">
                                     <h3>{{$package->title}}</h3>
-                                    <ul class="package-meta"  >
+                                    <ul class="package-meta">
                                         <li class="tp-price-meta">
                                             <p><i class="fa fa-clock-o"></i></p>
                                             <p>Duration</p>
                                             <h2>{{$package->days}} Days / {{$package->nights}} Nights</h2>
                                         </li>
                                         <br>
-                                        <li class="tp-price-meta" style="    margin-top: 5px;position: relative; right: 10px;">
+                                        <li class="tp-price-meta">
                                             <p><i class="fa fa-tag"></i></p>
                                             <p>Price</p>
                                             <h2>{{$package->price}} {{$package->currency}} </h2>
@@ -129,7 +129,7 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-8">
                     <div class="section-title section-title-left-border style-two">
-                        <h2 class="title">Why Choose Pack'N Go</h2>
+                        <h2 class="title">Why Choos Pack'N Go</h2>
                     </div>
                 </div>
             </div>
@@ -137,7 +137,7 @@
                 <li class="col-lg-2 col-sm-4 single-travelus-wrap">
                     <div class="single-travelus text-center">
                         <div class="icons">
-                            <img src="/images/website/icons/dollar.png" alt="img" style="margin-top: 35%">
+                            <img src="/images/website/icons/dollar.png" alt="img">
                         </div>
                         <h4>Our Standard Trips Adorable Price</h4>
                     </div>
@@ -145,7 +145,7 @@
                 <li class="col-lg-2 col-sm-4 single-travelus-wrap">
                     <div class="single-travelus text-center">
                         <div class="icons">
-                            <img src="/images/website/icons/team.png" alt="img" style="margin-top: 32%">
+                            <img src="/images/website/icons/team.png" alt="img">
                         </div>
                         <h4>Expert Team</h4>
                         <br>
@@ -154,7 +154,7 @@
                 <li class="col-lg-2 col-sm-4 single-travelus-wrap">
                     <div class="single-travelus text-center">
                         <div class="icons">
-                            <img src="/images/website/icons/247.png" alt="img" style="margin-top: 32%">
+                            <img src="/images/website/icons/247.png" alt="img">
                         </div>
                         <h4>24/7 Support</h4>
                         <br>
@@ -184,7 +184,7 @@
                             <img src="/images/website/video.png" alt="video">
                         </div>
                         <div class="video-popup-btn">
-                            <a href="https://www.youtube.com/watch?v=c7XEhXZ_rsk" class="video-play-btn mfp-iframe"><i class="fa fa-play" style="margin-top: 35%;"></i></a>
+                            <a href="https://www.youtube.com/watch?v=c7XEhXZ_rsk" class="video-play-btn mfp-iframe"><i class="fa fa-play"></i></a>
                         </div>
                     </div>
                 </div>
