@@ -16,7 +16,6 @@
                         <vs-td :data="insurance.id">
                             {{ index+1 }}
                         </vs-td>
-
                         <vs-td :data="insurance.image">
                             <a v-if="insurance.image" :href="`${insurance.image.url}`" target="_blank"><img :src="`${insurance.image.url}`" width="50px" height="50px"></a>
                             <b v-else>No Image</b>
