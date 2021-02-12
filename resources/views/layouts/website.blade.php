@@ -10,8 +10,13 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Search Engine -->
-        <meta name="description" content= "We are young & sincere travel consultants, who are passionate about trips, possess profound knowledge & will gladly help you with tailored travel packages." />
-        <meta name="robots" content= "index, follow">
+        <meta name="title" content="Pack'N Go">
+        <meta name="description" content="We are young & sincere travel consultants, who are passionate about trips, possess profound knowledge & will gladly help you with tailored travel packages.">
+        <meta name="keywords" content="Pack, and, go, pack and go, Pack'N, Go, Pack'N Go, Travel, Trip, Trips, Packages">
+        <meta name="robots" content="index, follow">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="language" content="English">
+        <meta name="revisit-after" content="1 days">
         <meta name="image" content="https://pack-n-go.test/images/logo/logo%201.png">
         <!-- Schema.org for Google -->
         <meta itemprop="name" content="Pack'N Go">
