@@ -60,9 +60,13 @@
             <a target="_blank" href="https://www.linkedin.com/in/mohamedswilam/" style="text-decoration: underline">
                 <span>Mohamed Swilam</span>
             </a>
-            and
+            , 
             <a target="_blank" href="https://www.linkedin.com/in/abdulrahman-rashwan-015257119/" style="text-decoration: underline">
                <span>Abdul-Rahman Rashwan</span>
+            </a>
+            and 
+             <a target="_blank" href=https://www.linkedin.com/in/hossammohamedsayed/" style="text-decoration: underline">
+               <span>Hossam Mohamed</span>
             </a>
         </div>
     </div>
