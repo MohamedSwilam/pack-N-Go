@@ -10,6 +10,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Search Engine -->
+        <meta name="google-site-verification" content="hHSOmFG7pSQp16_ld2Hx5G4OmZwndYDbQaG2qI1o6H4" />
         <meta name="title" content="Pack'N Go">
         <meta name="description" content="We are young & sincere travel consultants, who are passionate about trips, possess profound knowledge & will gladly help you with tailored travel packages.">
         <meta name="keywords" content="Pack, and, go, pack and go, Pack'N, Go, Pack'N Go, Travel, Trip, Trips, Packages">
