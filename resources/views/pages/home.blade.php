@@ -137,7 +137,7 @@
                 <li class="col-lg-2 col-sm-4 single-travelus-wrap">
                     <div class="single-travelus text-center">
                         <div class="icons">
-                            <img src="/images/website/icons/dollar.png" alt="img">
+                            <img style="margin-top: 35%" src="/images/website/icons/dollar.png" alt="img">
                         </div>
                         <h4>Our Standard Trips Adorable Price</h4>
                     </div>
@@ -145,7 +145,7 @@
                 <li class="col-lg-2 col-sm-4 single-travelus-wrap">
                     <div class="single-travelus text-center">
                         <div class="icons">
-                            <img src="/images/website/icons/team.png" alt="img">
+                            <img style="margin-top: 35%" src="/images/website/icons/team.png" alt="img">
                         </div>
                         <h4>Expert Team</h4>
                         <br>
@@ -154,7 +154,7 @@
                 <li class="col-lg-2 col-sm-4 single-travelus-wrap">
                     <div class="single-travelus text-center">
                         <div class="icons">
-                            <img src="/images/website/icons/247.png" alt="img">
+                            <img style="margin-top: 35%" src="/images/website/icons/247.png" alt="img">
                         </div>
                         <h4>24/7 Support</h4>
                         <br>

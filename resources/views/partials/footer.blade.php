@@ -13,7 +13,9 @@
                         <p>We are young & sincere travel consultants, who are passionate about trips, possess profound knowledge & will gladly help you with tailored travel packages.</p>
                         <ul class="social-icon">
                             <li>
-                                <a class="facebook" href="https://www.facebook.com/packndgo/" target="_blank"><i class="fab fa-facebook  " style="margin-top: 30%;"></i></a>
+                                <a class="facebook" href="https://www.facebook.com/packndgo/" target="_blank"><i class="fa fa-facebook" style="margin-top: 30%;"></i></a>
+                            </li><li>
+                                <a class="whatsapp" href="https://wa.me/0020096221116" target="_blank"><i class="fa fa-whatsapp" style="margin-top: 30%;"></i></a>
                             </li>
                         </ul>
                     </div>
