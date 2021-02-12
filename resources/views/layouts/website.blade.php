@@ -19,7 +19,7 @@
         <!-- Open Graph general (Facebook, Pinterest & LinkedIn) -->
         <meta property="og:title" content="Pack'N Go">
         <meta property="og:description" content="We are young & sincere travel consultants, who are passionate abou..">
-        <meta property="og:image" content="https://pack-n-go.test/images/logo/logo%201.png">
+        <meta property="og:image" content="https://packandgo-me.com/images/logo/logo%201.png">
         <meta property="og:url" content="https://packandgo-me.com/">
         <meta property="og:site_name" content="Pack'N Go">
         <meta property="og:locale" content="en_US">
@@ -28,7 +28,7 @@
         <meta property="twitter:card" content="summary">
         <meta property="twitter:title" content="Pack'N Go">
         <meta property="twitter:description" content="We are young & sincere travel consultants, who are passionate about trips, possess profound knowledge & will gladly he..">
-        <meta property="twitter:image:src" content="https://pack-n-go.test/images/logo/logo%201.png">
+        <meta property="twitter:image:src" content="https://packandgo-me.com/images/logo/logo%201.png">
 
 
         <title>@yield('title') {{ config('app.name', 'Pack\'N Go') }}</title>
