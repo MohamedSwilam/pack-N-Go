@@ -18,11 +18,23 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="language" content="English">
         <meta name="revisit-after" content="1 days">
-        <meta name="image" content="https://pack-n-go.test/images/logo/logo%201.png">
+        <meta name="image" content="https://packandgo-me.com/images/logo/logo%201.png">
+
         <!-- Schema.org for Google -->
-        <meta itemprop="name" content="Pack'N Go">
-        <meta itemprop="description" content="We are young & sincere travel consultants, who are passionate about trips, possess profound knowledge & will gladly help you with tailored travel packages.">
+        <meta property="og:site_name" content="Pack'N Go"/>
+        <meta property="og:title" content="Pack'N Go"/>
+        <meta property="og:url" content="https://www.packupgo.com"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:description" content="We are young & sincere travel consultants, who are passionate about trips, possess profound knowledge & will gladly help you with tailored travel packages."/>
+        <meta property="og:image" content="https://packandgo-me.com/images/logo/logo%201.png"/>
+        <meta property="og:image:width" content="1500"/>
+        <meta property="og:image:height" content="1500"/>
+        <meta itemprop="name" content="Pack'N Go"/>
+        <meta itemprop="url" content="https://www.packupgo.com"/>
+        <meta itemprop="description" content="We are young & sincere travel consultants, who are passionate about trips, possess profound knowledge & will gladly help you with tailored travel packages."/>
         <meta itemprop="image" content="https://pack-n-go.test/images/logo/logo%201.png">
+    {{--        <meta itemprop="name" content="Pack'N Go">--}}
+        {{--        <meta itemprop="description" content="We are young & sincere travel consultants, who are passionate about trips, possess profound knowledge & will gladly help you with tailored travel packages.">--}}
         <!-- Open Graph general (Facebook, Pinterest & LinkedIn) -->
         <meta property="og:title" content="Pack'N Go">
         <meta property="og:description" content="We are young & sincere travel consultants, who are passionate abou..">
