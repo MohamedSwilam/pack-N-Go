@@ -56,9 +56,7 @@
                         </div>
                     </div>
                 </li>
-                <li id="insurance-button">
-                    <a href="#about-us">About Us</a>
-                </li>
+                
             </ul>
         </div>
         <div class="nav-right-content">
